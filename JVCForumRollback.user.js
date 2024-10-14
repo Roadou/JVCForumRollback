@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      2.9.0
+// @version      2.9.5
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -403,7 +403,7 @@ var oldHtmlCode =
             <div class="forum-section">
               <div class="fs-header genesis-pass"></div>
               <div class="fs-body">
-                <h3><a href="/news/1775158/genesis-pass-les-premieres-fonctionnalites-des-nft-jv-sont-la.htm" class="xXx">Genesis pass holder</a></h3>
+                <h3><a href="/forums/0-3021265-0-1-0-1-0-genesis-pass-holder.htm" class="xXx">Genesis pass holder</a></h3>
               </div>
             </div>
           </div>
