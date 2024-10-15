@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      2.9.5
+// @version      3.0.0
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -350,17 +350,7 @@ const css = `
 
 //2)Ancien_HTML_____________
 var oldHtmlCode = 
-`<div class="layout__row js-layout-adHeader layout__adHeader">
-  <div class="js-ad-placeholder layout__adPlaceHolder">
-    <div class="dfp dfp--header js-dfp-header">
-      <div class="dfp__table">
-        <div class="dfp__cell">
-          <div id="dfp_header"></div>
-        </div>
-      </div>
-    </div><ins data-ad-position="header" data-breakpoints="xs,s,l,m,xl"></ins>
-  </div>
-</div>
+`
 <div class="layout__row layout__row--gutter layout__breadcrumb">
   <div class="px-3 px-lg-0 mt-3 spreadContainer spreadContainer--rowLayout">
     <nav class="breadcrumb" role="navigation"><a href="/" class="breadcrumb__item">jeuxvideo.com</a><h1 class="breadcrumb__item">Les Forums de jeuxvideo.com : retrouvez notre communauté et venez échanger avec elle sur divers sujets et de nombreux topics</h1></nav>
@@ -787,13 +777,6 @@ var oldHtmlCode =
       </div>
     </div>
     <div class="col-right" id="forum-right-col">
-      <div class="sideDfp sideDfp--rectangle_atf">
-        <div class="sideDfp__inner">
-          <div class="sideDfp__prospect">
-            <div id="dfp_rectangle_atf"></div>
-          </div>
-        </div>
-      </div><ins data-ad-position="rectangle_atf" data-breakpoints="l,xl"></ins>
       <div class="card card-forum-margin">
         <div class="card-forum-title card-header">Top Forums</div>
         <div class="card-body p-2">
@@ -816,13 +799,6 @@ var oldHtmlCode =
           </ol>
         </div>
       </div>
-      <div class="sideDfp sideDfp--rectangle_mtf">
-        <div class="sideDfp__inner">
-          <div class="sideDfp__prospect">
-            <div id="dfp_rectangle_mtf"></div>
-          </div>
-        </div>
-      </div><ins data-ad-position="rectangle_mtf" data-breakpoints="xs,s,l,m,xl"></ins>
       <div class="sideModule sideOrderedGames">
         <div class="sideModule__header">
           <div class="sideModule__icon"><i class="icon-fire sideModule__iconFile"></i></div><span class="sideModule__title">Les jeux attendus</span>
@@ -846,13 +822,6 @@ var oldHtmlCode =
         </div>
         <div class="sideModule__footer"><a href="/jeux/attendus/" class="xXx sideModule__cta simpleButton">Tous les jeux attendus</a></div>
       </div>
-      <div class="sideDfp sideDfp--rectangle_btf">
-        <div class="sideDfp__inner">
-          <div class="sideDfp__prospect">
-            <div id="dfp_rectangle_btf"></div>
-          </div>
-        </div>
-      </div><ins data-ad-position="rectangle_btf" data-breakpoints="xs,s,l,m,xl"></ins>
     </div>
   </div>
 </div>`;
