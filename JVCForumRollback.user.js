@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      3.0.0
+// @version      4.5.0
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -14,7 +14,48 @@
 // ==/UserScript==
 
 
-//1)Overlay_CSS_____________
+//1)Recuperer_Page_Actuelle_______
+
+const page = document.getElementById("jv-page");
+const elements = document.querySelectorAll('.card__imgGame + .card__body .card__link');
+
+//recuperer le bloc de fin
+const footer = page.querySelector(".layout__row.layout__footer");
+const blocjeuxnew = document.querySelector(".sideModule.sideOrderedGames");
+
+//_JVCake______________
+function jvCake(classe) {
+    const base16 = '0A12B34C56D78E9F';
+    let lien = '';
+    const s = classe; // Utilisation directe de la chaîne hexadécimale
+    for (let i = 0; i < s.length; i += 2) {
+        const char1 = base16.indexOf(s.charAt(i));
+        const char2 = base16.indexOf(s.charAt(i + 1));
+        lien += String.fromCharCode(char1 * 16 + char2);
+    }
+    return lien;
+}
+
+// Création liste lien et titre jeux
+const links = [];
+const titles = [];
+
+collectLinksAndTitles();
+
+// Récupérer les liens et titres de tous les éléments et les mettre dans la liste
+function collectLinksAndTitles() {
+    elements.forEach((element) => {
+        titles.push(element.title);
+        if (element.href) {
+            links.push(element.href);
+        } else {
+            links.push(jvCake(element.classList[1]));
+        }
+    });
+}
+
+
+//2)Overlay_CSS_____________
 const style = document.createElement('style');
 style.type = 'text/css';
 
@@ -347,8 +388,8 @@ const css = `
 
 
 
+//3)Ancien_HTML_____________
 
-//2)Ancien_HTML_____________
 var oldHtmlCode = 
 `
 <div class="layout__row layout__row--gutter layout__breadcrumb">
@@ -781,25 +822,25 @@ var oldHtmlCode =
         <div class="card-forum-title card-header">Top Forums</div>
         <div class="card-body p-2">
           <ol class="fw-bold mb-0">
-            <li><a href="/forums/0-3016891-0-1-0-1-0-genshin-impact.htm" class="lh-sm card-forum-link">Genshin Impact</a></li>
-            <li><a href="/forums/0-19163-0-1-0-1-0-league-of-legends.htm" class="lh-sm card-forum-link">League of Legends</a></li>
-            <li><a href="/forums/0-3020938-0-1-0-1-0-football-manager-2024.htm" class="lh-sm card-forum-link">Football Manager 2024</a></li>
-            <li><a href="/forums/0-3021932-0-1-0-1-0-topspin-2k25.htm" class="lh-sm card-forum-link">TopSpin 2K25</a></li>
-            <li><a href="/forums/0-3020471-0-1-0-1-0-honkai-star-rail.htm" class="lh-sm card-forum-link">Honkai : Star Rail</a></li>
-            <li><a href="/forums/0-3016443-0-1-0-1-0-project-eve.htm" class="lh-sm card-forum-link">Project EVE</a></li>
-            <li><a href="/forums/0-31913-0-1-0-1-0-fallout-4.htm" class="lh-sm card-forum-link">Fallout 4</a></li>
-            <li><a href="/forums/0-3018329-0-1-0-1-0-manor-lords.htm" class="lh-sm card-forum-link">Manor Lords</a></li>
-            <li><a href="/forums/0-3021379-0-1-0-1-0-tekken-8.htm" class="lh-sm card-forum-link">Tekken 8</a></li>
-            <li><a href="/forums/0-3021249-0-1-0-1-0-helldivers-ii.htm" class="lh-sm card-forum-link">Helldivers II</a></li>
-            <li><a href="/forums/0-3018929-0-1-0-1-0-total-war-warhammer-iii.htm" class="lh-sm card-forum-link">Total War : Warhammer III</a></li>
-            <li><a href="/forums/0-3004142-0-1-0-1-0-dragon-ball-z-dokkan-battle.htm" class="lh-sm card-forum-link">Dragon Ball Z Dokkan Battle</a></li>
-            <li><a href="/forums/0-3016975-0-1-0-1-0-elden-ring.htm" class="lh-sm card-forum-link">Elden Ring</a></li>
-            <li><a href="/forums/0-3018433-0-1-0-1-0-eiyuden-chronicle-hundred-heroes.htm" class="lh-sm card-forum-link">Eiyuden Chronicle : Hundred Heroes</a></li>
-            <li><a href="/forums/0-4526-0-1-0-1-0-baldur-s-gate-3.htm" class="lh-sm card-forum-link">Baldur's Gate 3</a></li>
+            <li><a href="${links[0] || '#'}" class="lh-sm card-forum-link">${titles[0] || 'Titre 1'}</a></li>
+            <li><a href="${links[1] || '#'}" class="lh-sm card-forum-link">${titles[1] || 'Titre 2'}</a></li>
+            <li><a href="${links[2] || '#'}" class="lh-sm card-forum-link">${titles[2] || 'Titre 3'}</a></li>
+            <li><a href="${links[3] || '#'}" class="lh-sm card-forum-link">${titles[3] || 'Titre 4'}</a></li>
+            <li><a href="${links[4] || '#'}" class="lh-sm card-forum-link">${titles[4] || 'Titre 5'}</a></li>
+            <li><a href="${links[5] || '#'}" class="lh-sm card-forum-link">${titles[5] || 'Titre 6'}</a></li>
+            <li><a href="${links[6] || '#'}" class="lh-sm card-forum-link">${titles[6] || 'Titre 7'}</a></li>
+            <li><a href="${links[7] || '#'}" class="lh-sm card-forum-link">${titles[7] || 'Titre 8'}</a></li>
+            <li><a href="${links[8] || '#'}" class="lh-sm card-forum-link">${titles[8] || 'Titre 9'}</a></li>
+            <li><a href="${links[9] || '#'}" class="lh-sm card-forum-link">${titles[9] || 'Titre 10'}</a></li>
+            <li><a href="${links[10] || '#'}" class="lh-sm card-forum-link">${titles[10] || 'Titre 11'}</a></li>
+            <li><a href="${links[11] || '#'}" class="lh-sm card-forum-link">${titles[11] || 'Titre 12'}</a></li>
+            <li><a href="${links[12] || '#'}" class="lh-sm card-forum-link">${titles[12] || 'Titre 13'}</a></li>
+            <li><a href="${links[13] || '#'}" class="lh-sm card-forum-link">${titles[13] || 'Titre 14'}</a></li>
+            <li><a href="${links[14] || '#'}" class="lh-sm card-forum-link">${titles[14] || 'Titre 15'}</a></li>
           </ol>
         </div>
       </div>
-      <div class="sideModule sideOrderedGames">
+      <div class="oldgames sideModule sideOrderedGames">
         <div class="sideModule__header">
           <div class="sideModule__icon"><i class="icon-fire sideModule__iconFile"></i></div><span class="sideModule__title">Les jeux attendus</span>
         </div>
@@ -827,23 +868,19 @@ var oldHtmlCode =
 </div>`;
 
 
-//3)Injection_HTML_ET_CSS_____________
-//récuper_bloc_fin
+//4)Injection_HTML_ET_CSS_____________
 
 
+// Ajouter CSS manquant (definit en 1)
+style.innerHTML = css;
+document.head.appendChild(style);
 
-//Chargement rapide
-window.requestAnimationFrame(function() {
-    // Ajouter CSS manquant (definit en 1)
-    style.innerHTML = css;
-    document.head.appendChild(style);
+// Remplacer le code HTML (definit en 3)
+page.innerHTML = oldHtmlCode;
 
-    // Remplacer le code HTML (definit en 2)
-    const page = document.getElementById("jv-page");
-    const footer = page.querySelector(".layout__row.layout__footer");
-    //remplace_le_code_par_l'ancien
-    page.innerHTML = oldHtmlCode;
-    //bandeau_de_fin_actuelle
-    page.appendChild(footer);
+//remplacer_bloc_jeux_attendu
+const oldblocjeux = page.querySelector('.oldgames.sideModule.sideOrderedGames');
+oldblocjeux.parentNode.replaceChild(blocjeuxnew, oldblocjeux);
 
-});
+//bandeau_de_fin_actuelle
+page.appendChild(footer);
