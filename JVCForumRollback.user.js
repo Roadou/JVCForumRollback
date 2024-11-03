@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      4.5.0
+// @version      4.7.0
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -395,6 +395,8 @@ var oldHtmlCode =
 <div class="layout__row layout__row--gutter layout__breadcrumb">
   <div class="px-3 px-lg-0 mt-3 spreadContainer spreadContainer--rowLayout">
     <nav class="breadcrumb" role="navigation"><a href="/" class="breadcrumb__item">jeuxvideo.com</a><h1 class="breadcrumb__item">Les Forums de jeuxvideo.com : retrouvez notre communauté et venez échanger avec elle sur divers sujets et de nombreux topics</h1></nav>
+        <div><span id="showhide-genesis" class="breadcrumb-icon icon-nft-badge" title="Afficher / Masquer Genesis" style="font-size: 15px;">&nbsp;Genesis</span>
+        </div>
   </div>
 </div>
 <div class="layout__row layout__row--gutter layout__content"><input id="ajax_timestamp_preference_user" type="hidden" name="ajax_timestamp_preference_user" value="1714618746"> <input id="ajax_hash_preference_user" type="hidden" name="ajax_hash_preference_user" value="f8e4685e486deab35e18d5a8defb8cd897581c94">
@@ -430,7 +432,7 @@ var oldHtmlCode =
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-12">
+          <div class="col-lg-12" style="display: none;">
             <div class="forum-section">
               <div class="fs-header genesis-pass"></div>
               <div class="fs-body">
@@ -841,27 +843,6 @@ var oldHtmlCode =
         </div>
       </div>
       <div class="oldgames sideModule sideOrderedGames">
-        <div class="sideModule__header">
-          <div class="sideModule__icon"><i class="icon-fire sideModule__iconFile"></i></div><span class="sideModule__title">Les jeux attendus</span>
-        </div>
-        <div class="sideOrderedGames__body">
-          <div class="sideOrderedGames__gameContainer" style="order:0"><span class="sideOrderedGames__gameRank" style="opacity:1">1</span> <span class="sideOrderedGames__gameBlock">
-              <div class="sideOrderedGames__gameTitleContainer"><a href="/jeux/jeu-558354/" class="xXx sideOrderedGames__gameTitle">Grand Theft Auto VI</a></div><span class="sideOrderedGames__gameReleaseDate">2025</span>
-            </span></div>
-          <div class="sideOrderedGames__gameContainer" style="order:2"><span class="sideOrderedGames__gameRank" style="opacity:.9">2</span> <span class="sideOrderedGames__gameBlock">
-              <div class="sideOrderedGames__gameTitleContainer"><a href="/jeux/jeu-1349958/" class="xXx sideOrderedGames__gameTitle">Star Wars Outlaws</a></div><span class="sideOrderedGames__gameReleaseDate">30 août 2024</span>
-            </span></div>
-          <div class="sideOrderedGames__gameContainer" style="order:4"><span class="sideOrderedGames__gameRank" style="opacity:.8">3</span> <span class="sideOrderedGames__gameBlock">
-              <div class="sideOrderedGames__gameTitleContainer"><a href="/jeux/jeu-1161426/" class="xXx sideOrderedGames__gameTitle">Senua's Saga : Hellblade II</a></div><span class="sideOrderedGames__gameReleaseDate">21 mai 2024</span>
-            </span></div>
-          <div class="sideOrderedGames__gameContainer" style="order:1"><span class="sideOrderedGames__gameRank" style="opacity:.7">4</span> <span class="sideOrderedGames__gameBlock">
-              <div class="sideOrderedGames__gameTitleContainer"><a href="/jeux/jeu-1521484/" class="xXx sideOrderedGames__gameTitle">Solo Leveling : Arise</a></div><span class="sideOrderedGames__gameReleaseDate">05 mai 2024</span>
-            </span></div>
-          <div class="sideOrderedGames__gameContainer" style="order:3"><span class="sideOrderedGames__gameRank" style="opacity:.6">5</span> <span class="sideOrderedGames__gameBlock">
-              <div class="sideOrderedGames__gameTitleContainer"><a href="/jeux/jeu-1876363/" class="xXx sideOrderedGames__gameTitle">Kingdom Come Deliverance 2</a></div><span class="sideOrderedGames__gameReleaseDate">2024</span>
-            </span></div>
-        </div>
-        <div class="sideModule__footer"><a href="/jeux/attendus/" class="xXx sideModule__cta simpleButton">Tous les jeux attendus</a></div>
       </div>
     </div>
   </div>
@@ -884,3 +865,20 @@ oldblocjeux.parentNode.replaceChild(blocjeuxnew, oldblocjeux);
 
 //bandeau_de_fin_actuelle
 page.appendChild(footer);
+
+//5)_Forum_Genesis___________
+setTimeout(function() {
+    document.getElementById("showhide-genesis").onclick = toggleGenesis;
+    const isGenesisVisible = localStorage.getItem("genesisVisible") === "true";
+
+    function toggleGenesis() {
+        const currentVisibility = localStorage.getItem("genesisVisible") === "true";
+        // Inverse et sauvegarde le nouvel état
+        localStorage.setItem("genesisVisible", !currentVisibility);
+        // Recharge la page pour appliquer le changement
+        location.reload();
+    }
+
+    const genesisContent = document.querySelector(".col-lg-12");
+    genesisContent.style.display = isGenesisVisible ? "block" : "none";
+}, 0);
