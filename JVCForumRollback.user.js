@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      4.9.9
+// @version      5.0.0
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -878,16 +878,17 @@ setTimeout(function() {
 }, 0);
 
 //5)_Forum_Genesis___________
-
-document.getElementById("showhide-genesis").onclick = toggleGenesis;
-const isGenesisVisible = localStorage.getItem("genesisVisible") === "true";
-
-function toggleGenesis() {
+setTimeout(function() {
+    document.getElementById("showhide-genesis").onclick = toggleGenesis;
     const isGenesisVisible = localStorage.getItem("genesisVisible") === "true";
-    // Inverse et sauvegarde le nouvel état
-    localStorage.setItem("genesisVisible", !isGenesisVisible);
-    genesisContent.style.display = !isGenesisVisible ? "block" : "none";
-}
-const genesisContent = document.querySelector(".col-lg-12");
-genesisContent.style.display = isGenesisVisible ? "block" : "none";
+    
+    function toggleGenesis() {
+        const isGenesisVisible = localStorage.getItem("genesisVisible") === "true";
+        // Inverse et sauvegarde le nouvel état
+        localStorage.setItem("genesisVisible", !isGenesisVisible);
+        genesisContent.style.display = !isGenesisVisible ? "block" : "none";
+    }
+    const genesisContent = document.querySelector(".col-lg-12");
+    genesisContent.style.display = isGenesisVisible ? "block" : "none";
+}, 0);
 
