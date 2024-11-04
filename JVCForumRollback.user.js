@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      4.7.0
+// @version      4.9.6
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -18,6 +18,7 @@
 
 const page = document.getElementById("jv-page");
 const elements = document.querySelectorAll('.card__imgGame + .card__body .card__link');
+const jaquettetopjeu = document.querySelector('.card__imgGame img');
 
 //recuperer le bloc de fin
 const footer = page.querySelector(".layout__row.layout__footer");
@@ -412,8 +413,8 @@ var oldHtmlCode =
         <div class="row">
           <div class="col-lg-6">
             <div class="forum-section">
-              <div class="f-alaune"><a href="/forums/0-3010011-0-1-0-1-0-grand-theft-auto-6.htm"><img src="https://image.noelshack.com/fichiers/2023/50/5/1702651559-gta6-jv.jpg">
-                  <p class="nom-forum">Grand Theft Auto VI</p>
+              <div class="f-alaune"><a href="${links[0]}"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                  <p class="nom-forum">${titles[0]}</p>
                 </a></div>
             </div>
           </div>
@@ -865,6 +866,16 @@ oldblocjeux.parentNode.replaceChild(blocjeuxnew, oldblocjeux);
 
 //bandeau_de_fin_actuelle
 page.appendChild(footer);
+
+//Apres_coup
+setTimeout(function() {
+    //forum_jeu
+    const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
+    const jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
+    console.log(jaquettetopjeuimgbase)
+    const meilleurjeuimg = document.querySelector('.col-lg-6 .f-alaune img');
+    meilleurjeuimg.src = jaquettetopjeuimg;
+}, 0);
 
 //5)_Forum_Genesis___________
 setTimeout(function() {
