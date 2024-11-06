@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.0.5
+// @version      6.0.7
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -837,11 +837,11 @@ oldblocjeux.parentNode.replaceChild(blocjeuxnew, oldblocjeux);
 page.appendChild(footer);
 
 //cache_top_forum_eviter_fouc________
-//links = JSON.parse(localStorage.getItem("forum-links-cache")) || [];
-//titles = JSON.parse(localStorage.getItem("forum-titles-cache")) || [];
+//links = JSON.parse(localStorage.getItem("jvcrollback-links")) || [];
+//titles = JSON.parse(localStorage.getItem("jvcrollback-titles")) || [];
 
-let links = JSON.parse(localStorage.getItem("forum-links-cache")) || [];
-let titles = JSON.parse(localStorage.getItem("forum-titles-cache")) || [];
+let links = JSON.parse(localStorage.getItem("jvcrollback-links")) || [];
+let titles = JSON.parse(localStorage.getItem("jvcrollback-titles")) || [];
 
 //Apres_coup____________________________
 setTimeout(() => {
@@ -874,8 +874,8 @@ setTimeout(() => {
 
     collectLinksAndTitles();
 
-    localStorage.setItem("forum-links-cache", JSON.stringify(links));
-    localStorage.setItem("forum-titles-cache", JSON.stringify(titles));
+    localStorage.setItem("jvcrollback-links", JSON.stringify(links));
+    localStorage.setItem("jvcrollback-titles", JSON.stringify(titles));
 
     updateLinks()
 
@@ -905,14 +905,12 @@ function updateLinks() {
 //5)_Forum_Genesis___________
 
 document.getElementById("showhide-genesis").onclick = toggleGenesis;
-const isGenesisVisible = localStorage.getItem("genesisVisible") === "true";
+const isGenesisVisible = localStorage.getItem("jvcrollback-genesis") === "true";
 function toggleGenesis() {
-    const isGenesisVisible = localStorage.getItem("genesisVisible") === "true";
+    const isGenesisVisible = localStorage.getItem("jvcrollback-genesis") === "true";
     // Inverse et sauvegarde le nouvel état
-    localStorage.setItem("genesisVisible", !isGenesisVisible);
+    localStorage.setItem("jvcrollback-genesis", !isGenesisVisible);
     genesisContent.style.display = !isGenesisVisible ? "block" : "none";
 }
 const genesisContent = document.querySelector(".col-lg-12");
 genesisContent.style.display = isGenesisVisible ? "block" : "none";
-
-
