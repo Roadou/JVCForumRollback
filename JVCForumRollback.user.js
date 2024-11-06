@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.1.0
+// @version      6.5.0
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -360,6 +360,11 @@ const css = `
 
 //3)Ancien_HTML_____________
 
+//cache_top_forum_eviter_FOUC________
+let links = [];
+let titles = JSON.parse(localStorage.getItem("jvcrollback-titles")) || [];
+const genesisvisible = localStorage.getItem("jvcrollback-genesis") || "none";
+
 var oldHtmlCode = 
 `
 <div class="layout__row layout__row--gutter layout__breadcrumb">
@@ -383,7 +388,7 @@ var oldHtmlCode =
           <div class="col-lg-6">
             <div class="forum-section">
               <div class="f-alaune"><a href="#"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-                  <p class="nom-forum">&nbsp;</p>
+                  <p class="nom-forum">${titles[0]}</p>
                 </a></div>
             </div>
           </div>
@@ -402,7 +407,7 @@ var oldHtmlCode =
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-12" style="display: none;">
+          <div class="col-lg-12" style="display: ${genesisvisible};">
             <div class="forum-section">
               <div class="fs-header genesis-pass"></div>
               <div class="fs-body">
@@ -794,25 +799,26 @@ var oldHtmlCode =
         <div class="card-forum-title card-header">Top Forums</div>
         <div class="card-body p-2">
           <ol class="fw-bold mb-0">
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
-            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[0]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[1]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[2]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[3]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[4]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[5]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[6]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[7]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[8]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[9]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[10]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[11]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[12]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[13]}</a></li>
+            <li><a href="#" class="lh-sm card-forum-link">${titles[14]}</a></li>
           </ol>
         </div>
       </div>
       <div class="oldgames sideModule sideOrderedGames">
+        <!-- Ancienne section à remplacer -->
       </div>
     </div>
   </div>
@@ -836,48 +842,33 @@ oldblocjeux.parentNode.replaceChild(blocjeuxnew, oldblocjeux);
 //bandeau_de_fin_actuelle
 page.appendChild(footer);
 
-//cache_top_forum_eviter_fouc________
-let links = [];
-let titles = JSON.parse(localStorage.getItem("jvcrollback-titles")) || [];
-let firsttitle = localStorage.getItem("jvcrollback-firtitle") || "\u200B"; //mobile
+//5)Apres_coup_MAJ_Forum_Genesis___________
 
-//Apres_coup____________________________
 setTimeout(() => {
+    document.getElementById("showhide-genesis").onclick = toggleGenesis;
+    const genesisContent = document.querySelector(".col-lg-12");
+    function toggleGenesis() {
+        let genesisvisibleswitch = localStorage.getItem("jvcrollback-genesis") || "none";
+        const newVisibility = (genesisvisibleswitch === "none") ? "block" : "none";
+        localStorage.setItem("jvcrollback-genesis", newVisibility);
+        genesisContent.style.display = newVisibility;
+    }
+    genesisContent.style.display = genesisvisibleswitch;
+}, 0);
+
+//6)Apres_coup_MAJ_top_jeu_____________
+
+setTimeout(() => {
+    //actualiste_jaquette_top_jeu____
+    const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
+    const jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
+    const meilleurjeuimg = document.querySelector('.col-lg-6 .f-alaune img');
+    meilleurjeuimg.src = jaquettetopjeuimg;
+
+
+    //actualiste_titre_et_liens_top_forum____
     links = [];
     titles = [];
-    firsttitle = ""  //mobile
-    let firsttitrecheck = true;  //mobile
-
-    function jvCake(classe) {
-        const base16 = '0A12B34C56D78E9F';
-        let lien = '';
-        const s = classe; // Utilisation directe de la chaîne hexadécimale
-        for (let i = 0; i < s.length; i += 2) {
-            const char1 = base16.indexOf(s.charAt(i));
-            const char2 = base16.indexOf(s.charAt(i + 1));
-            lien += String.fromCharCode(char1 * 16 + char2);
-        }
-        return lien;
-    }
-
-    // Récupérer les liens et titres de tous les éléments et les mettre dans la liste
-    function collectLinksAndTitles() {
-        elements.forEach((element) => {
-            titles.push(element.title);
-            //mobile
-            if (firsttitrecheck) {
-                firsttitle = element.title;
-                localStorage.setItem("jvcrollback-firtitle", firsttitle);
-                firsttitrecheck = false;
-            }
-            //fin_mobile
-            if (element.href) {
-                links.push(element.href);
-            } else {
-                links.push(jvCake(element.classList[1]));
-            }
-        });
-    }
 
     collectLinksAndTitles();
 
@@ -885,26 +876,40 @@ setTimeout(() => {
 
     updateLinks()
 
-    //forum_jeu
-    const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
-    const jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
-    const meilleurjeuimg = document.querySelector('.col-lg-6 .f-alaune img');
-    meilleurjeuimg.src = jaquettetopjeuimg;
 }, 0);
 
-//Optim_Mobile
-var userAgent = navigator.userAgent.toLowerCase();
-if (!userAgent.includes('mobile')) {
-    updateLinks() //sur PC tout les liens dynamique sont en cache
-} else {
-    updatefirtitre() //sur mobile uniquement le sujet du haut est en cache
+//6)Fonctions_d_usage______________
+
+// Récupérer les liens et titres de tous les éléments et les mettre dans la liste
+
+//JVCake
+function jvCake(classe) {
+    const base16 = '0A12B34C56D78E9F';
+    let lien = '';
+    const s = classe; // Utilisation directe de la chaîne hexadécimale
+    for (let i = 0; i < s.length; i += 2) {
+        const char1 = base16.indexOf(s.charAt(i));
+        const char2 = base16.indexOf(s.charAt(i + 1));
+        lien += String.fromCharCode(char1 * 16 + char2);
+    }
+    return lien;
 }
 
-function updatefirtitre() {
-    const meilleurjeutitre = document.querySelector('.col-lg-6 .nom-forum');
-    meilleurjeutitre.innerText = firsttitle;
+//Selection_top_jeu_current
+function collectLinksAndTitles() {
+    elements.forEach((element) => {
+        titles.push(element.title);
+        if (element.href) {
+            links.push(element.href);
+        } else {
+            links.push(jvCake(element.classList[1]));
+        }
+    });
 }
 
+
+
+//Update_top_jeu_page_remplacée
 function updateLinks() {
     const meilleurjeutitre = document.querySelector('.col-lg-6 .nom-forum');
     const lienElement = document.querySelector('.col-lg-6 .f-alaune a');
@@ -917,25 +922,4 @@ function updateLinks() {
     });
 }
 
-//5)_Forum_Genesis___________
 
-//Optim_Mobile
-if (!userAgent.includes('mobile')) {
-    GenesisSwitch();
-} else {
-    setTimeout(GenesisSwitch, 0); //sur mobile se lance apres le reste
-}
-
-
-function GenesisSwitch() {
-    document.getElementById("showhide-genesis").onclick = toggleGenesis;
-    const isGenesisVisible = localStorage.getItem("jvcrollback-genesis") === "true";
-    function toggleGenesis() {
-        const isGenesisVisible = localStorage.getItem("jvcrollback-genesis") === "true";
-        // Inverse et sauvegarde le nouvel état
-        localStorage.setItem("jvcrollback-genesis", !isGenesisVisible);
-        genesisContent.style.display = !isGenesisVisible ? "block" : "none";
-    }
-    const genesisContent = document.querySelector(".col-lg-12");
-    genesisContent.style.display = isGenesisVisible ? "block" : "none";
-}
