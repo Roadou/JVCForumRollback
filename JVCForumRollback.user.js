@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.5.0
+// @version      6.5.2
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -847,13 +847,14 @@ page.appendChild(footer);
 setTimeout(() => {
     document.getElementById("showhide-genesis").onclick = toggleGenesis;
     const genesisContent = document.querySelector(".col-lg-12");
+    let genesisvisibleswitch = "none";
     function toggleGenesis() {
-        let genesisvisibleswitch = localStorage.getItem("jvcrollback-genesis") || "none";
+        genesisvisibleswitch = localStorage.getItem("jvcrollback-genesis");
         const newVisibility = (genesisvisibleswitch === "none") ? "block" : "none";
         localStorage.setItem("jvcrollback-genesis", newVisibility);
         genesisContent.style.display = newVisibility;
     }
-    genesisContent.style.display = genesisvisibleswitch;
+    genesisContent.style.display = localStorage.getItem("jvcrollback-genesis") || "none";
 }, 0);
 
 //6)Apres_coup_MAJ_top_jeu_____________
@@ -921,5 +922,3 @@ function updateLinks() {
         element.textContent = titles[index];
     });
 }
-
-
