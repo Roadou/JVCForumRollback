@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.0.9
+// @version      6.1.0
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -839,11 +839,14 @@ page.appendChild(footer);
 //cache_top_forum_eviter_fouc________
 let links = [];
 let titles = JSON.parse(localStorage.getItem("jvcrollback-titles")) || [];
+let firsttitle = localStorage.getItem("jvcrollback-firtitle") || "\u200B"; //mobile
 
 //Apres_coup____________________________
 setTimeout(() => {
     links = [];
     titles = [];
+    firsttitle = ""  //mobile
+    let firsttitrecheck = true;  //mobile
 
     function jvCake(classe) {
         const base16 = '0A12B34C56D78E9F';
@@ -861,6 +864,13 @@ setTimeout(() => {
     function collectLinksAndTitles() {
         elements.forEach((element) => {
             titles.push(element.title);
+            //mobile
+            if (firsttitrecheck) {
+                firsttitle = element.title;
+                localStorage.setItem("jvcrollback-firtitle", firsttitle);
+                firsttitrecheck = false;
+            }
+            //fin_mobile
             if (element.href) {
                 links.push(element.href);
             } else {
@@ -882,9 +892,18 @@ setTimeout(() => {
     meilleurjeuimg.src = jaquettetopjeuimg;
 }, 0);
 
+//Optim_Mobile
+var userAgent = navigator.userAgent.toLowerCase();
+if (!userAgent.includes('mobile')) {
+    updateLinks() //sur PC tout les liens dynamique sont en cache
+} else {
+    updatefirtitre() //sur mobile uniquement le sujet du haut est en cache
+}
 
-updateLinks()
-
+function updatefirtitre() {
+    const meilleurjeutitre = document.querySelector('.col-lg-6 .nom-forum');
+    meilleurjeutitre.innerText = firsttitle;
+}
 
 function updateLinks() {
     const meilleurjeutitre = document.querySelector('.col-lg-6 .nom-forum');
@@ -900,13 +919,23 @@ function updateLinks() {
 
 //5)_Forum_Genesis___________
 
-document.getElementById("showhide-genesis").onclick = toggleGenesis;
-const isGenesisVisible = localStorage.getItem("jvcrollback-genesis") === "true";
-function toggleGenesis() {
-    const isGenesisVisible = localStorage.getItem("jvcrollback-genesis") === "true";
-    // Inverse et sauvegarde le nouvel état
-    localStorage.setItem("jvcrollback-genesis", !isGenesisVisible);
-    genesisContent.style.display = !isGenesisVisible ? "block" : "none";
+//Optim_Mobile
+if (!userAgent.includes('mobile')) {
+    GenesisSwitch();
+} else {
+    setTimeout(GenesisSwitch, 0); //sur mobile se lance apres le reste
 }
-const genesisContent = document.querySelector(".col-lg-12");
-genesisContent.style.display = isGenesisVisible ? "block" : "none";
+
+
+function GenesisSwitch() {
+    document.getElementById("showhide-genesis").onclick = toggleGenesis;
+    const isGenesisVisible = localStorage.getItem("jvcrollback-genesis") === "true";
+    function toggleGenesis() {
+        const isGenesisVisible = localStorage.getItem("jvcrollback-genesis") === "true";
+        // Inverse et sauvegarde le nouvel état
+        localStorage.setItem("jvcrollback-genesis", !isGenesisVisible);
+        genesisContent.style.display = !isGenesisVisible ? "block" : "none";
+    }
+    const genesisContent = document.querySelector(".col-lg-12");
+    genesisContent.style.display = isGenesisVisible ? "block" : "none";
+}
