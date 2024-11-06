@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.0.7
+// @version      6.0.9
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -837,10 +837,7 @@ oldblocjeux.parentNode.replaceChild(blocjeuxnew, oldblocjeux);
 page.appendChild(footer);
 
 //cache_top_forum_eviter_fouc________
-//links = JSON.parse(localStorage.getItem("jvcrollback-links")) || [];
-//titles = JSON.parse(localStorage.getItem("jvcrollback-titles")) || [];
-
-let links = JSON.parse(localStorage.getItem("jvcrollback-links")) || [];
+let links = [];
 let titles = JSON.parse(localStorage.getItem("jvcrollback-titles")) || [];
 
 //Apres_coup____________________________
@@ -874,7 +871,6 @@ setTimeout(() => {
 
     collectLinksAndTitles();
 
-    localStorage.setItem("jvcrollback-links", JSON.stringify(links));
     localStorage.setItem("jvcrollback-titles", JSON.stringify(titles));
 
     updateLinks()
