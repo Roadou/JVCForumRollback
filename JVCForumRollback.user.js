@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.5.2
+// @version      6.5.3
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -847,9 +847,9 @@ page.appendChild(footer);
 setTimeout(() => {
     document.getElementById("showhide-genesis").onclick = toggleGenesis;
     const genesisContent = document.querySelector(".col-lg-12");
-    let genesisvisibleswitch = "none";
+    let genesisvisibleswitch;
     function toggleGenesis() {
-        genesisvisibleswitch = localStorage.getItem("jvcrollback-genesis");
+        genesisvisibleswitch = localStorage.getItem("jvcrollback-genesis") || "none";
         const newVisibility = (genesisvisibleswitch === "none") ? "block" : "none";
         localStorage.setItem("jvcrollback-genesis", newVisibility);
         genesisContent.style.display = newVisibility;
