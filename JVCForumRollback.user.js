@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      5.0.0
+// @version      6.0.5
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -23,37 +23,6 @@ const jaquettetopjeu = document.querySelector('.card__imgGame img');
 //recuperer le bloc de fin
 const footer = page.querySelector(".layout__row.layout__footer");
 const blocjeuxnew = document.querySelector(".sideModule.sideOrderedGames");
-
-//_JVCake______________
-function jvCake(classe) {
-    const base16 = '0A12B34C56D78E9F';
-    let lien = '';
-    const s = classe; // Utilisation directe de la chaîne hexadécimale
-    for (let i = 0; i < s.length; i += 2) {
-        const char1 = base16.indexOf(s.charAt(i));
-        const char2 = base16.indexOf(s.charAt(i + 1));
-        lien += String.fromCharCode(char1 * 16 + char2);
-    }
-    return lien;
-}
-
-// Création liste lien et titre jeux
-const links = [];
-const titles = [];
-
-collectLinksAndTitles();
-
-// Récupérer les liens et titres de tous les éléments et les mettre dans la liste
-function collectLinksAndTitles() {
-    elements.forEach((element) => {
-        titles.push(element.title);
-        if (element.href) {
-            links.push(element.href);
-        } else {
-            links.push(jvCake(element.classList[1]));
-        }
-    });
-}
 
 
 //2)Overlay_CSS_____________
@@ -413,8 +382,8 @@ var oldHtmlCode =
         <div class="row">
           <div class="col-lg-6">
             <div class="forum-section">
-              <div class="f-alaune"><a href="${links[0]}"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
-                  <p class="nom-forum">${titles[0]}</p>
+              <div class="f-alaune"><a href="#"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+                  <p class="nom-forum">&nbsp;</p>
                 </a></div>
             </div>
           </div>
@@ -825,21 +794,21 @@ var oldHtmlCode =
         <div class="card-forum-title card-header">Top Forums</div>
         <div class="card-body p-2">
           <ol class="fw-bold mb-0">
-            <li><a href="${links[0] || '#'}" class="lh-sm card-forum-link">${titles[0] || 'Titre 1'}</a></li>
-            <li><a href="${links[1] || '#'}" class="lh-sm card-forum-link">${titles[1] || 'Titre 2'}</a></li>
-            <li><a href="${links[2] || '#'}" class="lh-sm card-forum-link">${titles[2] || 'Titre 3'}</a></li>
-            <li><a href="${links[3] || '#'}" class="lh-sm card-forum-link">${titles[3] || 'Titre 4'}</a></li>
-            <li><a href="${links[4] || '#'}" class="lh-sm card-forum-link">${titles[4] || 'Titre 5'}</a></li>
-            <li><a href="${links[5] || '#'}" class="lh-sm card-forum-link">${titles[5] || 'Titre 6'}</a></li>
-            <li><a href="${links[6] || '#'}" class="lh-sm card-forum-link">${titles[6] || 'Titre 7'}</a></li>
-            <li><a href="${links[7] || '#'}" class="lh-sm card-forum-link">${titles[7] || 'Titre 8'}</a></li>
-            <li><a href="${links[8] || '#'}" class="lh-sm card-forum-link">${titles[8] || 'Titre 9'}</a></li>
-            <li><a href="${links[9] || '#'}" class="lh-sm card-forum-link">${titles[9] || 'Titre 10'}</a></li>
-            <li><a href="${links[10] || '#'}" class="lh-sm card-forum-link">${titles[10] || 'Titre 11'}</a></li>
-            <li><a href="${links[11] || '#'}" class="lh-sm card-forum-link">${titles[11] || 'Titre 12'}</a></li>
-            <li><a href="${links[12] || '#'}" class="lh-sm card-forum-link">${titles[12] || 'Titre 13'}</a></li>
-            <li><a href="${links[13] || '#'}" class="lh-sm card-forum-link">${titles[13] || 'Titre 14'}</a></li>
-            <li><a href="${links[14] || '#'}" class="lh-sm card-forum-link">${titles[14] || 'Titre 15'}</a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
+            <li><a href="'#'" class="lh-sm card-forum-link"></a></li>
           </ol>
         </div>
       </div>
@@ -867,28 +836,83 @@ oldblocjeux.parentNode.replaceChild(blocjeuxnew, oldblocjeux);
 //bandeau_de_fin_actuelle
 page.appendChild(footer);
 
-//Apres_coup
-setTimeout(function() {
+//cache_top_forum_eviter_fouc________
+//links = JSON.parse(localStorage.getItem("forum-links-cache")) || [];
+//titles = JSON.parse(localStorage.getItem("forum-titles-cache")) || [];
+
+let links = JSON.parse(localStorage.getItem("forum-links-cache")) || [];
+let titles = JSON.parse(localStorage.getItem("forum-titles-cache")) || [];
+
+//Apres_coup____________________________
+setTimeout(() => {
+    links = [];
+    titles = [];
+
+    function jvCake(classe) {
+        const base16 = '0A12B34C56D78E9F';
+        let lien = '';
+        const s = classe; // Utilisation directe de la chaîne hexadécimale
+        for (let i = 0; i < s.length; i += 2) {
+            const char1 = base16.indexOf(s.charAt(i));
+            const char2 = base16.indexOf(s.charAt(i + 1));
+            lien += String.fromCharCode(char1 * 16 + char2);
+        }
+        return lien;
+    }
+
+    // Récupérer les liens et titres de tous les éléments et les mettre dans la liste
+    function collectLinksAndTitles() {
+        elements.forEach((element) => {
+            titles.push(element.title);
+            if (element.href) {
+                links.push(element.href);
+            } else {
+                links.push(jvCake(element.classList[1]));
+            }
+        });
+    }
+
+    collectLinksAndTitles();
+
+    localStorage.setItem("forum-links-cache", JSON.stringify(links));
+    localStorage.setItem("forum-titles-cache", JSON.stringify(titles));
+
+    updateLinks()
+
     //forum_jeu
     const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
     const jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
-    console.log(jaquettetopjeuimgbase)
     const meilleurjeuimg = document.querySelector('.col-lg-6 .f-alaune img');
     meilleurjeuimg.src = jaquettetopjeuimg;
 }, 0);
 
+
+updateLinks()
+
+
+function updateLinks() {
+    const meilleurjeutitre = document.querySelector('.col-lg-6 .nom-forum');
+    const lienElement = document.querySelector('.col-lg-6 .f-alaune a');
+    meilleurjeutitre.innerText = titles[0];
+    lienElement.setAttribute('href', links[0]);
+    const elements = document.querySelectorAll('.lh-sm.card-forum-link');
+    elements.forEach((element, index) => {
+        element.href = links[index];
+        element.textContent = titles[index];
+    });
+}
+
 //5)_Forum_Genesis___________
-setTimeout(function() {
-    document.getElementById("showhide-genesis").onclick = toggleGenesis;
+
+document.getElementById("showhide-genesis").onclick = toggleGenesis;
+const isGenesisVisible = localStorage.getItem("genesisVisible") === "true";
+function toggleGenesis() {
     const isGenesisVisible = localStorage.getItem("genesisVisible") === "true";
-    
-    function toggleGenesis() {
-        const isGenesisVisible = localStorage.getItem("genesisVisible") === "true";
-        // Inverse et sauvegarde le nouvel état
-        localStorage.setItem("genesisVisible", !isGenesisVisible);
-        genesisContent.style.display = !isGenesisVisible ? "block" : "none";
-    }
-    const genesisContent = document.querySelector(".col-lg-12");
-    genesisContent.style.display = isGenesisVisible ? "block" : "none";
-}, 0);
+    // Inverse et sauvegarde le nouvel état
+    localStorage.setItem("genesisVisible", !isGenesisVisible);
+    genesisContent.style.display = !isGenesisVisible ? "block" : "none";
+}
+const genesisContent = document.querySelector(".col-lg-12");
+genesisContent.style.display = isGenesisVisible ? "block" : "none";
+
 
