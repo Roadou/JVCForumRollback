@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.5.3
+// @version      6.5.4
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -19,6 +19,8 @@
 const page = document.getElementById("jv-page");
 const elements = document.querySelectorAll('.card__imgGame + .card__body .card__link');
 const jaquettetopjeu = document.querySelector('.card__imgGame img');
+const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
+const jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
 
 //recuperer le bloc de fin
 const footer = page.querySelector(".layout__row.layout__footer");
@@ -387,7 +389,7 @@ var oldHtmlCode =
         <div class="row">
           <div class="col-lg-6">
             <div class="forum-section">
-              <div class="f-alaune"><a href="#"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+              <div class="f-alaune"><a href="#"><img src=${jaquettetopjeuimg}>
                   <p class="nom-forum">${titles[0]}</p>
                 </a></div>
             </div>
@@ -860,12 +862,6 @@ setTimeout(() => {
 //6)Apres_coup_MAJ_top_jeu_____________
 
 setTimeout(() => {
-    //actualiste_jaquette_top_jeu____
-    const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
-    const jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
-    const meilleurjeuimg = document.querySelector('.col-lg-6 .f-alaune img');
-    meilleurjeuimg.src = jaquettetopjeuimg;
-
 
     //actualiste_titre_et_liens_top_forum____
     links = [];
@@ -879,7 +875,7 @@ setTimeout(() => {
 
 }, 0);
 
-//6)Fonctions_d_usage______________
+//7)Fonctions_d_usage______________
 
 // Récupérer les liens et titres de tous les éléments et les mettre dans la liste
 
