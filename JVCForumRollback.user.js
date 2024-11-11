@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.5.4
+// @version      6.5.5
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -367,12 +367,12 @@ let links = [];
 let titles = JSON.parse(localStorage.getItem("jvcrollback-titles")) || [];
 const genesisvisible = localStorage.getItem("jvcrollback-genesis") || "none";
 
-var oldHtmlCode = 
+var oldHtmlCode =
 `
 <div class="layout__row layout__row--gutter layout__breadcrumb">
   <div class="px-3 px-lg-0 mt-3 spreadContainer spreadContainer--rowLayout">
     <nav class="breadcrumb" role="navigation"><a href="/" class="breadcrumb__item">jeuxvideo.com</a><h1 class="breadcrumb__item">Les Forums de jeuxvideo.com : retrouvez notre communauté et venez échanger avec elle sur divers sujets et de nombreux topics</h1></nav>
-        <div><span id="showhide-genesis" class="breadcrumb-icon icon-nft-badge" title="Afficher / Masquer Genesis" style="font-size: 15px;">&nbsp;Genesis</span>
+        <div><span id="showhide-genesis" class="breadcrumb-icon icon-nft-badge" title="Afficher / Masquer Genesis" style="font-size: 15px; user-select: none;">&nbsp;Genesis</span>
         </div>
   </div>
 </div>
