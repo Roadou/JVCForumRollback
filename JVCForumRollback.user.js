@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.5.5
+// @version      6.5.6
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -897,7 +897,7 @@ function collectLinksAndTitles() {
     elements.forEach((element) => {
         titles.push(element.title);
         if (element.href) {
-            links.push(element.href);
+            links.push(element.getAttribute('href'));
         } else {
             links.push(jvCake(element.classList[1]));
         }
