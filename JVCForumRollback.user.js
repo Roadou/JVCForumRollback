@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.5.6
+// @version      6.5.7
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -360,12 +360,12 @@ const css = `
 
 
 
-//3)Ancien_HTML_____________
-
-//cache_top_forum_eviter_FOUC________
+//3)Definition_Liens_et_Titre_plus_cache_____________
 let links = [];
 let titles = JSON.parse(localStorage.getItem("jvcrollback-titles")) || [];
 const genesisvisible = localStorage.getItem("jvcrollback-genesis") || "none";
+
+//4)Ancien_HTML_____________
 
 var oldHtmlCode =
 `
@@ -827,14 +827,14 @@ var oldHtmlCode =
 </div>`;
 
 
-//4)Injection_HTML_ET_CSS_____________
+//5)Injection_HTML_ET_CSS_____________
 
 
-// Ajouter CSS manquant (definit en 1)
+// Ajouter CSS manquant (definit en 2)
 style.innerHTML = css;
 document.head.appendChild(style);
 
-// Remplacer le code HTML (definit en 3)
+// Remplacer le code HTML (definit en 4)
 page.innerHTML = oldHtmlCode;
 
 //remplacer_bloc_jeux_attendu
@@ -844,7 +844,7 @@ oldblocjeux.parentNode.replaceChild(blocjeuxnew, oldblocjeux);
 //bandeau_de_fin_actuelle
 page.appendChild(footer);
 
-//5)Apres_coup_MAJ_Forum_Genesis___________
+//6)Apres_coup_MAJ_Forum_Genesis___________
 
 setTimeout(() => {
     document.getElementById("showhide-genesis").onclick = toggleGenesis;
@@ -859,7 +859,7 @@ setTimeout(() => {
     genesisContent.style.display = localStorage.getItem("jvcrollback-genesis") || "none";
 }, 0);
 
-//6)Apres_coup_MAJ_top_jeu_____________
+//7)Apres_coup_MAJ_top_jeu_____________
 
 setTimeout(() => {
 
@@ -875,7 +875,7 @@ setTimeout(() => {
 
 }, 0);
 
-//7)Fonctions_d_usage______________
+//8)Fonctions_d_usage______________
 
 // Récupérer les liens et titres de tous les éléments et les mettre dans la liste
 
