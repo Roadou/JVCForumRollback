@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.5.7
+// @version      6.5.8
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
-// @icon         https://jvflux.fr/images/2/2e/forum_accueil_jeuxvideo.com_blabla.png
+// @icon         https://image.jeuxvideo.com/medias-xs/168862/1688618763-3707-capture-d-ecran.png
 // @grant        none
 // @run-at       document-end
 // @downloadURL  https://github.com/Roadou/JVCForumRollback/raw/main/JVCForumRollback.user.js
