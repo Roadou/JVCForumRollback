@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.6.0
+// @version      6.6.1
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -606,10 +606,11 @@ var oldHtmlCode =
             <div class="forum-section">
               <div class="fs-header nintendo"></div>
               <div class="fs-body">
+                <h3><a href="/forums/0-3021761-0-1-0-1-0-nintendo-switch-2.htm">Nintendo Switch 2</a></h3>
                 <h3><a href="/forums/0-3007199-0-1-0-1-0-nintendo-switch.htm">Nintendo Switch</a></h3>
                 <h3><a href="/forums/0-1000011-0-1-0-1-0-wii-u.htm">Wii U</a></h3>
                 <h3><a href="/forums/0-62-0-1-0-1-0-wii.htm">Wii</a></h3>
-                <ul>
+                <ul style="display: none;">
                   <li><a href="/forums/0-1000024-0-1-0-1-0-wii-ware-console-virtuelle.htm">Wii Ware & Console virtuelle</a></li>
                 </ul>
                 <h3><a href="/forums/0-1000039-0-1-0-1-0-nintendo-3ds.htm">3DS</a></h3>
