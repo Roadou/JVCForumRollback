@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.6.2
+// @version      6.6.3
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -391,7 +391,12 @@ var oldHtmlCode =
         <div class="row">
           <div class="col-lg-6">
             <div class="forum-section">
+              <!--
               <div class="f-alaune"><a href="#"><img src=${jaquettetopjeuimg}>
+                  <p class="nom-forum">${titles[0]}</p>
+                </a></div>
+                -->
+              <div class="f-alaune"><a href="#" style="display: flex; align-items: center;"><img src="https://static.jvc.gg/unversioned/img/default-og.png">
                   <p class="nom-forum">${titles[0]}</p>
                 </a></div>
             </div>
