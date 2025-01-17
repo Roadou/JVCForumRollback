@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.6.3
+// @version      6.6.4
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -22,9 +22,12 @@ const page = document.getElementById("jv-page");
 const elements = document.querySelectorAll('.card__imgGame + .card__body .card__link');
 const jaquettetopjeu = document.querySelector('.card__imgGame img');
 const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
-const jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
+let jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
 
-//recuperer le bloc de fin
+//exeception_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
+jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171466/1714656797-9405-jaquette-avant.png') ? 'https://cdn.dlcompare.com/others_jpg/upload/news/image/football-manager-2024-est-la-mei-63f39b13-image-380789af1.jpg' : jaquettetopjeuimg; //football_manager_2024
+
+//recuperer_le_bloc_de_fin
 const footer = page.querySelector(".layout__row.layout__footer");
 const blocjeuxnew = document.querySelector(".sideModule.sideOrderedGames");
 
@@ -391,12 +394,7 @@ var oldHtmlCode =
         <div class="row">
           <div class="col-lg-6">
             <div class="forum-section">
-              <!--
               <div class="f-alaune"><a href="#"><img src=${jaquettetopjeuimg}>
-                  <p class="nom-forum">${titles[0]}</p>
-                </a></div>
-                -->
-              <div class="f-alaune"><a href="#" style="display: flex; align-items: center;"><img src="https://static.jvc.gg/unversioned/img/default-og.png">
                   <p class="nom-forum">${titles[0]}</p>
                 </a></div>
             </div>
