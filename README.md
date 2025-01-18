@@ -16,4 +16,6 @@
 
 #
 
+<a href="https://github.com/Roadou/JVCForumRollback/blob/main/CHANGELOG.md" target="_blank">Changelog JVCForumRollback</a>
+
 ![Ancienne page forum](https://jvscript.fr/storage/images/jvcforumrollback.png)
