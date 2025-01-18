@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.6.4
+// @version      6.6.5
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -25,7 +25,7 @@ const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquett
 let jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
 
 //exeception_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
-jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171466/1714656797-9405-jaquette-avant.png') ? 'https://cdn.dlcompare.com/others_jpg/upload/news/image/football-manager-2024-est-la-mei-63f39b13-image-380789af1.jpg' : jaquettetopjeuimg; //football_manager_2024
+jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171466/1714656797-9405-jaquette-avant.png') ? 'https://cdn2.unrealengine.com/football-manager-2024-s-miles-jacobson-talks-past-present-and-future-of-the-football-sim-1920x1080-ec8779b5d071.jpeg' : jaquettetopjeuimg;
 
 //recuperer_le_bloc_de_fin
 const footer = page.querySelector(".layout__row.layout__footer");
