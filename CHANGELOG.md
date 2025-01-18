@@ -1,5 +1,9 @@
 # Changelog JVCForumRollback
 
+## [6.6.5] (18/01/2025)
+
+- Meilleur jeu en-tête (image externe pour "footballmanager" => car l'image JVC ne marche pas / ratio trop différent v2)
+
 ## [6.6.4] (17/01/2025)
 
 - Meilleur jeu en-tête (image externe si "footballmanager" => car l'image JVC ne marche pas / ratio trop différent)
