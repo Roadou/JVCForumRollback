@@ -1,5 +1,9 @@
 # Changelog JVCForumRollback
 
+## [6.6.6] (20/01/2025)
+
+- Correction de certaines images en base 64 qui n'avait pas la bonne extension png<==>jpeg . (ça pouvait ralentir la lecture.)
+  
 ## [6.6.5] (18/01/2025)
 
 - Meilleur jeu en-tête (image externe pour "footballmanager" => car l'image JVC ne marche pas / ratio trop différent v2)
