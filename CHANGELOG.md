@@ -1,9 +1,13 @@
 # Changelog JVCForumRollback
 
+## [6.6.7] (22/01/2025)
+
+- Mise en Second du forum Switch 2 pour être raccord avec jvc et ne pas perdre les habitués du forum switch
+
 ## [6.6.6] (20/01/2025)
 
 - Correction de certaines images en base 64 qui n'avait pas la bonne extension png<==>jpeg . (ça pouvait ralentir la lecture.)
-  
+
 ## [6.6.5] (18/01/2025)
 
 - Meilleur jeu en-tête (image externe pour "footballmanager" => car l'image JVC ne marche pas / ratio trop différent v2)
