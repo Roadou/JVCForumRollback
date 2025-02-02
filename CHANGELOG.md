@@ -1,5 +1,9 @@
 # Changelog JVCForumRollback
 
+## [6.6.8] (03/02/2025)
+
+- Repassage du forum switch 2 en postion 1 (car + frequenté et flemme de changer plus tard)
+
 ## [6.6.7] (22/01/2025)
 
 - Mise en Second du forum Switch 2 pour être raccord avec jvc et ne pas perdre les habitués du forum switch
