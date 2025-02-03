@@ -4,7 +4,7 @@
 
 [![Installer / Mettre à jour Script](https://img.shields.io/badge/Installer%20/%20Mettre%20%C3%A0%20jour%20le%20Script-Green?style=for-the-badge&color=1E971E)](https://github.com/Roadou/JVCForumRollback/raw/main/JVCForumRollback.user.js) ou sur [JVScript](https://jvscript.fr/script/jvcforumrollback)
 
-> [Changelog](https://github.com/Roadou/JVCForumRollback/blob/main/CHANGELOG.md)
+> [Changelog](https://github.com/Roadou/JVCForumRollback/blob/main/CHANGELOG.md#changelog-jvcforumrollback)
 
 #
 
