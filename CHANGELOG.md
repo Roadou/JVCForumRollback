@@ -1,5 +1,9 @@
 # Changelog JVCForumRollback
 
+## [6.6.9] (06/02/2025)
+
+- Retour sur l'ancienne icone du script (JVC) Allegement de cloudflare (normalement c'est bon)
+
 ## [6.6.8] (03/02/2025)
 
 - Repassage du forum switch 2 en postion 1 (car + frequenté et flemme de changer plus tard)

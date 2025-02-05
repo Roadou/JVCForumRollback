@@ -1,11 +1,11 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.6.8
+// @version      6.6.9
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
-// @icon         https://raw.githubusercontent.com/Roadou/JVCForumRollback/refs/heads/main/resources/Old_Page_forum.png
+// @icon         https://image.jeuxvideo.com/medias-xs/168862/1688618763-3707-capture-d-ecran.png
 // @grant        none
 // @run-at       document-end
 // @downloadURL  https://github.com/Roadou/JVCForumRollback/raw/main/JVCForumRollback.user.js
@@ -13,7 +13,7 @@
 // @license      MIT
 // ==/UserScript==
 
-/* icon         https://image.jeuxvideo.com/medias-xs/168862/1688618763-3707-capture-d-ecran.png */
+/* icon         https://raw.githubusercontent.com/Roadou/JVCForumRollback/refs/heads/main/resources/Old_Page_forum.png */
 
 
 //1)Recuperer_Page_Actuelle_______
