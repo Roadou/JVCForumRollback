@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.7.0
+// @version      6.6.9
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -24,11 +24,8 @@ const jaquettetopjeu = document.querySelector('.card__imgGame img');
 const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
 let jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
 
-//execeptions_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
-//football
+//exeception_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171466/1714656797-9405-jaquette-avant.png') ? 'https://cdn2.unrealengine.com/football-manager-2024-s-miles-jacobson-talks-past-present-and-future-of-the-football-sim-1920x1080-ec8779b5d071.jpeg' : jaquettetopjeuimg;
-//Kingdom_Come_Deliverance 2
-jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171346/1713464229-1879-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias/172426/1724264786-8139-capture-d-ecran.jpg' : jaquettetopjeuimg;
 
 //recuperer_le_bloc_de_fin
 const footer = page.querySelector(".layout__row.layout__footer");
@@ -397,10 +394,7 @@ var oldHtmlCode =
         <div class="row">
           <div class="col-lg-6">
             <div class="forum-section">
-              <div class="f-alaune">
-                  <a href="#">
-                    <img src=${jaquettetopjeuimg}>
-                    <!-- <img src="https://static.jvc.gg/unversioned/img/default-og.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
+              <div class="f-alaune"><a href="#"><img src=${jaquettetopjeuimg}>
                   <p class="nom-forum">${titles[0]}</p>
                 </a></div>
             </div>

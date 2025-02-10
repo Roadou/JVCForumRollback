@@ -1,5 +1,10 @@
 # Changelog JVCForumRollback
 
+## [6.7.0] (10/02/2025)
+
+- Jeu en-tête (va chercher une autre image pour "Kingdom Come Deliverance 2" ratio trop différent v2)
+- ToDo : Il faut trouver une solution à long terme pour les jeux dont le ratio ne vas pas (j'en cherche une...).
+
 ## [6.6.9] (06/02/2025)
 
 - Retour sur l'ancienne icone du script (JVC) Allegement de cloudflare (normalement c'est bon)
