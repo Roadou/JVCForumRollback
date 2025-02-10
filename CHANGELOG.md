@@ -1,5 +1,9 @@
 # Changelog JVCForumRollback
 
+## [6.7.1] (10/02/2025)
+
+- Jeu en-tête (taille md de l'image) pour la bande passante.
+
 ## [6.7.0] (10/02/2025)
 
 - Jeu en-tête (va chercher une autre image pour "Kingdom Come Deliverance 2" ratio trop différent v2)
