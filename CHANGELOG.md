@@ -1,5 +1,10 @@
 # Changelog JVCForumRollback
 
+## [6.8.0] (12/02/2025)
+
+- Remplacement du bloc = jeu en tendance  (je suis vraiment désolé) mais avec le ratio des jaquettes ça ne marche pas...
+- J'ai donc mis les blablas à la place **comme en 2019**, c'était compliqué de trouver une autre solution à cause des images de jeux sur la page.
+
 ## [6.7.1] (10/02/2025)
 
 - Jeu en-tête (taille md de l'image) pour la bande passante.
