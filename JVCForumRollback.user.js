@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.8.1
+// @version      6.8.3
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -24,13 +24,11 @@ const jaquettetopjeu = document.querySelector('.card__imgGame img');
 const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
 let jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
 
-/*
 //execeptions_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
 //football
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171466/1714656797-9405-jaquette-avant.png') ? 'https://cdn2.unrealengine.com/football-manager-2024-s-miles-jacobson-talks-past-present-and-future-of-the-football-sim-1920x1080-ec8779b5d071.jpeg' : jaquettetopjeuimg;
 //Kingdom_Come_Deliverance 2
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171346/1713464229-1879-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/172426/1724264786-8139-capture-d-ecran.jpg' : jaquettetopjeuimg;
-*/
 
 //recuperer_le_bloc_de_fin
 const footer = page.querySelector(".layout__row.layout__footer");
@@ -398,14 +396,16 @@ var oldHtmlCode =
         </div>
         <div class="row">
           <div class="col-lg-6">
-            <!-- <div class="forum-section">
+            <div class="forum-section">
               <div class="f-alaune">
-                <a href="#">
+                  <a href="#">
                     <img src=${jaquettetopjeuimg}>
-                    <img src="https://static.jvc.gg/unversioned/img/default-og.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">
+                    <!-- <img src="https://static.jvc.gg/unversioned/img/default-og.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
                   <p class="nom-forum">${titles[0]}</p>
                 </a></div>
-            </div> -->
+            </div>
+          </div>
+          <div class="col-lg-6">
             <div class="forum-section">
               <div class="fs-header commu"></div>
               <div class="fs-body">
@@ -414,25 +414,6 @@ var oldHtmlCode =
                   <li><a href="/forums/0-13-0-1-0-1-0-suggestions-jeuxvideo-com.htm">Suggestions jeuxvideo.com</a></li>
                   <li><a href="/forums/0-1000047-0-1-0-1-0-boutique-jeuxvideo-com.htm">Boutique jeuxvideo.com</a></li>
                   <li><a href="/forums/0-76-0-1-0-1-0-sondages.htm">Sondages</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="forum-section">
-              <div class="fs-body f-blabla">
-                <ul>
-                  <li><a href="/forums/0-15-0-1-0-1-0-blabla-moins-de-15-ans.htm">Moins de 15 ans</a></li>
-                  <li><a href="/forums/0-50-0-1-0-1-0-blabla-15-18-ans.htm">15 - 18 ans</a></li>
-                  <li><a href="/forums/0-51-0-1-0-1-0-blabla-18-25-ans.htm">18 - 25 ans</a></li>
-                  <li><a href="/forums/0-52-0-1-0-1-0-blabla-25-35-ans.htm">25 - 35 ans</a></li>
-                  <li><a href="/forums/0-53-0-1-0-1-0-blabla-35-ans-et-plus.htm">Plus de 35 ans</a></li>
-                </ul>
-                <ul>
-                  <li><a href="/forums/0-1000020-0-1-0-1-0-belgique.htm">Belgique <i class="be"></i></a></li>
-                  <li><a href="/forums/0-1000022-0-1-0-1-0-suisse.htm">Suisse <i class="ch"></i></a></li>
-                  <li><a href="/forums/0-83-0-1-0-1-0-quebec.htm">Québec <i class="ca"></i></a></li>
-                  <li><a href="/forums/0-1000034-0-1-0-1-0-japon.htm">Japon <i class="jp"></i></a></li>
                 </ul>
               </div>
             </div>
@@ -936,12 +917,10 @@ function collectLinksAndTitles() {
 
 //Update_top_jeu_page_remplacée
 function updateLinks() {
-    /*
     const meilleurjeutitre = document.querySelector('.col-lg-6 .nom-forum');
     const lienElement = document.querySelector('.col-lg-6 .f-alaune a');
     meilleurjeutitre.innerText = titles[0];
     lienElement.setAttribute('href', links[0]);
-   */
     const elements = document.querySelectorAll('.lh-sm.card-forum-link');
     elements.forEach((element, index) => {
         element.href = links[index];
