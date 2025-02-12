@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.8.0
+// @version      6.8.1
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -20,11 +20,9 @@
 
 const page = document.getElementById("jv-page");
 const elements = document.querySelectorAll('.card__imgGame + .card__body .card__link');
-/*
 const jaquettetopjeu = document.querySelector('.card__imgGame img');
 const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
 let jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
-*/
 
 /*
 //execeptions_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
@@ -388,7 +386,7 @@ var oldHtmlCode =
         </div>
   </div>
 </div>
-<div class="layout__row layout__row--gutter layout__content"><input id="ajax_timestamp_preference_user" type="hidden" name="ajax_timestamp_preference_user" value="1714618746"> <input id="ajax_hash_preference_user" type="hidden" name="ajax_hash_preference_user" value="f8e4685e486deab35e18d5a8defb8cd897581c94">
+<div class="layout__row layout__row--gutter layout__content">
   <div class="row" id="content-forum">
     <div class="col-main" id="forum-main-col">
       <div class="px-3 px-lg-0">
@@ -403,7 +401,7 @@ var oldHtmlCode =
             <!-- <div class="forum-section">
               <div class="f-alaune">
                 <a href="#">
-                    <img src=${'jaquettetopjeuimg'}>
+                    <img src=${jaquettetopjeuimg}>
                     <img src="https://static.jvc.gg/unversioned/img/default-og.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">
                   <p class="nom-forum">${titles[0]}</p>
                 </a></div>
