@@ -1,5 +1,9 @@
 # Changelog JVCForumRollback
 
+## [6.8.1] (12/02/2025)
+
+- Clean code , rétablissement de certaines opérations (peu couteuse) en cas de rétablissement.
+
 ## [6.8.0] (12/02/2025)
 
 - Remplacement du bloc = jeu en tendance  (je suis vraiment désolé) mais avec le ratio des jaquettes ça ne marche pas...
