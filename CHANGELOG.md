@@ -1,5 +1,11 @@
 # Changelog JVCForumRollback
 
+## [6.8.3] (12/02/2025)
+
+- **Anulation de la mise à jour 6.8.0**
+- Remise en place du bloc tendance malgré le ratio des fiches de jeux.
+- ToDo : Il faut trouver une solution à long terme pour les jeux à cause du ratio.
+
 ## [6.8.1] (12/02/2025)
 
 - Clean code , rétablissement de certaines opérations (peu couteuse) en cas de rétablissement.
