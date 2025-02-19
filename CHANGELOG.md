@@ -1,5 +1,10 @@
 # Changelog JVCForumRollback
 
+## [6.8.4] (19/02/2025)
+
+- Rajout de code en description en cas de retour en arrière (ne change rien sur l'execution)
+- Mise à jour fichier "meta.js" qui n'était pas synchro (pouvait provoquer des bug de mise à jour auto)
+
 ## [6.8.3] (12/02/2025)
 
 - **Anulation de la mise à jour 6.8.0**
