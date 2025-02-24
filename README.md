@@ -19,3 +19,9 @@
 #
 
 ![Ancienne page forum](https://jvscript.fr/storage/images/jvcforumrollback.png)
+
+#
+
+<sub>Ce projet est **indépendant** et n'est **pas affilié** à JV.</sub>  
+<sub>Il repose en partie sur des éléments archivés du site, dont les droits restent la propriété de Webedia.</sub>  
+<sub>Sa disponibilité perdurera, sauf décision contraire de Webedia.</sub>  
