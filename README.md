@@ -23,5 +23,6 @@
 #
 
 <sub>Ce projet est **indépendant** et n'est **pas affilié** à JV.</sub>  
-<sub>Il repose en partie sur des éléments archivés du site, dont les droits restent la propriété de Webedia.</sub>  
+<sub>(Par ailleurs, la page : https://www.jeuxvideo.com/forums.htm n'a pas de balise "noarchive" et ne contient **aucune donnée personnelle.**)</sub>  
+<sub>Le script repose en partie sur des éléments archivés (https://web.archive.org/) de la page de selections des forums, dont les droits restent la propriété de Webedia.</sub>  
 <sub>Sa disponibilité perdurera, sauf décision contraire de Webedia.</sub>  
