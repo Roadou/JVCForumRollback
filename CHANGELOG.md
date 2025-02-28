@@ -1,5 +1,10 @@
 # Changelog JVCForumRollback
 
+## [6.8.5] (28/02/2025)
+
+- Miniature Pokemon Z (exception)
+- Trouver une solution pour les prochaine jeux :hap: (encore en ToDo)
+
 ## [6.8.4] (19/02/2025)
 
 - Rajout de code en description en cas de retour en arrière (ne change rien sur l'execution)
