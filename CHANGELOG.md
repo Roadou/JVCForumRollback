@@ -1,5 +1,10 @@
 # Changelog JVCForumRollback
 
+## [6.8.6] (12/03/2025)
+
+- Miniature "GTA VI" (exception)
+- Retrait minature (exception) "Kingdom Come Deliverance 2"
+
 ## [6.8.5] (28/02/2025)
 
 - Miniature Pokemon Z (exception)
