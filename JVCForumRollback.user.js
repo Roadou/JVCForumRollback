@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.8.5
+// @version      6.8.6
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -27,10 +27,14 @@ let jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
 //execeptions_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
 //football
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171466/1714656797-9405-jaquette-avant.png') ? 'https://cdn2.unrealengine.com/football-manager-2024-s-miles-jacobson-talks-past-present-and-future-of-the-football-sim-1920x1080-ec8779b5d071.jpeg' : jaquettetopjeuimg;
-//Kingdom_Come_Deliverance 2
-jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171346/1713464229-1879-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/172426/1724264786-8139-capture-d-ecran.jpg' : jaquettetopjeuimg;
 //Pokemon_Z
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171026/1710255054-326-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/173644/1736441929-5733-capture-d-ecran.jpg' : jaquettetopjeuimg;
+//GTA_VI
+jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/173799/1737994714-5886-capture-d-ecran.jpg' : jaquettetopjeuimg;
+/*
+Kingdom_Come_Deliverance 2
+jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171346/1713464229-1879-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/172426/1724264786-8139-capture-d-ecran.jpg' : jaquettetopjeuimg;
+*/
 
 //recuperer_le_bloc_de_fin
 const footer = page.querySelector(".layout__row.layout__footer");
