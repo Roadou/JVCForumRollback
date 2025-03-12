@@ -1,5 +1,9 @@
 # Changelog JVCForumRollback
 
+## [6.8.7] (12/03/2025)
+
+- Miniature "GTA VI" v2 (exception)
+
 ## [6.8.6] (12/03/2025)
 
 - Miniature "GTA VI" (exception)
