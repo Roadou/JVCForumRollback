@@ -1,5 +1,9 @@
 # Changelog JVCForumRollback
 
+## [6.8.8] (24/03/2025)
+
+- Miniature "AC Shadowns" (exception)
+
 ## [6.8.7] (12/03/2025)
 
 - Miniature "GTA VI" v2 (exception)
