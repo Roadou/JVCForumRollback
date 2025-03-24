@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.8.7
+// @version      6.8.8
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -31,10 +31,9 @@ jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-m
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171026/1710255054-326-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/173644/1736441929-5733-capture-d-ecran.jpg' : jaquettetopjeuimg;
 //GTA_VI
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquettetopjeuimg;
-/*
-Kingdom_Come_Deliverance 2
-jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171346/1713464229-1879-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/172426/1724264786-8139-capture-d-ecran.jpg' : jaquettetopjeuimg;
-*/
+//AC_Shadow
+jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171579/1715789028-8027-jaquette-avant.png') ? 'https://image.jeuxvideo.com/medias-md/172356/1723559357-7019-capture-d-ecran.jpg' : jaquettetopjeuimg;
+
 
 //recuperer_le_bloc_de_fin
 const footer = page.querySelector(".layout__row.layout__footer");
