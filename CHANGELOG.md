@@ -1,21 +1,26 @@
 # Changelog JVCForumRollback
 
+## [6.8.9] (07/04/2025)
+
+- Retrait Miniature "AC Shadowns" (fin exception car mauvais ratio)
+- Ajout Miniature Mario Kart (exception car mauvais ratio)
+
 ## [6.8.8] (24/03/2025)
 
-- Miniature "AC Shadowns" (exception)
+- Miniature "AC Shadowns" (exception car mauvais ratio)
 
 ## [6.8.7] (12/03/2025)
 
-- Miniature "GTA VI" v2 (exception)
+- Miniature "GTA VI" v2 (exception car mauvais ratio)
 
 ## [6.8.6] (12/03/2025)
 
-- Miniature "GTA VI" (exception)
-- Retrait minature (exception) "Kingdom Come Deliverance 2"
+- Miniature "GTA VI" (exception car mauvais ratio)
+- Retrait minature (exception car mauvais ratio) "Kingdom Come Deliverance 2"
 
 ## [6.8.5] (28/02/2025)
 
-- Miniature Pokemon Z (exception)
+- Miniature Pokemon Z (exception car mauvais ratio)
 - Trouver une solution pour les prochaine jeux :hap: (encore en ToDo)
 
 ## [6.8.4] (19/02/2025)
