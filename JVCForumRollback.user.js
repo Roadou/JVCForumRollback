@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.8.9
+// @version      6.9.0
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -22,7 +22,7 @@ const page = document.getElementById("jv-page");
 const elements = document.querySelectorAll('.card__imgGame + .card__body .card__link');
 const jaquettetopjeu = document.querySelector('.card__imgGame img');
 const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
-let jaquettetopjeuimg = jaquettetopjeuimgbase.replace('medias-xs', 'medias-md');
+let jaquettetopjeuimg = jaquettetopjeuimgbase.replace('s-xs/', 's-md/');
 
 //execeptions_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
 //football_manager
@@ -33,6 +33,8 @@ jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-m
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquettetopjeuimg;
 //Mario_Arnaque90euro_world
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/174360/1743599301-2480-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/174367/1743673909-2831-capture-d-ecran.jpg' : jaquettetopjeuimg;
+//oblivion
+jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/images-md/pc/e/s/es4opc0f.jpg') ? 'https://image.jeuxvideo.com/medias-md/174534/1745338268-388-capture-d-ecran.jpg' : jaquettetopjeuimg;
 
 
 //recuperer_le_bloc_de_fin

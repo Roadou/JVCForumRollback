@@ -1,5 +1,10 @@
 # Changelog JVCForumRollback
 
+## [6.9.0] (23/04/2025)
+
+- Ajout Oblivion (exception car mauvais ratio)
+- Remplacement de **tous** les fichiers XS par Medium (Compatibilité plus large vieux forum Jeux).
+
 ## [6.8.9] (07/04/2025)
 
 - Retrait Miniature "AC Shadowns" (fin exception car mauvais ratio)
