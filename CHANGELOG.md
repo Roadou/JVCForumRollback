@@ -1,5 +1,9 @@
 # Changelog JVCForumRollback
 
+## [6.9.1] (23/04/2025)
+
+- Clair Obscur (exception car mauvais ratio)
+
 ## [6.9.0] (23/04/2025)
 
 - Ajout Oblivion (exception car mauvais ratio)
