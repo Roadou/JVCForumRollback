@@ -1,5 +1,9 @@
 # Changelog JVCForumRollback
 
+## [6.9.5] (29/04/2025)
+
+- Préparation d'un système de favoris à la place de l'image top jeu. (Non Actif)
+
 ## [6.9.1] (23/04/2025)
 
 - Clair Obscur (exception car mauvais ratio)
