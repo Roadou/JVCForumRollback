@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.9.5
+// @version      6.9.6
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -20,6 +20,8 @@
 
 const page = document.getElementById("jv-page");
 const elements = document.querySelectorAll('.card__imgGame + .card__body .card__link');
+
+//*
 const jaquettetopjeu = document.querySelector('.card__imgGame img');
 const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
 let jaquettetopjeuimg = jaquettetopjeuimgbase.replace('s-xs/', 's-md/');
@@ -31,14 +33,13 @@ jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-m
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171026/1710255054-326-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/173644/1736441929-5733-capture-d-ecran.jpg' : jaquettetopjeuimg;
 //GTA_VI
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquettetopjeuimg;
-/*Mario_drop_world
-jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/174360/1743599301-2480-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/174367/1743673909-2831-capture-d-ecran.jpg' : jaquettetopjeuimg;
-*/
+//Mario_drop_world
+//jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/174360/1743599301-2480-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/174367/1743673909-2831-capture-d-ecran.jpg' : jaquettetopjeuimg;
 //oblivion
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/images-md/pc/e/s/es4opc0f.jpg') ? 'https://image.jeuxvideo.com/medias-md/174534/1745338268-388-capture-d-ecran.jpg' : jaquettetopjeuimg;
 //clair_obscure
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171803/1718033257-8476-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/172909/1729090304-5615-capture-d-ecran.jpg' : jaquettetopjeuimg;
-
+//*/
 
 //recuperer_le_bloc_de_fin
 const footer = page.querySelector(".layout__row.layout__footer");
@@ -937,7 +938,7 @@ function collectLinksAndTitles() {
 //Update_top_jeu_page_remplacee_(Court_Therme)
 function updateLinks() {
     const meilleurjeutitre = document.querySelector('.col-lg-6 .nom-forum');
-    const lienElement = document.querySelector('.col-lg-6 .f-alaune a');
+    let lienElement = document.querySelector('.col-lg-6 .f-alaune a');
     meilleurjeutitre.innerText = titles[0];
     lienElement.setAttribute('href', links[0]);
     const elements = document.querySelectorAll('.lh-sm.card-forum-link');
@@ -952,8 +953,7 @@ function updateLinks() {
 function updateFavProfil() {
     let spanpseudo = document.querySelector('.headerAccount__pseudo');
     let pseudoco = spanpseudo.textContent.toLowerCase();
-    const meilleurjeutitre = document.querySelector('.col-lg-6 .nom-forum');
-    const lienElement = document.querySelector('.col-lg-6 .f-alaune a');
+    let lienElement = document.querySelector('.col-lg-6 .f-alaune a');
     if (pseudoco !== "connexion") {
         lienElement.setAttribute('href', "/profil/" + pseudoco + "?mode=favoris");
     }
