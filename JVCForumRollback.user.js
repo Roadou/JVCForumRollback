@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.9.1
+// @version      6.9.5
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -410,8 +410,10 @@ var oldHtmlCode =
               <div class="f-alaune">
                   <a href="#">
                     <img src=${jaquettetopjeuimg}>
+                    <!-- <img src="https://image.jeuxvideo.com/medias-md/157322/1573218277-2396-card.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
                     <!-- <img src="https://static.jvc.gg/unversioned/img/default-og.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
                   <p class="nom-forum">${titles[0]}</p>
+                  <!-- <p class="nom-forum">Forums Favoris</p>  -->
                 </a></div>
             </div>
           </div>
@@ -897,6 +899,8 @@ setTimeout(() => {
 
     updateLinks()
 
+    //updateFavProfil()
+
 }, 0);
 
 //8)Fonctions_d_usage______________
@@ -930,7 +934,7 @@ function collectLinksAndTitles() {
 
 
 
-//Update_top_jeu_page_remplacée
+//Update_top_jeu_page_remplacee_(Court_Therme)
 function updateLinks() {
     const meilleurjeutitre = document.querySelector('.col-lg-6 .nom-forum');
     const lienElement = document.querySelector('.col-lg-6 .f-alaune a');
@@ -941,4 +945,16 @@ function updateLinks() {
         element.href = links[index];
         element.textContent = titles[index];
     });
+}
+
+
+//Mise_en_Place_Favoris_Perso_(Futur)
+function updateFavProfil() {
+    let spanpseudo = document.querySelector('.headerAccount__pseudo');
+    let pseudoco = spanpseudo.textContent.toLowerCase();
+    const meilleurjeutitre = document.querySelector('.col-lg-6 .nom-forum');
+    const lienElement = document.querySelector('.col-lg-6 .f-alaune a');
+    if (pseudoco !== "connexion") {
+        lienElement.setAttribute('href', "/profil/" + pseudoco + "?mode=favoris");
+    }
 }
