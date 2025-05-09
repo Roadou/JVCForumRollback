@@ -18,7 +18,7 @@
 
 #
 
-![Ancienne page forum](https://jvscript.fr/storage/images/jvcforumrollback.png)
+![Ancienne page forum](https://jvscript.fr/storage/images/jvcforumrollback.jpg)
 
 #
 
