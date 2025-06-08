@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.9.6
+// @version      6.9.7
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -34,9 +34,7 @@ jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-m
 //GTA_VI
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquettetopjeuimg;
 //Mario_drop_world
-//jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/174360/1743599301-2480-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/174367/1743673909-2831-capture-d-ecran.jpg' : jaquettetopjeuimg;
-//oblivion
-jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/images-md/pc/e/s/es4opc0f.jpg') ? 'https://image.jeuxvideo.com/medias-md/174534/1745338268-388-capture-d-ecran.jpg' : jaquettetopjeuimg;
+jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/174773/1747733351-6826-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/174367/1743673909-2831-capture-d-ecran.jpg' : jaquettetopjeuimg;
 //clair_obscure
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171803/1718033257-8476-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/172909/1729090304-5615-capture-d-ecran.jpg' : jaquettetopjeuimg;
 //*/

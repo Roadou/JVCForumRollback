@@ -1,5 +1,10 @@
 # Changelog JVCForumRollback
 
+## [6.9.7] (08/06/2025)
+
+- Retrait Miniature Oblivion (fin exception car mauvais ratio)
+- Ajout Miniature Mario Kart (exception car mauvais ratio)
+
 ## [6.9.6] (29/04/2025)
 
 - Finalisation du système de favoris en vue de remplacer l'image top jeu. **(Non Actif / Commentaire)**
