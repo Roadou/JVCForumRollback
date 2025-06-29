@@ -1,5 +1,7 @@
 name: Générer le fichier .meta.js automatiquement
 #permet de génerer automatiquement le fichier meta à partir du fichier user.
+#.github/workflows/generate-meta.yml
+
 
 on:
   push:
@@ -27,5 +29,8 @@ jobs:
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
           git add JVCForumRollback.meta.js
-          git diff --cached --quiet || git commit -m "Auto: mise à jour de .meta.js"
-          git push
+          # Ne commit ET ne push que si le fichier a réellement changé
+          if ! git diff --cached --quiet; then
+            git commit -m "Auto: mise à jour de .meta.js"
+            git push
+          fi
