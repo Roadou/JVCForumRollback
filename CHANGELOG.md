@@ -2,6 +2,11 @@
 
 [**Detail Changelog**](../../commits/main/JVCForumRollback.user.js)
 
+## [6.9.8] (29/06/2025)
+
+- Tentative de documentation du script (commentaires plus explicites dans le JS)
+- Ajout d'un module qui permet de génerer le fichier meta via une modification sur le fichier user (bot github).
+
 ## [6.9.7] (08/06/2025)
 
 - Retrait Miniature Oblivion (fin exception car mauvais ratio)
