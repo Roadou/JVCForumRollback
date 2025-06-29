@@ -1,0 +1,31 @@
+name: Générer le fichier .meta.js automatiquement
+#permet de génerer automatiquement le fichier meta à partir du fichier user.
+
+on:
+  push:
+    paths:
+      - JVCForumRollback.user.js
+  workflow_dispatch:
+
+jobs:
+  extract_meta:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Cloner le dépôt
+        uses: actions/checkout@v3
+
+      - name: Extraire uniquement l'en-tête UserScript
+        run: |
+          # Vider le fichier pour éviter l’accumulation
+          : > JVCForumRollback.meta.js
+
+          # Copier les lignes de l'en-tête jusqu'à ==/UserScript==
+          awk '/==\/UserScript==/ {print; exit} {print}' JVCForumRollback.user.js >> JVCForumRollback.meta.js
+
+      - name: Commit et push si changement
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add JVCForumRollback.meta.js
+          git diff --cached --quiet || git commit -m "Auto: mise à jour de .meta.js"
+          git push

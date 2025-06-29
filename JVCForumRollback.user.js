@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.9.7
+// @version      6.9.8
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -16,7 +16,7 @@
 /* icon         https://raw.githubusercontent.com/Roadou/JVCForumRollback/refs/heads/main/resources/Old_Page_forum.png */
 
 
-//1)Recuperer_Page_Actuelle_______
+//1)Recuperer_Elements_Page_Actuelle_______
 
 const page = document.getElementById("jv-page");
 const elements = document.querySelectorAll('.card__imgGame + .card__body .card__link');
@@ -39,7 +39,7 @@ jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-m
 jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171803/1718033257-8476-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/172909/1729090304-5615-capture-d-ecran.jpg' : jaquettetopjeuimg;
 //*/
 
-//recuperer_le_bloc_de_fin
+//recuperer_le_bloc_de_fin___
 const footer = page.querySelector(".layout__row.layout__footer");
 const blocjeuxnew = document.querySelector(".sideModule.sideOrderedGames");
 
@@ -862,13 +862,14 @@ document.head.appendChild(style);
 // Remplacer le code HTML (definit en 4)
 page.innerHTML = oldHtmlCode;
 
-//remplacer_bloc_jeux_attendu
+//remplacer_bloc_des_jeux_attendu
 const oldblocjeux = page.querySelector('.oldgames.sideModule.sideOrderedGames');
 oldblocjeux.parentNode.replaceChild(blocjeuxnew, oldblocjeux);
 
 //bandeau_de_fin_actuelle
 page.appendChild(footer);
 
+// Apres coup (Ce qui suit est execute en differe (Afin de ne pas penaliser la rapidite de l'affichage de la page)
 //6)Apres_coup_MAJ_Forum_Genesis___________
 
 setTimeout(() => {
@@ -904,13 +905,13 @@ setTimeout(() => {
 
 //8)Fonctions_d_usage______________
 
-// Récupérer les liens et titres de tous les éléments et les mettre dans la liste
+// Recuperer les liens et titres de tous les elements et les mettre dans la liste
 
-//JVCake
+//JVCare
 function jvCake(classe) {
     const base16 = '0A12B34C56D78E9F';
     let lien = '';
-    const s = classe; // Utilisation directe de la chaîne hexadécimale
+    const s = classe; // Utilisation directe de la chaîne hexadecimale
     for (let i = 0; i < s.length; i += 2) {
         const char1 = base16.indexOf(s.charAt(i));
         const char2 = base16.indexOf(s.charAt(i + 1));
@@ -919,7 +920,9 @@ function jvCake(classe) {
     return lien;
 }
 
-//Selection_top_jeu_current
+//Formatage_top_jeu_(Recup en etape 1)
+//if => on a le lien deja formate
+//else => on a le lien format brut (le script a etait trop rapide => donc on applique la logique du site => JVCake)
 function collectLinksAndTitles() {
     elements.forEach((element) => {
         titles.push(element.title);
@@ -933,7 +936,7 @@ function collectLinksAndTitles() {
 
 
 
-//Update_top_jeu_page_remplacee_(Court_Therme)
+//Update_top_jeu_page_remplacee_(On vient mettre à jour le titre de chaque lien top fofo => ils sont stockes en cache donc il faut les mettre a jour)
 function updateLinks() {
     const meilleurjeutitre = document.querySelector('.col-lg-6 .nom-forum');
     let lienElement = document.querySelector('.col-lg-6 .f-alaune a');
@@ -946,8 +949,8 @@ function updateLinks() {
     });
 }
 
-
-//Mise_en_Place_Favoris_Perso_(Futur)
+//non utilisee (pour le futur)
+//Permettra d'avoir les favoris en haut a gauche (si jabandonne lidee de mettre à jour les images manuellement)
 function updateFavProfil() {
     let spanpseudo = document.querySelector('.headerAccount__pseudo');
     let pseudoco = spanpseudo.textContent.toLowerCase();
