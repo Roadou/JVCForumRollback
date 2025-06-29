@@ -1,6 +1,6 @@
 # Changelog JVCForumRollback
 
-**Full Changelog:** https://github.com/Roadou/JVCForumRollback/commits/main/JVCForumRollback.user.js    
+[**Detail Changelog**](../../commits/main/JVCForumRollback.user.js)
 
 ## [6.9.7] (08/06/2025)
 
