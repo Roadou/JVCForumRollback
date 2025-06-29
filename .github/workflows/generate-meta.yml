@@ -1,5 +1,5 @@
-name: Générer le fichier .meta.js automatiquement
-#permet de génerer automatiquement le fichier meta à partir du fichier user.
+name: Vérifier et régénérer .meta.js en cas de modification de .user.js ou de merge.
+#permet de génerer automatiquement le fichier meta à partir du fichier userjs.
 #.github/workflows/generate-meta.yml
 
 
