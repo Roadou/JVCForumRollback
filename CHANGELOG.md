@@ -4,7 +4,7 @@
 
 ## [6.9.9] (29/06/2025)
 
-- Debug du module (bot discord Il intervient maintenant **uniquement** en cas de changement. Ça évite des permissions supplémentaires).
+- Debug du module (bot github Il intervient maintenant **uniquement** en cas de changement. Ça évite des permissions supplémentaires).
 
 ## [6.9.8] (29/06/2025)
 
