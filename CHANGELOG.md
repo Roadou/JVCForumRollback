@@ -2,6 +2,10 @@
 
 [**Detail Changelog**](../../commits/main/JVCForumRollback.user.js)
 
+## [6.9.9] (29/06/2025)
+
+- Debug du module (bot discord Il intervient maintenant **uniquement** en cas de changement. Ça évite des permissions supplémentaires).
+
 ## [6.9.8] (29/06/2025)
 
 - Tentative de documentation du script (commentaires plus explicites dans le JS)
