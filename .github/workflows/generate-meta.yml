@@ -15,8 +15,6 @@ jobs:
 
       - name: Extraire uniquement l'en-tête UserScript
         run: |
-          # Ajouter un commentaire en haut du .meta.js
-          echo "// Ce fichier est généré automatiquement. Ne pas modifier manuellement." > JVCForumRollback.meta.js
 
           # Copier les lignes de l'en-tête jusqu'à ==/UserScript==
           awk '/==\/UserScript==/ {print; exit} {print}' JVCForumRollback.user.js >> JVCForumRollback.meta.js
