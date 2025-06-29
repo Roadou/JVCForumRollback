@@ -1,3 +1,4 @@
+// Ce fichier est généré automatiquement. Ne pas modifier manuellement.
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
