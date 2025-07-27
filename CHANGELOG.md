@@ -2,6 +2,10 @@
 
 [**Detail Changelog**](../../commits/main/JVCForumRollback.user.js)
 
+## [7.0.0] (27/07/2025)
+
+- Optimisation selecteurs CSS (changement minime).
+
 ## [6.9.9] (29/06/2025)
 
 - Debug du module (bot github Il intervient maintenant **uniquement** en cas de changement. Ça évite des permissions supplémentaires).
