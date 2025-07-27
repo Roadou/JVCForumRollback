@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      6.9.9
+// @version      7.0.0
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -19,10 +19,10 @@
 //1)Recuperer_Elements_Page_Actuelle_______
 
 const page = document.getElementById("jv-page");
-const elements = document.querySelectorAll('.card__imgGame + .card__body .card__link');
+const elements = document.querySelectorAll('.card--game > .card__body .card__link');
 
 //*
-const jaquettetopjeu = document.querySelector('.card__imgGame img');
+const jaquettetopjeu = document.querySelector('.card__imgGame > img');
 const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
 let jaquettetopjeuimg = jaquettetopjeuimgbase.replace('s-xs/', 's-md/');
 
