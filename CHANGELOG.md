@@ -2,6 +2,12 @@
 
 [**Detail Changelog**](../../commits/main/JVCForumRollback.user.js)
 
+## [7.0.1] (16/08/2025)
+
+- Optimisation du code, meilleure lisibilité pour entretien futur.
+- Clean de redondances inutiles.
+- Syntaxe [CamelCase](https://www.v-labs.fr/glossaire/camel-case/).
+
 ## [7.0.0] (27/07/2025)
 
 - Optimisation selecteurs CSS (changement minime).

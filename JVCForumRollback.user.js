@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.0.0
+// @version      7.0.1
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -18,29 +18,29 @@
 
 //1)Recuperer_Elements_Page_Actuelle_______
 
-const page = document.getElementById("jv-page");
-const elements = document.querySelectorAll('.card--game > .card__body .card__link');
+const jvPage = document.getElementById("jv-page");
+const jeuxLinks = document.querySelectorAll('.card--game > .card__body .card__link');
 
-//*
-const jaquettetopjeu = document.querySelector('.card__imgGame > img');
-const jaquettetopjeuimgbase = jaquettetopjeu.getAttribute('data-src') || jaquettetopjeu.getAttribute('src');
-let jaquettetopjeuimg = jaquettetopjeuimgbase.replace('s-xs/', 's-md/');
 
-//execeptions_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
-//football_manager
-jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171466/1714656797-9405-jaquette-avant.png') ? 'https://cdn2.unrealengine.com/football-manager-2024-s-miles-jacobson-talks-past-present-and-future-of-the-football-sim-1920x1080-ec8779b5d071.jpeg' : jaquettetopjeuimg;
+const jaquetteTopJeu = document.querySelector('.card__imgGame > img');
+const jaquetteTopJeuImgSD = jaquetteTopJeu.getAttribute('data-src') || jaquetteTopJeu.getAttribute('src');
+let jaquetteTopJeuImg = jaquetteTopJeuImgSD.replace('s-xs/', 's-md/');
+
+//Exceptions_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
+//Football_manager
+jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/171466/1714656797-9405-jaquette-avant.png') ? 'https://cdn2.unrealengine.com/football-manager-2024-s-miles-jacobson-talks-past-present-and-future-of-the-football-sim-1920x1080-ec8779b5d071.jpeg' : jaquetteTopJeuImg;
 //Pokemon_Z
-jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171026/1710255054-326-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/173644/1736441929-5733-capture-d-ecran.jpg' : jaquettetopjeuimg;
+jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/171026/1710255054-326-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/173644/1736441929-5733-capture-d-ecran.jpg' : jaquetteTopJeuImg;
 //GTA_VI
-jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquettetopjeuimg;
+jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquetteTopJeuImg;
 //Mario_drop_world
-jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/174773/1747733351-6826-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/174367/1743673909-2831-capture-d-ecran.jpg' : jaquettetopjeuimg;
-//clair_obscure
-jaquettetopjeuimg = (jaquettetopjeuimg === 'https://image.jeuxvideo.com/medias-md/171803/1718033257-8476-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/172909/1729090304-5615-capture-d-ecran.jpg' : jaquettetopjeuimg;
-//*/
+jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/174773/1747733351-6826-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/174367/1743673909-2831-capture-d-ecran.jpg' : jaquetteTopJeuImg;
+//Clair_obscure
+jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/171803/1718033257-8476-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/172909/1729090304-5615-capture-d-ecran.jpg' : jaquetteTopJeuImg;
+
 
 //recuperer_le_bloc_de_fin___
-const footer = page.querySelector(".layout__row.layout__footer");
+const footer = jvPage.querySelector(".layout__row.layout__footer");
 const blocjeuxnew = document.querySelector(".sideModule.sideOrderedGames");
 
 
@@ -408,7 +408,7 @@ var oldHtmlCode =
             <div class="forum-section">
               <div class="f-alaune">
                   <a href="#">
-                    <img src=${jaquettetopjeuimg}>
+                    <img src=${jaquetteTopJeuImg}>
                     <!-- <img src="https://image.jeuxvideo.com/medias-md/157322/1573218277-2396-card.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
                     <!-- <img src="https://static.jvc.gg/unversioned/img/default-og.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
                   <p class="nom-forum">${titles[0]}</p>
@@ -860,90 +860,69 @@ style.innerHTML = css;
 document.head.appendChild(style);
 
 // Remplacer le code HTML (definit en 4)
-page.innerHTML = oldHtmlCode;
+jvPage.innerHTML = oldHtmlCode;
 
 //remplacer_bloc_des_jeux_attendu
-const oldblocjeux = page.querySelector('.oldgames.sideModule.sideOrderedGames');
-oldblocjeux.parentNode.replaceChild(blocjeuxnew, oldblocjeux);
+const oldblocjeux = jvPage.querySelector('.oldgames.sideModule.sideOrderedGames');
+oldblocjeux.replaceWith(blocjeuxnew);
 
 //bandeau_de_fin_actuelle
-page.appendChild(footer);
+jvPage.appendChild(footer);
 
 // Apres coup (Ce qui suit est execute en differe (Afin de ne pas penaliser la rapidite de l'affichage de la page)
 //6)Apres_coup_MAJ_Forum_Genesis___________
 
 setTimeout(() => {
-    document.getElementById("showhide-genesis").onclick = toggleGenesis;
-    const genesisContent = document.querySelector(".col-lg-12");
-    let genesisvisibleswitch;
-    function toggleGenesis() {
-        genesisvisibleswitch = localStorage.getItem("jvcrollback-genesis") || "none";
-        const newVisibility = (genesisvisibleswitch === "none") ? "block" : "none";
-        localStorage.setItem("jvcrollback-genesis", newVisibility);
-        genesisContent.style.display = newVisibility;
-    }
-    genesisContent.style.display = localStorage.getItem("jvcrollback-genesis") || "none";
+    document.querySelector("#showhide-genesis").addEventListener("click", function() {
+        const genesisBloc = document.querySelector(".col-lg-12");
+        const genesisVisibilty = (genesisBloc.style.display === "none") ? "block" : "none";
+        genesisBloc.style.display = genesisVisibilty;
+        localStorage.setItem("jvcrollback-genesis", genesisVisibilty);
+    });
 }, 0);
 
 //7)Apres_coup_MAJ_top_jeu_____________
 
 setTimeout(() => {
-
     //actualiste_titre_et_liens_top_forum____
     links = [];
     titles = [];
-
     collectLinksAndTitles();
-
-    localStorage.setItem("jvcrollback-titles", JSON.stringify(titles));
-
     updateLinks()
-
     //updateFavProfil()
-
 }, 0);
 
 //8)Fonctions_d_usage______________
 
 // Recuperer les liens et titres de tous les elements et les mettre dans la liste
 
-//JVCare
-function jvCake(classe) {
+//JVCare_(Fonction_generique_de_JVC)_(Obligatoire_pour formater_certains_liens_sans_latence)
+//https://jvflux.fr/Fonctionnement_technique_de_Jeuxvideo.com#JvCare
+function jvCare(classe) {
     const base16 = '0A12B34C56D78E9F';
     let lien = '';
-    const s = classe; // Utilisation directe de la chaîne hexadecimale
+    const s = classe.split(' ')[1];
     for (let i = 0; i < s.length; i += 2) {
-        const char1 = base16.indexOf(s.charAt(i));
-        const char2 = base16.indexOf(s.charAt(i + 1));
-        lien += String.fromCharCode(char1 * 16 + char2);
+        lien += String.fromCharCode(base16.indexOf(s.at(i)) * 16 + base16.indexOf(s.at(i + 1)));
     }
     return lien;
 }
 
 //Formatage_top_jeu_(Recup en etape 1)
-//if => on a le lien deja formate
-//else => on a le lien format brut (le script a etait trop rapide => donc on applique la logique du site => JVCake)
+//href => on a le lien deja formate || format brut offusqué (le script a etait trop rapide => donc on applique la logique du site => jvCare)
 function collectLinksAndTitles() {
-    elements.forEach((element) => {
-        titles.push(element.title);
-        if (element.href) {
-            links.push(element.getAttribute('href'));
-        } else {
-            links.push(jvCake(element.classList[1]));
-        }
-    });
+    titles = [...jeuxLinks].map(liens => liens.title);
+    links = [...jeuxLinks].map(liens => liens.href || jvCare(liens.classList[1]));
+    localStorage.setItem("jvcrollback-titles", JSON.stringify(titles));
 }
 
 
-
-//Update_top_jeu_page_remplacee_(On vient mettre à jour le titre de chaque lien top fofo => ils sont stockes en cache donc il faut les mettre a jour)
+//Update_top_jeu_page_remplacee_(On vient mettre à jour le titre de chaque lien top fofo)
 function updateLinks() {
-    const meilleurjeutitre = document.querySelector('.col-lg-6 .nom-forum');
-    let lienElement = document.querySelector('.col-lg-6 .f-alaune a');
-    meilleurjeutitre.innerText = titles[0];
-    lienElement.setAttribute('href', links[0]);
-    const elements = document.querySelectorAll('.lh-sm.card-forum-link');
-    elements.forEach((element, index) => {
+    document.querySelector('.col-lg-6 .nom-forum').textContent = titles[0];
+    document.querySelector('.col-lg-6 .f-alaune a').href = links[0];
+
+    document.querySelectorAll('.lh-sm.card-forum-link').forEach((element, index) => {
         element.href = links[index];
         element.textContent = titles[index];
     });
@@ -952,10 +931,9 @@ function updateLinks() {
 //non utilisee (pour le futur)
 //Permettra d'avoir les favoris en haut a gauche (si jabandonne lidee de mettre à jour les images manuellement)
 function updateFavProfil() {
-    let spanpseudo = document.querySelector('.headerAccount__pseudo');
-    let pseudoco = spanpseudo.textContent.toLowerCase();
+    let pseudoco = document.querySelector('.headerAccount__pseudo').textContent.toLowerCase();
+    if (pseudoco === "connexion") return;
+
     let lienElement = document.querySelector('.col-lg-6 .f-alaune a');
-    if (pseudoco !== "connexion") {
-        lienElement.setAttribute('href', "/profil/" + pseudoco + "?mode=favoris");
-    }
+    lienElement.href = `/profil/${pseudoco}?mode=favoris`;
 }
