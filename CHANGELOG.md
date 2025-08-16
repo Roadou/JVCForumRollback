@@ -2,6 +2,10 @@
 
 [**Detail Changelog**](../../commits/main/JVCForumRollback.user.js)
 
+## [7.0.2] (16/08/2025)
+
+- Correction d'une incohérence apparue suite à la simplification du code => qui déclenchait une erreur.
+
 ## [7.0.1] (16/08/2025)
 
 - Optimisation du code, meilleure lisibilité pour entretien futur.
