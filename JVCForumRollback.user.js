@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.0.2
+// @version      7.0.3
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -13,7 +13,7 @@
 // @license      MIT
 // ==/UserScript==
 
-/* icon         https://raw.githubusercontent.com/Roadou/JVCForumRollback/refs/heads/main/resources/Old_Page_forum.png */
+/* icon         https://raw.githubusercontent.com/Roadou/JVCForumRollback/main/resources/Old_Page_forum.png */
 
 
 //1)Recuperer_Elements_Page_Actuelle_______
@@ -912,7 +912,7 @@ function jvCare(classe) {
 //href => on a le lien deja formate || format brut offusqué (le script a etait trop rapide => donc on applique la logique du site => jvCare)
 function collectLinksAndTitles() {
     titles = [...jeuxLinks].map(liens => liens.title);
-    links = [...jeuxLinks].map(liens => liens.href || jvCare(liens.classList.value));
+    links = [...jeuxLinks].map(liens => liens.getAttribute('href') || jvCare(liens.classList.value));
     localStorage.setItem("jvcrollback-titles", JSON.stringify(titles));
 }
 
