@@ -2,6 +2,10 @@
 
 [**Detail Changelog**](../../commits/main/JVCForumRollback.user.js)
 
+## [7.1.1] (22/08/2025)
+
+- Optimisation du code, meilleure lisibilité pour entretien futur.
+
 ## [7.0.4] (22/08/2025)
 
 - [MINIATURE RATIO] Miniature Pokemon Z (Maj mauvais ratio)
