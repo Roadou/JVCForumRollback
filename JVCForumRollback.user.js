@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.0.3
+// @version      7.0.4
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -27,16 +27,12 @@ const jaquetteTopJeuImgSD = jaquetteTopJeu.getAttribute('data-src') || jaquetteT
 let jaquetteTopJeuImg = jaquetteTopJeuImgSD.replace('s-xs/', 's-md/');
 
 //Exceptions_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
-//Football_manager
+//FOOTBALL_MANAGER
 jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/171466/1714656797-9405-jaquette-avant.png') ? 'https://cdn2.unrealengine.com/football-manager-2024-s-miles-jacobson-talks-past-present-and-future-of-the-football-sim-1920x1080-ec8779b5d071.jpeg' : jaquetteTopJeuImg;
-//Pokemon_Z
-jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/171026/1710255054-326-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/173644/1736441929-5733-capture-d-ecran.jpg' : jaquetteTopJeuImg;
+//POKEMON_Z
+jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/174859/1748593985-1819-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/173644/1736441929-5733-capture-d-ecran.jpg' : jaquetteTopJeuImg;
 //GTA_VI
 jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquetteTopJeuImg;
-//Mario_drop_world
-jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/174773/1747733351-6826-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/174367/1743673909-2831-capture-d-ecran.jpg' : jaquetteTopJeuImg;
-//Clair_obscure
-jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/171803/1718033257-8476-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/172909/1729090304-5615-capture-d-ecran.jpg' : jaquetteTopJeuImg;
 
 
 //recuperer_le_bloc_de_fin___
