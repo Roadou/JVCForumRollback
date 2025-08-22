@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.0.4
+// @version      7.1.1
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -36,8 +36,8 @@ jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-m
 
 
 //recuperer_le_bloc_de_fin___
-const footer = jvPage.querySelector(".layout__row.layout__footer");
-const blocjeuxnew = document.querySelector(".sideModule.sideOrderedGames");
+const jvFooter = jvPage.querySelector(".layout__row.layout__footer");
+const blocJeuxNew = document.querySelector(".sideModule.sideOrderedGames");
 
 
 //2)Overlay_CSS_____________
@@ -851,21 +851,21 @@ var oldHtmlCode =
 //5)Injection_HTML_ET_CSS_____________
 
 
-// Ajouter CSS manquant (definit en 2)
+//Ajouter_CSS_manquant_(definit en 2)
 style.innerHTML = css;
 document.head.appendChild(style);
 
-// Remplacer le code HTML (definit en 4)
+//Remplacer_le_HTML_(definit en 4)
 jvPage.innerHTML = oldHtmlCode;
 
-//remplacer_bloc_des_jeux_attendu
-const oldblocjeux = jvPage.querySelector('.oldgames.sideModule.sideOrderedGames');
-oldblocjeux.replaceWith(blocjeuxnew);
+//Remplacer_bloc_"Top jeux les plus attendus"
+const oldBlocJeux = jvPage.querySelector('.oldgames.sideModule.sideOrderedGames');
+oldBlocJeux.replaceWith(blocJeuxNew);
 
-//bandeau_de_fin_actuelle
-jvPage.appendChild(footer);
+//Ajouter_bandeau_de_fin_actuel
+jvPage.appendChild(jvFooter);
 
-// Apres coup (Ce qui suit est execute en differe (Afin de ne pas penaliser la rapidite de l'affichage de la page)
+// Apres coup (setTimeout = 0 => Permet de différer certaines actions car Le début du code ne doit pas être trop lourd )
 //6)Apres_coup_MAJ_Forum_Genesis___________
 
 setTimeout(() => {
@@ -877,20 +877,16 @@ setTimeout(() => {
     });
 }, 0);
 
-//7)Apres_coup_MAJ_top_jeu_____________
-
+//7)Apres_MAJ_TOP_JEU_____________
 setTimeout(() => {
     //actualiste_titre_et_liens_top_forum____
-    links = [];
-    titles = [];
-    collectLinksAndTitles();
-    updateLinks()
+    getAndUpdateLinks()
+
     //updateFavProfil()
 }, 0);
 
-//8)Fonctions_d_usage______________
 
-// Recuperer les liens et titres de tous les elements et les mettre dans la liste
+//8)Fonctions_Appelées______________
 
 //JVCare_(Fonction_generique_de_JVC)_(Obligatoire_pour formater_certains_liens_sans_latence)
 //https://jvflux.fr/Fonctionnement_technique_de_Jeuxvideo.com#JvCare
@@ -904,20 +900,19 @@ function jvCare(classe) {
     return lien;
 }
 
-//Formatage_top_jeu_(Recup en etape 1)
-//href => on a le lien deja formate || format brut offusqué (le script a etait trop rapide => donc on applique la logique du site => jvCare)
-function collectLinksAndTitles() {
+//Update top jeu page remplacee (On vient mettre à jour le titre de chaque lien top fofo)
+//HREF => On a le lien deja formate || Sinon (Script trop rapide => on applique la logique du site => jvCare)
+function getAndUpdateLinks() {
+    //RECUP INFO ".card__link"
     titles = [...jeuxLinks].map(liens => liens.title);
     links = [...jeuxLinks].map(liens => liens.getAttribute('href') || jvCare(liens.classList.value));
     localStorage.setItem("jvcrollback-titles", JSON.stringify(titles));
-}
 
-
-//Update_top_jeu_page_remplacee_(On vient mettre à jour le titre de chaque lien top fofo)
-function updateLinks() {
+    //MINIATURE
     document.querySelector('.col-lg-6 .nom-forum').textContent = titles[0];
     document.querySelector('.col-lg-6 .f-alaune a').href = links[0];
 
+    //MENU DROITE TOP FORUM
     document.querySelectorAll('.lh-sm.card-forum-link').forEach((element, index) => {
         element.href = links[index];
         element.textContent = titles[index];
