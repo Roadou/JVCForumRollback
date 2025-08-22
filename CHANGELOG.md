@@ -2,6 +2,11 @@
 
 [**Detail Changelog**](../../commits/main/JVCForumRollback.user.js)
 
+## [7.0.4] (22/08/2025)
+
+- [MINIATURE RATIO] Miniature Pokemon Z (Maj mauvais ratio)
+- [MINIATURE RATIO] Retrait Jeux Divers (Fin exception Mauvais ratio)
+
 ## [7.0.3] (17/08/2025)
 
 - **Re**passage de liens absolus en relatifs (Merci GPT5 d'avoir fait nimp pour factoriser 3 lignes...).
@@ -28,8 +33,8 @@
 
 ## [6.9.7] (08/06/2025)
 
-- Retrait Miniature Oblivion (fin exception car mauvais ratio)
-- Ajout Miniature Mario Kart (exception car mauvais ratio)
+- [MINIATURE RATIO] Retrait Oblivion (Fin exception Mauvais ratio)
+- [MINIATURE RATIO] Ajout Mario Kart (Exception Mauvais ratio)
 
 ## [6.9.6] (29/04/2025)
 
@@ -41,34 +46,34 @@
 
 ## [6.9.1] (23/04/2025)
 
-- Clair Obscur (exception car mauvais ratio)
+- [MINIATURE RATIO] Clair Obscur (Exception Mauvais ratio)
 
 ## [6.9.0] (23/04/2025)
 
-- Ajout Oblivion (exception car mauvais ratio)
+- [MINIATURE RATIO] Ajout Oblivion (Exception Mauvais ratio)
 - Remplacement de **tous** les fichiers XS par Medium (Compatibilité plus large vieux forum Jeux).
 
 ## [6.8.9] (07/04/2025)
 
-- Retrait Miniature "AC Shadowns" (fin exception car mauvais ratio)
-- Ajout Miniature Mario Kart (exception car mauvais ratio)
+- [MINIATURE RATIO] Retrait Miniature "AC Shadowns" (Fin exception mauvais ratio)
+- [MINIATURE RATIO] Ajout Miniature Mario Kart (Exception mauvais ratio)
 
 ## [6.8.8] (24/03/2025)
 
-- Miniature "AC Shadowns" (exception car mauvais ratio)
+- [MINIATURE RATIO] Miniature "AC Shadowns" (Exception mauvais ratio)
 
 ## [6.8.7] (12/03/2025)
 
-- Miniature "GTA VI" v2 (exception car mauvais ratio)
+- [MINIATURE RATIO] Miniature "GTA VI" v2 (Exception mauvais ratio)
 
 ## [6.8.6] (12/03/2025)
 
-- Miniature "GTA VI" (exception car mauvais ratio)
-- Retrait minature (exception car mauvais ratio) "Kingdom Come Deliverance 2"
+- [MINIATURE RATIO] Miniature "GTA VI" (Exception mauvais ratio)
+- [MINIATURE RATIO] Retrait minature "Kingdom Come Deliverance 2" (Fin Exception mauvais ratio) 
 
 ## [6.8.5] (28/02/2025)
 
-- Miniature Pokemon Z (exception car mauvais ratio)
+- [MINIATURE RATIO] Miniature Pokemon Z (Exception mauvais ratio)
 - Trouver une solution pour les prochaine jeux :hap: (encore en ToDo)
 
 ## [6.8.4] (19/02/2025)
@@ -88,7 +93,7 @@
 
 ## [6.8.0] (12/02/2025)
 
-- Remplacement du bloc = jeu en tendance  (je suis vraiment désolé) mais avec le ratio des jaquettes ça ne marche pas...
+- [MINIATURE RATIO] Remplacement du bloc = jeu en tendance  (je suis vraiment désolé) mais avec le ratio des jaquettes ça ne marche pas...
 - J'ai donc mis les blablas à la place **comme en 2019**, c'était compliqué de trouver une autre solution à cause des images de jeux sur la page.
 
 ## [6.7.1] (10/02/2025)
@@ -97,7 +102,7 @@
 
 ## [6.7.0] (10/02/2025)
 
-- Jeu en-tête (va chercher une autre image pour "Kingdom Come Deliverance 2" ratio trop différent v2)
+- [MINIATURE RATIO] Jeu en-tête (va chercher une autre image pour "Kingdom Come Deliverance 2" ratio trop différent v2)
 - ToDo : Il faut trouver une solution à long terme pour les jeux dont le ratio ne vas pas (j'en cherche une...).
 
 ## [6.6.9] (06/02/2025)
@@ -114,15 +119,15 @@
 
 ## [6.6.6] (20/01/2025)
 
-- Correction de certaines images en base 64 qui n'avait pas la bonne extension png<==>jpeg . (ça pouvait ralentir la lecture.)
+- Correction de certaines images en base 64 qui n'avait pas la bonne extension png <==> jpeg . (ça pouvait ralentir la lecture.)
 
 ## [6.6.5] (18/01/2025)
 
-- Meilleur jeu en-tête (image externe pour "footballmanager" => car l'image JVC ne marche pas / ratio trop différent v2)
+- [MINIATURE RATIO] Meilleur jeu en-tête (image externe pour "footballmanager" => car l'image JVC ne marche pas / ratio trop différent v2)
 
 ## [6.6.4] (17/01/2025)
 
-- Meilleur jeu en-tête (image externe si "footballmanager" => car l'image JVC ne marche pas / ratio trop différent)
+- [MINIATURE RATIO] Meilleur jeu en-tête (image externe si "footballmanager" => car l'image JVC ne marche pas / ratio trop différent)
 
 ## [6.6.1] (16/01/2025)
 
@@ -151,7 +156,7 @@
 
 ## [6.5.4] (08/11/2024)
 
-- Meilleur jeu en-tête (image dynamique)
+- [MINIATURE RATIO] Meilleur jeu en-tête (image dynamique)
 
 ## [6.5.0] (06/11/2024)
 
@@ -163,7 +168,7 @@
 
 ## [4.9.6] (04/11/2024)
 
-- Meilleur jeu en-tête nom
+- [MINIATURE RATIO] Meilleur jeu en-tête nom
 
 ## [4.7.0] (03/11/2024)
 
