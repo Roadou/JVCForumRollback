@@ -32,6 +32,6 @@ jobs:
           # Ne commit ET ne push que si le fichier a réellement changé
           if ! git diff --cached --quiet; then
             msg=$(git log -1 --pretty=%s) #titre commit
-            git commit -m "$msg (auto : meta.js)"
+            git commit -m "$msg (meta.js)" #titre user => meta
             git push
           fi
