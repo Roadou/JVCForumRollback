@@ -2,6 +2,10 @@
 
 [**Detail Changelog**](../../commits/main/JVCForumRollback.user.js)
 
+## [7.1.2] (03/09/2025)
+
+- [MINIATURE RATIO] Miniature Silksong (Exception mauvais ratio)
+
 ## [7.1.1] (22/08/2025)
 
 - Optimisation du code, meilleure lisibilité pour entretien futur.
