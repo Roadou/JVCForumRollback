@@ -2,9 +2,14 @@
 
 [**Detail Changelog**](../../commits/main/JVCForumRollback.user.js)
 
+## [7.1.3] (12/10/2025)
+
+- [MINIATURE RATIO] Miniature Battlefield VI (Exception Mauvais ratio)
+- [MINIATURE RATIO] Miniature Silksong (Fin exception Mauvais ratio)
+
 ## [7.1.2] (03/09/2025)
 
-- [MINIATURE RATIO] Miniature Silksong (Exception mauvais ratio)
+- [MINIATURE RATIO] Miniature Silksong (Exception Mauvais ratio)
 
 ## [7.1.1] (22/08/2025)
 
@@ -12,7 +17,7 @@
 
 ## [7.0.4] (22/08/2025)
 
-- [MINIATURE RATIO] Miniature Pokemon Z (Maj mauvais ratio)
+- [MINIATURE RATIO] Miniature Pokemon Z (Maj Mauvais ratio)
 - [MINIATURE RATIO] Retrait Jeux Divers (Fin exception Mauvais ratio)
 
 ## [7.0.3] (17/08/2025)
@@ -63,25 +68,25 @@
 
 ## [6.8.9] (07/04/2025)
 
-- [MINIATURE RATIO] Retrait Miniature "AC Shadowns" (Fin exception mauvais ratio)
-- [MINIATURE RATIO] Ajout Miniature Mario Kart (Exception mauvais ratio)
+- [MINIATURE RATIO] Retrait Miniature "AC Shadowns" (Fin exception Mauvais ratio)
+- [MINIATURE RATIO] Ajout Miniature Mario Kart (Exception Mauvais ratio)
 
 ## [6.8.8] (24/03/2025)
 
-- [MINIATURE RATIO] Miniature "AC Shadowns" (Exception mauvais ratio)
+- [MINIATURE RATIO] Miniature "AC Shadowns" (Exception Mauvais ratio)
 
 ## [6.8.7] (12/03/2025)
 
-- [MINIATURE RATIO] Miniature "GTA VI" v2 (Exception mauvais ratio)
+- [MINIATURE RATIO] Miniature "GTA VI" v2 (Exception Mauvais ratio)
 
 ## [6.8.6] (12/03/2025)
 
-- [MINIATURE RATIO] Miniature "GTA VI" (Exception mauvais ratio)
-- [MINIATURE RATIO] Retrait minature "Kingdom Come Deliverance 2" (Fin Exception mauvais ratio) 
+- [MINIATURE RATIO] Miniature "GTA VI" (Exception Mauvais ratio)
+- [MINIATURE RATIO] Retrait minature "Kingdom Come Deliverance 2" (Fin Exception Mauvais ratio) 
 
 ## [6.8.5] (28/02/2025)
 
-- [MINIATURE RATIO] Miniature Pokemon Z (Exception mauvais ratio)
+- [MINIATURE RATIO] Miniature Pokemon Z (Exception Mauvais ratio)
 - Trouver une solution pour les prochaine jeux :hap: (encore en ToDo)
 
 ## [6.8.4] (19/02/2025)
