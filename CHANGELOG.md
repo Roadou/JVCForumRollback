@@ -3,24 +3,24 @@
 [**Changelog Complet**](../../commits/main/JVCForumRollback.user.js)
 
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
-Les changements de routine sont visibles **via les fleches ⯈**, pour garder un changelog centré sur l’essentiel du script.    
+Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
 ## [7.1.3] (12/10/2025)
 
 <details>
-  <summary><sub>Ratio Image</sub></summary>
+  <summary>🖼️</summary>
   <ul>
-    <li>[MINIATURE RATIO] Miniature Battlefield VI (Exception Mauvais ratio)</li>
-    <li>[MINIATURE RATIO] Miniature Silksong (Fin exception Mauvais ratio)</li>
+    <li>🖼️ Miniature Battlefield VI (Exception Mauvais ratio)</li>
+    <li>🖼️ Miniature Silksong (Fin exception Mauvais ratio)</li>
   </ul>
 </details>
 
 ## [7.1.2] (03/09/2025)
 
 <details>
-  <summary><sub>Ratio Image</sub></summary>
+  <summary>🖼️</summary>
   <ul>
-    <li>[MINIATURE RATIO] Miniature Silksong (Exception Mauvais ratio)</li>
+    <li>🖼️ Miniature Silksong (Exception Mauvais ratio)</li>
   </ul>
 </details>
 
@@ -31,10 +31,10 @@ Les changements de routine sont visibles **via les fleches ⯈**, pour garder un
 ## [7.0.4] (22/08/2025)
 
 <details>
-  <summary><sub>Ratio Image</sub></summary>
+  <summary>🖼️</summary>
   <ul>
-    <li>[MINIATURE RATIO] Miniature Pokemon Z (Maj Mauvais ratio).</li>
-    <li>[MINIATURE RATIO] Retrait Jeux Divers (Fin exception Mauvais ratio).</li>
+    <li>🖼️ Miniature Pokemon Z (Maj Mauvais ratio).</li>
+    <li>🖼️ Retrait Jeux Divers (Fin exception Mauvais ratio).</li>
   </ul>
 </details>
 
@@ -71,10 +71,10 @@ Les changements de routine sont visibles **via les fleches ⯈**, pour garder un
 ## [6.9.7] (08/06/2025)
 
 <details>
-  <summary><sub>Ratio Image</sub></summary>
+  <summary>🖼️</summary>
   <ul>
-    <li>[MINIATURE RATIO] Retrait Oblivion (Fin exception Mauvais ratio).</li>
-    <li>[MINIATURE RATIO] Ajout Mario Kart (Exception Mauvais ratio).</li>
+    <li>🖼️ Retrait Oblivion (Fin exception Mauvais ratio).</li>
+    <li>🖼️ Ajout Mario Kart (Exception Mauvais ratio).</li>
   </ul>
 </details>
 
@@ -89,49 +89,49 @@ Les changements de routine sont visibles **via les fleches ⯈**, pour garder un
 ## [6.9.1] (23/04/2025)
 
 <details>
-  <summary><sub>Ratio Image</sub></summary>
-  <ul><li>[MINIATURE RATIO] Clair Obscur (Exception Mauvais ratio).</li></ul>
+  <summary>🖼️</summary>
+  <ul><li>🖼️ Clair Obscur (Exception Mauvais ratio).</li></ul>
 </details>
 
 ## [6.9.0] (23/04/2025)
 
 <ul><li>Remplacement de <b>tous</b> les fichiers XS par Medium (Compatibilité plus large vieux forum Jeux).</li></ul>
 <details>
-  <summary><sub>Ratio Image</sub></summary>
-  <ul><li>[MINIATURE RATIO] Ajout Oblivion (Exception Mauvais ratio).</li></ul>
+  <summary>🖼️</summary>
+  <ul><li>🖼️ Ajout Oblivion (Exception Mauvais ratio).</li></ul>
 </details>
 
 ## [6.8.9] (07/04/2025)
 
 <details>
-  <summary><sub>Ratio Image</sub></summary>
+  <summary>🖼️</summary>
   <ul>
-    <li>[MINIATURE RATIO] Retrait Miniature "AC Shadowns" (Fin exception Mauvais ratio).</li>
-    <li>[MINIATURE RATIO] Ajout Miniature Mario Kart (Exception Mauvais ratio).</li>
+    <li>🖼️ Retrait Miniature "AC Shadowns" (Fin exception Mauvais ratio).</li>
+    <li>🖼️ Ajout Miniature Mario Kart (Exception Mauvais ratio).</li>
   </ul>
 </details>
 
 ## [6.8.8] (24/03/2025)
 
 <details>
-  <summary><sub>Ratio Image</sub></summary>
-  <ul><li>[MINIATURE RATIO] Miniature "AC Shadowns" (Exception Mauvais ratio).</li></ul>
+  <summary>🖼️</summary>
+  <ul><li>🖼️ Miniature "AC Shadowns" (Exception Mauvais ratio).</li></ul>
 </details>
 
 ## [6.8.7] (12/03/2025)
 
 <details>
-  <summary><sub>Ratio Image</sub></summary>
-  <ul><li>[MINIATURE RATIO] Miniature "GTA VI" v2 (Exception Mauvais ratio).</li></ul>
+  <summary>🖼️</summary>
+  <ul><li>🖼️ Miniature "GTA VI" v2 (Exception Mauvais ratio).</li></ul>
 </details>
 
 ## [6.8.6] (12/03/2025)
 
 <details>
-  <summary><sub>Ratio Image</sub></summary>
+  <summary>🖼️</summary>
   <ul>
-    <li>[MINIATURE RATIO] Miniature "GTA VI" (Exception Mauvais ratio).</li>
-    <li>[MINIATURE RATIO] Retrait minature "Kingdom Come Deliverance 2" (Fin Exception Mauvais ratio).</li>
+    <li>🖼️ Miniature "GTA VI" (Exception Mauvais ratio).</li>
+    <li>🖼️ Retrait minature "Kingdom Come Deliverance 2" (Fin Exception Mauvais ratio).</li>
   </ul>
 </details>
 
@@ -139,10 +139,10 @@ Les changements de routine sont visibles **via les fleches ⯈**, pour garder un
 
 
 <details>
-  <summary><sub>Ratio Image</sub></summary>
+  <summary>🖼️</summary>
   <ul>
     <li>Trouver une solution pour les prochaine jeux :hap: (encore en ToDo).</li>
-    <li>[MINIATURE RATIO] Miniature Pokemon Z (Exception Mauvais ratio).</li>
+    <li>🖼️ Miniature Pokemon Z (Exception Mauvais ratio).</li>
   </ul>
 </details>
 
@@ -169,8 +169,8 @@ Les changements de routine sont visibles **via les fleches ⯈**, pour garder un
 
 <ul><li>J'ai donc mis les blablas à la place <b>comme en 2019</b>, c'était compliqué de trouver une autre solution à cause des images de jeux sur la page.</li></ul>
 <details>
-  <summary><sub>Ratio Image</sub></summary>
-  <ul><li>[MINIATURE RATIO] Remplacement du bloc = jeu en tendance.</li></ul>
+  <summary>🖼️</summary>
+  <ul><li>🖼️ Remplacement du bloc = jeu en tendance.</li></ul>
 </details>
 
 ## [6.7.1] (10/02/2025)
@@ -181,8 +181,8 @@ Les changements de routine sont visibles **via les fleches ⯈**, pour garder un
 
 <ul><li>ToDo : Il faut trouver une solution à long terme pour les jeux dont le ratio ne vas pas (j'en cherche une...).</li></ul>
 <details>
-  <summary><sub>Ratio Image</sub></summary>
-  <ul><li>[MINIATURE RATIO] Jeu en-tête (Autre image "Kingdom Come Deliverance 2" ratio trop différent v2).</li></ul>
+  <summary>🖼️</summary>
+  <ul><li>🖼️ Jeu en-tête (Autre image "Kingdom Come Deliverance 2" ratio trop différent v2).</li></ul>
 </details>
 
 ## [6.6.9] (06/02/2025)
@@ -204,15 +204,15 @@ Les changements de routine sont visibles **via les fleches ⯈**, pour garder un
 ## [6.6.5] (18/01/2025)
 
 <details>
-  <summary><sub>Ratio Image</sub></summary>
-  <ul><li>[MINIATURE RATIO] Meilleur jeu en-tête (image externe pour "footballmanager" => car l'image JVC ne marche pas / ratio trop différent v2).</li></ul>
+  <summary>🖼️</summary>
+  <ul><li>🖼️ Meilleur jeu en-tête (image externe pour "footballmanager" => car l'image JVC ne marche pas / ratio trop différent v2).</li></ul>
 </details>
 
 ## [6.6.4] (17/01/2025)
 
 <details>
-  <summary><sub>Ratio Image</sub></summary>
-  <ul><li>[MINIATURE RATIO] Meilleur jeu en-tête ("footballmanager" => car l'image JVC ne marche pas / ratio trop différent).</li></ul>
+  <summary>🖼️</summary>
+  <ul><li>🖼️ Meilleur jeu en-tête ("footballmanager" => car l'image JVC ne marche pas / ratio trop différent).</li></ul>
 </details>
 
 ## [6.6.1] (16/01/2025)
@@ -244,7 +244,7 @@ Les changements de routine sont visibles **via les fleches ⯈**, pour garder un
 
 ## [6.5.4] (08/11/2024)
 
-<ul><li>[MINIATURE RATIO] Meilleur jeu en-tête (image dynamique)</li></ul>
+<ul><li>🖼️ Meilleur jeu en-tête (image dynamique)</li></ul>
 
 ## [6.5.0] (06/11/2024)
 
@@ -256,7 +256,7 @@ Les changements de routine sont visibles **via les fleches ⯈**, pour garder un
 
 ## [4.9.6] (04/11/2024)
 
-<ul><li>[MINIATURE RATIO] Meilleur jeu en-tête nom</li></ul>
+<ul><li>🖼️ Meilleur jeu en-tête nom</li></ul>
 
 ## [4.7.0] (03/11/2024)
 
@@ -300,4 +300,5 @@ Les changements de routine sont visibles **via les fleches ⯈**, pour garder un
 ## [1.0.0] (18/05/2024)
 
 <ul><li>Création du script de base</li></ul>
+
 
