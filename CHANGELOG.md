@@ -3,7 +3,7 @@
 [**Changelog Complet**](../../commits/main/JVCForumRollback.user.js)
 
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
-Les micro-ajustements (codés en dur) sont visibles **via la flèche ⯈**, pour que le Changelog reste clair.    
+Les changements de routine sont visibles **via les fleches ⯈**, pour garder un changelog centré sur l’essentiel du script.    
 
 ## [7.1.3] (12/10/2025)
 
@@ -300,3 +300,4 @@ Les micro-ajustements (codés en dur) sont visibles **via la flèche ⯈**, pour
 ## [1.0.0] (18/05/2024)
 
 <ul><li>Création du script de base</li></ul>
+
