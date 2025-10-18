@@ -244,7 +244,7 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 
 ## [6.5.4] (08/11/2024)
 
-<ul><li>🖼️ Meilleur jeu en-tête (image dynamique)</li></ul>
+<ul><li>Meilleur jeu en-tête (image dynamique)</li></ul>
 
 ## [6.5.0] (06/11/2024)
 
@@ -256,7 +256,7 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 
 ## [4.9.6] (04/11/2024)
 
-<ul><li>🖼️ Meilleur jeu en-tête nom</li></ul>
+<ul><li>Meilleur jeu en-tête nom</li></ul>
 
 ## [4.7.0] (03/11/2024)
 
@@ -300,5 +300,4 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 ## [1.0.0] (18/05/2024)
 
 <ul><li>Création du script de base</li></ul>
-
 
