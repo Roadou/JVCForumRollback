@@ -8,7 +8,7 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 ## [7.1.3] (12/10/2025)
 
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul>
     <li>🖼️ Miniature Battlefield VI (Exception Mauvais ratio)</li>
     <li>🖼️ Miniature Silksong (Fin exception Mauvais ratio)</li>
@@ -18,7 +18,7 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 ## [7.1.2] (03/09/2025)
 
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul>
     <li>🖼️ Miniature Silksong (Exception Mauvais ratio)</li>
   </ul>
@@ -31,7 +31,7 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 ## [7.0.4] (22/08/2025)
 
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul>
     <li>🖼️ Miniature Pokemon Z (Maj Mauvais ratio).</li>
     <li>🖼️ Retrait Jeux Divers (Fin exception Mauvais ratio).</li>
@@ -71,7 +71,7 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 ## [6.9.7] (08/06/2025)
 
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul>
     <li>🖼️ Retrait Oblivion (Fin exception Mauvais ratio).</li>
     <li>🖼️ Ajout Mario Kart (Exception Mauvais ratio).</li>
@@ -89,7 +89,7 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 ## [6.9.1] (23/04/2025)
 
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul><li>🖼️ Clair Obscur (Exception Mauvais ratio).</li></ul>
 </details>
 
@@ -97,14 +97,14 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 
 <ul><li>Remplacement de <b>tous</b> les fichiers XS par Medium (Compatibilité plus large vieux forum Jeux).</li></ul>
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul><li>🖼️ Ajout Oblivion (Exception Mauvais ratio).</li></ul>
 </details>
 
 ## [6.8.9] (07/04/2025)
 
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul>
     <li>🖼️ Retrait Miniature "AC Shadowns" (Fin exception Mauvais ratio).</li>
     <li>🖼️ Ajout Miniature Mario Kart (Exception Mauvais ratio).</li>
@@ -114,21 +114,21 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 ## [6.8.8] (24/03/2025)
 
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul><li>🖼️ Miniature "AC Shadowns" (Exception Mauvais ratio).</li></ul>
 </details>
 
 ## [6.8.7] (12/03/2025)
 
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul><li>🖼️ Miniature "GTA VI" v2 (Exception Mauvais ratio).</li></ul>
 </details>
 
 ## [6.8.6] (12/03/2025)
 
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul>
     <li>🖼️ Miniature "GTA VI" (Exception Mauvais ratio).</li>
     <li>🖼️ Retrait minature "Kingdom Come Deliverance 2" (Fin Exception Mauvais ratio).</li>
@@ -139,7 +139,7 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 
 
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul>
     <li>Trouver une solution pour les prochaine jeux :hap: (encore en ToDo).</li>
     <li>🖼️ Miniature Pokemon Z (Exception Mauvais ratio).</li>
@@ -169,7 +169,7 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 
 <ul><li>J'ai donc mis les blablas à la place <b>comme en 2019</b>, c'était compliqué de trouver une autre solution à cause des images de jeux sur la page.</li></ul>
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul><li>🖼️ Remplacement du bloc = jeu en tendance.</li></ul>
 </details>
 
@@ -181,7 +181,7 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 
 <ul><li>ToDo : Il faut trouver une solution à long terme pour les jeux dont le ratio ne vas pas (j'en cherche une...).</li></ul>
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul><li>🖼️ Jeu en-tête (Autre image "Kingdom Come Deliverance 2" ratio trop différent v2).</li></ul>
 </details>
 
@@ -204,14 +204,14 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 ## [6.6.5] (18/01/2025)
 
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul><li>🖼️ Meilleur jeu en-tête (image externe pour "footballmanager" => car l'image JVC ne marche pas / ratio trop différent v2).</li></ul>
 </details>
 
 ## [6.6.4] (17/01/2025)
 
 <details>
-  <summary>🖼️</summary>
+  <summary><sub>Déplier</sub></summary>
   <ul><li>🖼️ Meilleur jeu en-tête ("footballmanager" => car l'image JVC ne marche pas / ratio trop différent).</li></ul>
 </details>
 
@@ -300,4 +300,5 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 ## [1.0.0] (18/05/2024)
 
 <ul><li>Création du script de base</li></ul>
+
 
