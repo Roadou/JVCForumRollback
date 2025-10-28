@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.1.3
+// @version      7.2.1
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -12,8 +12,6 @@
 // @updateURL    https://github.com/Roadou/JVCForumRollback/raw/main/JVCForumRollback.meta.js
 // @license      MIT
 // ==/UserScript==
-
-/* icon         https://raw.githubusercontent.com/Roadou/JVCForumRollback/main/resources/Old_Page_forum.png */
 
 
 //1)Recuperer_Elements_Page_Actuelle_______
@@ -33,8 +31,6 @@ jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-m
 jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/174859/1748593985-1819-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/173644/1736441929-5733-capture-d-ecran.jpg' : jaquetteTopJeuImg;
 //GTA_VI
 jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquetteTopJeuImg;
-//BATTLEFIELD_6
-jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175913/1759131497-2504-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/175500/1755001960-9547-capture-d-ecran.jpg' : jaquetteTopJeuImg;
 
 
 //recuperer_le_bloc_de_fin___
@@ -370,7 +366,19 @@ const css = `
   width: 2em;
   margin-right: .3125rem;
   text-align: right
-}`;
+}
+
+/*CSS PERSO BLABLA HAUT*/
+.top-blabla > .bloc-2020 {
+  display: none;
+}
+.bloc-2023 {
+  display: none;
+}
+.top-blabla > .bloc-2023 {
+  display: block;
+}
+`;
 
 
 
@@ -378,7 +386,7 @@ const css = `
 //3)Definition_Liens_et_Titre_plus_cache_____________
 let links = [];
 let titles = JSON.parse(localStorage.getItem("jvcrollback-titles")) || [];
-const genesisvisible = localStorage.getItem("jvcrollback-genesis") || "none";
+const rowTopBlabla = localStorage.getItem("jvcrollback-topblabla");
 
 //4)Ancien_HTML_____________
 
@@ -387,7 +395,7 @@ var oldHtmlCode =
 <div class="layout__row layout__row--gutter layout__breadcrumb">
   <div class="px-3 px-lg-0 mt-3 spreadContainer spreadContainer--rowLayout">
     <nav class="breadcrumb" role="navigation"><a href="/" class="breadcrumb__item">jeuxvideo.com</a><h1 class="breadcrumb__item">Les Forums de jeuxvideo.com : retrouvez notre communauté et venez échanger avec elle sur divers sujets et de nombreux topics</h1></nav>
-        <div><span id="showhide-genesis" class="breadcrumb-icon icon-nft-badge" title="Afficher / Masquer Genesis" style="font-size: 15px; user-select: none;">&nbsp;Genesis</span>
+        <div><span id="showhide-topblabla" class="breadcrumb-icon icon-history" title="Remonter / Descendre les blablas" style="font-size: 15px; user-select: none; display: inline-flex; align-items: center; ">&nbsp;2020</span>
         </div>
   </div>
 </div>
@@ -401,8 +409,8 @@ var oldHtmlCode =
         <div class="titre-head-bloc">
           <h2 class="titre-bloc">jeuxvideo.com</h2>
         </div>
-        <div class="row">
-          <div class="col-lg-6">
+        <div class="${rowTopBlabla || 'row'}">
+          <div class="col-lg-6 bloc-2020">
             <div class="forum-section">
               <div class="f-alaune">
                   <a href="#">
@@ -427,13 +435,22 @@ var oldHtmlCode =
               </div>
             </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-12" style="display: ${genesisvisible};">
+          <div class="col-lg-6 bloc-2023">
             <div class="forum-section">
-              <div class="fs-header genesis-pass"></div>
-              <div class="fs-body">
-                <h3><a href="/forums/0-3021265-0-1-0-1-0-genesis-pass-holder.htm" class="xXx">Genesis pass holder</a></h3>
+              <div class="fs-body f-blabla">
+                <ul>
+                  <li><a href="/forums/0-15-0-1-0-1-0-blabla-moins-de-15-ans.htm">Moins de 15 ans</a></li>
+                  <li><a href="/forums/0-50-0-1-0-1-0-blabla-15-18-ans.htm">15 - 18 ans</a></li>
+                  <li><a href="/forums/0-51-0-1-0-1-0-blabla-18-25-ans.htm">18 - 25 ans</a></li>
+                  <li><a href="/forums/0-52-0-1-0-1-0-blabla-25-35-ans.htm">25 - 35 ans</a></li>
+                  <li><a href="/forums/0-53-0-1-0-1-0-blabla-35-ans-et-plus.htm">Plus de 35 ans</a></li>
+                </ul>
+                <ul>
+                  <li><a href="/forums/0-1000020-0-1-0-1-0-belgique.htm">Belgique <i class="be"></i></a></li>
+                  <li><a href="/forums/0-1000022-0-1-0-1-0-suisse.htm">Suisse <i class="ch"></i></a></li>
+                  <li><a href="/forums/0-83-0-1-0-1-0-quebec.htm">Québec <i class="ca"></i></a></li>
+                  <li><a href="/forums/0-1000034-0-1-0-1-0-japon.htm">Japon <i class="jp"></i></a></li>
+                </ul>
               </div>
             </div>
           </div>
@@ -868,14 +885,14 @@ oldBlocJeux.replaceWith(blocJeuxNew);
 jvPage.appendChild(jvFooter);
 
 // Apres coup (setTimeout = 0 => Permet de différer certaines actions car Le début du code ne doit pas être trop lourd )
-//6)Apres_coup_MAJ_Forum_Genesis___________
+//6)Apres_coup_MAJ_Layout_Blabla_2020__________
 
 setTimeout(() => {
-    document.querySelector("#showhide-genesis").addEventListener("click", function() {
-        const genesisBloc = document.querySelector(".col-lg-12");
-        const genesisVisibilty = (genesisBloc.style.display === "none") ? "block" : "none";
-        genesisBloc.style.display = genesisVisibilty;
-        localStorage.setItem("jvcrollback-genesis", genesisVisibilty);
+    document.querySelector("#showhide-topblabla").addEventListener("click", function() {
+        const currentLayout = document.querySelector("#forum-main-col .row");
+        const newLayout = (currentLayout.className === "row") ? "row top-blabla" : "row";
+        currentLayout.className = newLayout;
+        localStorage.setItem("jvcrollback-topblabla", newLayout);
     });
 }, 0);
 
