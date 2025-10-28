@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.2.1
+// @version      7.2.2
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -368,14 +368,14 @@ const css = `
   text-align: right
 }
 
-/*CSS PERSO BLABLA HAUT*/
-.top-blabla > .bloc-2020 {
+/* CSS AJOUTE POUR LE LAYOUT DE 2020 / NON ORIGINAL */
+.old-layout > .bloc-2023 {
   display: none;
 }
-.bloc-2023 {
+.bloc-2020 {
   display: none;
 }
-.top-blabla > .bloc-2023 {
+.old-layout > .bloc-2020 {
   display: block;
 }
 `;
@@ -395,7 +395,7 @@ var oldHtmlCode =
 <div class="layout__row layout__row--gutter layout__breadcrumb">
   <div class="px-3 px-lg-0 mt-3 spreadContainer spreadContainer--rowLayout">
     <nav class="breadcrumb" role="navigation"><a href="/" class="breadcrumb__item">jeuxvideo.com</a><h1 class="breadcrumb__item">Les Forums de jeuxvideo.com : retrouvez notre communauté et venez échanger avec elle sur divers sujets et de nombreux topics</h1></nav>
-        <div><span id="showhide-topblabla" class="breadcrumb-icon icon-history" title="Remonter / Descendre les blablas" style="font-size: 15px; user-select: none; display: inline-flex; align-items: center; ">&nbsp;2020</span>
+        <div><span id="switch-topblabla" class="breadcrumb-icon icon-menu-puzzle" title="Remonter / Descendre les blablas" style="font-size: 15px; user-select: none; display: inline-flex; align-items: center; ">&nbsp;2020</span>
         </div>
   </div>
 </div>
@@ -410,7 +410,7 @@ var oldHtmlCode =
           <h2 class="titre-bloc">jeuxvideo.com</h2>
         </div>
         <div class="${rowTopBlabla || 'row'}">
-          <div class="col-lg-6 bloc-2020">
+          <div class="col-lg-6 bloc-2023">
             <div class="forum-section">
               <div class="f-alaune">
                   <a href="#">
@@ -435,7 +435,7 @@ var oldHtmlCode =
               </div>
             </div>
           </div>
-          <div class="col-lg-6 bloc-2023">
+          <div class="col-lg-6 bloc-2020">
             <div class="forum-section">
               <div class="fs-body f-blabla">
                 <ul>
@@ -888,9 +888,9 @@ jvPage.appendChild(jvFooter);
 //6)Apres_coup_MAJ_Layout_Blabla_2020__________
 
 setTimeout(() => {
-    document.querySelector("#showhide-topblabla").addEventListener("click", function() {
+    document.querySelector("#switch-topblabla").addEventListener("click", function() {
         const currentLayout = document.querySelector("#forum-main-col .row");
-        const newLayout = (currentLayout.className === "row") ? "row top-blabla" : "row";
+        const newLayout = (currentLayout.className === "row") ? "row old-layout" : "row";
         currentLayout.className = newLayout;
         localStorage.setItem("jvcrollback-topblabla", newLayout);
     });
