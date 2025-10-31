@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.2.2
+// @version      7.2.3
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -375,7 +375,8 @@ const css = `
 .bloc-2020 {
   display: none;
 }
-.old-layout > .bloc-2020 {
+.old-layout > .bloc-2020,
+.old-layout + .bloc-2020 {
   display: block;
 }
 `;
@@ -410,7 +411,7 @@ var oldHtmlCode =
           <h2 class="titre-bloc">jeuxvideo.com</h2>
         </div>
         <div class="${rowTopBlabla || 'row'}">
-          <div class="col-lg-6 bloc-2023">
+          <div class="col-lg-6">
             <div class="forum-section">
               <div class="f-alaune">
                   <a href="#">
@@ -422,7 +423,7 @@ var oldHtmlCode =
                 </a></div>
             </div>
           </div>
-          <div class="col-lg-6">
+          <div class="col-lg-6 bloc-2023">
             <div class="forum-section">
               <div class="fs-header commu"></div>
               <div class="fs-body">
@@ -451,6 +452,16 @@ var oldHtmlCode =
                   <li><a href="/forums/0-83-0-1-0-1-0-quebec.htm">Québec <i class="ca"></i></a></li>
                   <li><a href="/forums/0-1000034-0-1-0-1-0-japon.htm">Japon <i class="jp"></i></a></li>
                 </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row bloc-2020">
+          <div class="col-lg-12">
+            <div class="forum-section">
+              <div class="fs-header commu"></div>
+              <div class="fs-body">
+                <h3><a href="/forums/0-1000021-0-1-0-1-0-communaute.htm">Communauté</a></h3>
               </div>
             </div>
           </div>
