@@ -5,9 +5,13 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [7.2.3] (31/10/2025)
+
+<ul><li>Interface alternative plus proche de celle de 2020 (Avec top jeu conservé).</li></ul>
+
 ## [7.2.2] (28/10/2025)
 
-<ul><li><b>Bouton pour remonter les blablas comme en 2020 / 7.2.2 : Clean code.</b></li></ul>
+<ul><li><b>Bouton pour remonter les blablas comme en 2020</b> / 7.2.2 : Clean code.</li></ul>
 <details>
   <summary><sub>Déplier</sub></summary>
   <ul><li>🖼️ Miniature Battlefield VI (Fin exception Mauvais ratio)</li></ul>
