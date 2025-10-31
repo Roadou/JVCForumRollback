@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.2.3
+// @version      7.2.4
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -387,7 +387,7 @@ const css = `
 //3)Definition_Liens_et_Titre_plus_cache_____________
 let links = [];
 let titles = JSON.parse(localStorage.getItem("jvcrollback-titles")) || [];
-const rowTopBlabla = localStorage.getItem("jvcrollback-topblabla");
+const rowTopBlabla = localStorage.getItem("jvcrollback-topblabla") === "row old-layout" ? "row old-layout" : "row";
 
 //4)Ancien_HTML_____________
 
@@ -410,7 +410,7 @@ var oldHtmlCode =
         <div class="titre-head-bloc">
           <h2 class="titre-bloc">jeuxvideo.com</h2>
         </div>
-        <div class="${rowTopBlabla || 'row'}">
+        <div class="${rowTopBlabla}">
           <div class="col-lg-6">
             <div class="forum-section">
               <div class="f-alaune">
