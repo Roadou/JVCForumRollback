@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.2.4
+// @version      7.2.5
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -27,10 +27,10 @@ let jaquetteTopJeuImg = jaquetteTopJeuImgSD.replace('s-xs/', 's-md/');
 //Exceptions_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
 //FOOTBALL_MANAGER
 jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/171466/1714656797-9405-jaquette-avant.png') ? 'https://cdn2.unrealengine.com/football-manager-2024-s-miles-jacobson-talks-past-present-and-future-of-the-football-sim-1920x1080-ec8779b5d071.jpeg' : jaquetteTopJeuImg;
-//POKEMON_Z
-jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/174859/1748593985-1819-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/173644/1736441929-5733-capture-d-ecran.jpg' : jaquetteTopJeuImg;
 //GTA_VI
 jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquetteTopJeuImg;
+//BATTLEFIELD_6
+jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175913/1759131497-2504-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/175500/1755001960-9547-capture-d-ecran.jpg' : jaquetteTopJeuImg;
 
 
 //recuperer_le_bloc_de_fin___
@@ -368,7 +368,9 @@ const css = `
   text-align: right
 }
 
-/* CSS AJOUTE POUR LE LAYOUT DE 2020 / NON ORIGINAL */
+/* CSS NON ORIGINAL - AJOUTE POUR PEMETTRE LE SWITCH VERSION 2020 */
+/* La classe .old-layout change la visibilite de plusieurs elements (enfants / freres) sans redondance JS */
+
 .old-layout > .bloc-2023 {
   display: none;
 }
@@ -396,7 +398,7 @@ var oldHtmlCode =
 <div class="layout__row layout__row--gutter layout__breadcrumb">
   <div class="px-3 px-lg-0 mt-3 spreadContainer spreadContainer--rowLayout">
     <nav class="breadcrumb" role="navigation"><a href="/" class="breadcrumb__item">jeuxvideo.com</a><h1 class="breadcrumb__item">Les Forums de jeuxvideo.com : retrouvez notre communauté et venez échanger avec elle sur divers sujets et de nombreux topics</h1></nav>
-        <div><span id="switch-topblabla" class="breadcrumb-icon icon-menu-puzzle" title="Remonter / Descendre les blablas" style="font-size: 15px; user-select: none; display: inline-flex; align-items: center; ">&nbsp;2020</span>
+        <div><span id="switch-layout-blabla" class="breadcrumb-icon icon-menu-puzzle" title="Remonter / Descendre les blablas" style="font-size: 15px; user-select: none; display: inline-flex; align-items: center; ">&nbsp;2020</span>
         </div>
   </div>
 </div>
@@ -899,7 +901,7 @@ jvPage.appendChild(jvFooter);
 //6)Apres_coup_MAJ_Layout_Blabla_2020__________
 
 setTimeout(() => {
-    document.querySelector("#switch-topblabla").addEventListener("click", function() {
+    document.querySelector("#switch-layout-blabla").addEventListener("click", function() {
         const currentLayout = document.querySelector("#forum-main-col .row");
         const newLayout = (currentLayout.className === "row") ? "row old-layout" : "row";
         currentLayout.className = newLayout;
