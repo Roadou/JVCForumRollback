@@ -5,6 +5,18 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [7.2.5] (13/11/2025)
+
+<ul><li>Clean code.</li></ul>
+<details>
+  <summary><sub>Déplier</sub></summary>
+  <ul>
+    <li>🖼️ Miniature Pokemon Z (Fin exception Mauvais ratio)</li>
+    <li>🖼️ Miniature Battlefield VI (Exception Mauvais ratio)</li>
+  </ul>
+</details>
+
+
 ## [7.2.4] (31/10/2025)
 
 <ul><li>Interface alternative plus proche de celle de 2020 (Avec top jeu conservé). / Clean Code</li></ul>
@@ -148,7 +160,6 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 </details>
 
 ## [6.8.5] (28/02/2025)
-
 
 <details>
   <summary><sub>Déplier</sub></summary>
