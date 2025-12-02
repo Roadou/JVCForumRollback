@@ -5,6 +5,10 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [7.2.6] (02/12/2025)
+
+<ul><li>Ajustement très light. / Simplification css pour eviter des confusions. / Nommage descriptif fonctions.</li></ul>
+
 ## [7.2.5] (13/11/2025)
 
 <ul><li>Clean code.</li></ul>
@@ -15,7 +19,6 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
     <li>🖼️ Miniature Battlefield VI (Exception Mauvais ratio)</li>
   </ul>
 </details>
-
 
 ## [7.2.4] (31/10/2025)
 
