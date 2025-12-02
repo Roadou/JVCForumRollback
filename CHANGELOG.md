@@ -5,7 +5,7 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
-## [7.2.6] (02/12/2025)
+## [7.2.7] (02/12/2025)
 
 <ul><li>Ajustement très light. / Simplification css pour eviter des confusions. / Nommage descriptif fonctions.</li></ul>
 
