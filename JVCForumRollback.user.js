@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.2.6
+// @version      7.2.7
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -903,9 +903,9 @@ jvPage.appendChild(jvFooter);
 setTimeout(() => {
     document.querySelector("#switch-layout-blabla").addEventListener("click", function() {
         const currentLayout = document.querySelector(".row.old-layout, .row.new-layout");
-        const newLayout = (currentLayout.className === "row new-layout") ? "row old-layout" : "row new-layout";
-        currentLayout.className = newLayout;
-        localStorage.setItem("jvcrollback-topblabla", newLayout);
+        const switchLayout = (currentLayout.className === "row new-layout") ? "row old-layout" : "row new-layout";
+        currentLayout.className = switchLayout;
+        localStorage.setItem("jvcrollback-topblabla", switchLayout);
     });
 }, 0);
 
