@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.2.5
+// @version      7.2.6
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -33,7 +33,7 @@ jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-m
 jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175913/1759131497-2504-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/175500/1755001960-9547-capture-d-ecran.jpg' : jaquetteTopJeuImg;
 
 
-//recuperer_le_bloc_de_fin___
+//Recuperer_le_bloc_de_fin___
 const jvFooter = jvPage.querySelector(".layout__row.layout__footer");
 const blocJeuxNew = document.querySelector(".sideModule.sideOrderedGames");
 
@@ -368,18 +368,18 @@ const css = `
   text-align: right
 }
 
-/* CSS NON ORIGINAL - AJOUTE POUR PEMETTRE LE SWITCH VERSION 2020 */
-/* La classe .old-layout change la visibilite de plusieurs elements (enfants / freres) sans redondance JS */
+/* CSS NON ORIGINAL - AJOUTE POUR PERMETTRE LE SWITCH VERSION 2020 */
+/* La classe .old-layout change la visibilite de plusieurs blocs (enfants / freres) sans redondance JS */
 
-.old-layout > .bloc-2023 {
-  display: none;
-}
 .bloc-2020 {
   display: none;
 }
 .old-layout > .bloc-2020,
 .old-layout + .bloc-2020 {
   display: block;
+}
+.old-layout > .bloc-2023 {
+  display: none;
 }
 `;
 
@@ -389,7 +389,7 @@ const css = `
 //3)Definition_Liens_et_Titre_plus_cache_____________
 let links = [];
 let titles = JSON.parse(localStorage.getItem("jvcrollback-titles")) || [];
-const rowTopBlabla = localStorage.getItem("jvcrollback-topblabla") === "row old-layout" ? "row old-layout" : "row";
+const rowTopBlabla = localStorage.getItem("jvcrollback-topblabla") === "row old-layout" ? "row old-layout" : "row new-layout";
 
 //4)Ancien_HTML_____________
 
@@ -897,30 +897,27 @@ oldBlocJeux.replaceWith(blocJeuxNew);
 //Ajouter_bandeau_de_fin_actuel
 jvPage.appendChild(jvFooter);
 
-// Apres coup (setTimeout = 0 => Permet de différer certaines actions car Le début du code ne doit pas être trop lourd )
-//6)Apres_coup_MAJ_Layout_Blabla_2020__________
+// Apres coup (setTimeout = 0 => Permet de différer certaines actions car Le début du code (visuel) doit etre rapide. )
 
+//6)Apres_coup--MAJ_Layout_Blabla_2020__________
 setTimeout(() => {
     document.querySelector("#switch-layout-blabla").addEventListener("click", function() {
-        const currentLayout = document.querySelector("#forum-main-col .row");
-        const newLayout = (currentLayout.className === "row") ? "row old-layout" : "row";
+        const currentLayout = document.querySelector(".row.old-layout, .row.new-layout");
+        const newLayout = (currentLayout.className === "row new-layout") ? "row old-layout" : "row new-layout";
         currentLayout.className = newLayout;
         localStorage.setItem("jvcrollback-topblabla", newLayout);
     });
 }, 0);
 
-//7)Apres_MAJ_TOP_JEU_____________
+//7)Apres_coup--MAJ_TOP_JEU_____________
 setTimeout(() => {
-    //actualiste_titre_et_liens_top_forum____
-    getAndUpdateLinks()
-
-    //updateFavProfil()
+    //Actualiste_titre_et_liens_top_forum__________
+    getUpdateTopGames();
+    //showFavProfil();
 }, 0);
 
 
-//8)Fonctions_Appelées______________
-
-//JVCare_(Fonction_generique_de_JVC)_(Obligatoire_pour formater_certains_liens_sans_latence)
+//JVCare_(Fonction_generique_de_JVC)_(Obligatoire_et_Standardise)
 //https://jvflux.fr/Fonctionnement_technique_de_Jeuxvideo.com#JvCare
 function jvCare(classe) {
     const base16 = '0A12B34C56D78E9F';
@@ -932,9 +929,9 @@ function jvCare(classe) {
     return lien;
 }
 
-//Update top jeu page remplacee (On vient mettre à jour le titre de chaque lien top fofo)
-//HREF => On a le lien deja formate || Sinon (Script trop rapide => on applique la logique du site => jvCare)
-function getAndUpdateLinks() {
+//Update top jeu page remplacee (On vient mettre a jour le titre de chaque lien top fofo)
+//HREF => Liens formates || Sinon (Script trop rapide => on applique la logique du site => fonction jvCare)
+function getUpdateTopGames() {
     //RECUP INFO ".card__link"
     titles = [...jeuxLinks].map(liens => liens.title);
     links = [...jeuxLinks].map(liens => liens.getAttribute('href') || jvCare(liens.classList.value));
@@ -951,12 +948,14 @@ function getAndUpdateLinks() {
     });
 }
 
-//non utilisee (pour le futur)
-//Permettra d'avoir les favoris en haut a gauche (si jabandonne lidee de mettre à jour les images manuellement)
-function updateFavProfil() {
+//NON UTILISE  (pour le futur)
+//Permettra davoir les favoris en haut a gauche (si jabandonne lidee de mettre a jour les images)
+/*
+function showFavProfil() {
     let pseudoco = document.querySelector('.headerAccount__pseudo').textContent.toLowerCase();
     if (pseudoco === "connexion") return;
 
     let lienElement = document.querySelector('.col-lg-6 .f-alaune a');
     lienElement.href = `/profil/${pseudoco}?mode=favoris`;
 }
+*/
