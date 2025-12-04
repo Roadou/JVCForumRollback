@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.2.7
+// @version      7.2.8
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -25,13 +25,10 @@ const jaquetteTopJeuImgSD = jaquetteTopJeu.getAttribute('data-src') || jaquetteT
 let jaquetteTopJeuImg = jaquetteTopJeuImgSD.replace('s-xs/', 's-md/');
 
 //Exceptions_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
-//FOOTBALL_MANAGER
-jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/171466/1714656797-9405-jaquette-avant.png') ? 'https://cdn2.unrealengine.com/football-manager-2024-s-miles-jacobson-talks-past-present-and-future-of-the-football-sim-1920x1080-ec8779b5d071.jpeg' : jaquetteTopJeuImg;
+//FOOTBALL_MANAGER_26
+jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/176219/1762191548-5029-card.jpg' : jaquetteTopJeuImg;
 //GTA_VI
 jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquetteTopJeuImg;
-//BATTLEFIELD_6
-jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175913/1759131497-2504-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/175500/1755001960-9547-capture-d-ecran.jpg' : jaquetteTopJeuImg;
-
 
 //Recuperer_le_bloc_de_fin___
 const jvFooter = jvPage.querySelector(".layout__row.layout__footer");
