@@ -5,7 +5,7 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
-## [7.2.8] (04/12/2025)
+## [7.2.9] (04/12/2025)
 
 <details>
   <summary><sub>Déplier</sub></summary>
