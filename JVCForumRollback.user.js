@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      7.2.8
+// @version      7.2.9
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -26,7 +26,7 @@ let jaquetteTopJeuImg = jaquetteTopJeuImgSD.replace('s-xs/', 's-md/');
 
 //Exceptions_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
 //FOOTBALL_MANAGER_26
-jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/176219/1762191548-5029-card.jpg' : jaquetteTopJeuImg;
+jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/175760/1757595772-1987-capture-d-ecran.jpg' : jaquetteTopJeuImg;
 //GTA_VI
 jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquetteTopJeuImg;
 
