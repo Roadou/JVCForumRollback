@@ -1,7 +1,10 @@
-name: Vérifier et régénérer .meta.js en cas de modification de .user.js ou de merge.
-#permet de génerer automatiquement le fichier meta à partir du fichier userjs.
+name: Générer .meta.js en cas de modification de .user.js ou de merge.
 #.github/workflows/generate-meta.yml
 
+# Permission minimale limitée à une modif du fichier (JVCForumRollback.user.js).
+# Ne permet rien sans merge ou droit d'ecriture de base
+permissions:
+  contents: write
 
 on:
   push:
