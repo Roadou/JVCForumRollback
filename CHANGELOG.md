@@ -5,6 +5,13 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [7.4.0] (22/12/2025)
+
+<ul>
+    <li>Quick Fix / Suppression d'un système de cache qui était en fait inutile et fragile.</li>
+    <li>Todo: Ameliorer la rapidité sur Firefox, ça devient PRIO => Refactor pour FireFox dans la v 8.0.0</li>
+</ul>
+
 ## [7.2.9] (04/12/2025)
 
 <details>
