@@ -8,7 +8,7 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 ## [8.0.6] (23/12/2025)
 
 <ul>
-    <li>Optimisation maximale pour **Firefox et Mobile**. Surpression maximale de <a href="https://fr.wikipedia.org/wiki/FOUC">FOOC</a>.</li>
+    <li>Optimisation maximale pour <b>Firefox et Mobile</b>. Surpression maximale de <a href="https://fr.wikipedia.org/wiki/FOUC">FOUC</a>.</li>
     <li>Cette mise à jour améliore au maximum le chargement, dans la limite permise par un userscript.</li>
 </ul>
 
@@ -350,4 +350,5 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 ## [1.0.0] (18/05/2024)
 
 <ul><li>Création du script de base</li></ul>
+
 
