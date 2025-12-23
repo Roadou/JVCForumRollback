@@ -5,7 +5,7 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
-## [8.0.6] (23/12/2025)
+## [8.1.0] (23/12/2025)
 
 <ul>
     <li>Optimisation maximale pour <b>Firefox et Mobile</b>. Surpression maximale de <a href="https://fr.wikipedia.org/wiki/FOUC">FOUC</a>.</li>
@@ -350,5 +350,6 @@ Les changements de routine sont dépliables **via les flèches ▸**, afin de ga
 ## [1.0.0] (18/05/2024)
 
 <ul><li>Création du script de base</li></ul>
+
 
 
