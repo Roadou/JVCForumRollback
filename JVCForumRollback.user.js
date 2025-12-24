@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.1.1
+// @version      8.1.2
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -413,11 +413,11 @@ function main() {
               <div class="col-lg-6">
                 <div class="forum-section">
                   <div class="f-alaune">
-                      <a href="#">
-                        <img src=${jaquetteTopJeuImg}>
+                      <a href="/forums/0-51-0-1-0-1-0-blabla-18-25-ans.htm">
+                        <img src="https://image.noelshack.com/fichiers/2016/46/1479479039-pereissou.png" style="height: 100%; object-fit: contain;">
                         <!-- <img src="https://image.jeuxvideo.com/medias-md/157322/1573218277-2396-card.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
                         <!-- <img src="https://static.jvc.gg/unversioned/img/default-og.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
-                      <p class="nom-forum">${jeuxLinks[0].title}</p>
+                      <p class="nom-forum">Joyeux Noël et bonne année les kheys</p>
                       <!-- <p class="nom-forum">Forums Favoris</p>  -->
                     </a></div>
                 </div>
@@ -932,7 +932,7 @@ function main() {
         //RECUP INFO ".card__link"
         let links = [...jeuxLinks].map(liens => liens.getAttribute('href') || jvCare(liens.classList.value));
         //MINIATURE LIEN + TOP FORUM LIENS
-        document.querySelector('.col-lg-6 .f-alaune a').href = links[0];
+        //document.querySelector('.col-lg-6 .f-alaune a').href = links[0];
         document.querySelectorAll('.lh-sm.card-forum-link').forEach((element, index) => {
             element.href = links[index];
         });
