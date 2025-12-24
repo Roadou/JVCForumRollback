@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.1.2
+// @version      8.1.3
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -417,7 +417,7 @@ function main() {
                         <img src="https://image.noelshack.com/fichiers/2016/46/1479479039-pereissou.png" style="height: 100%; object-fit: contain;">
                         <!-- <img src="https://image.jeuxvideo.com/medias-md/157322/1573218277-2396-card.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
                         <!-- <img src="https://static.jvc.gg/unversioned/img/default-og.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
-                      <p class="nom-forum">Joyeux Noël et bonne année les kheys</p>
+                      <p class="nom-forum">Joyeux Noël et Bonne Année les kheys</p>
                       <!-- <p class="nom-forum">Forums Favoris</p>  -->
                     </a></div>
                 </div>
