@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.1.5
+// @version      8.2.1
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -414,10 +414,10 @@ function main() {
                 <div class="forum-section">
                   <div class="f-alaune">
                       <a href="#">
-                        <img src="https://image.noelshack.com/fichiers/2017/49/7/1512927071-fffffffffffffffffffffff.png" style="position: absolute;z-index: 1;height: 100%;object-fit: contain;">
-                        <img src="https://image.jeuxvideo.com/medias-md/157322/1573218277-2396-card.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">
+                        <img src=${jaquetteTopJeuImg}>
+                        <!-- <img src="https://image.jeuxvideo.com/medias-md/157322/1573218277-2396-card.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
                         <!-- <img src="https://static.jvc.gg/unversioned/img/default-og.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
-                      <p class="nom-forum" style="position: absolute;z-index: 1;">Joyeux Noël et Bonne Année les kheys</p>
+                      <p class="nom-forum">${jeuxLinks[0].title}</p>
                       <!-- <p class="nom-forum">Forums Favoris</p>  -->
                     </a></div>
                 </div>
@@ -957,8 +957,11 @@ function main() {
 if (document.getElementById('jv-footer')) {
     main();
 } else {
+    let once = false;
     const observer = new MutationObserver(() => {
+        if (once) return;
         if (document.getElementById('jv-footer')) {
+            once = true;
             observer.disconnect();
             clearTimeout(timeout);
             main();
