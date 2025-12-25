@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.1.3
+// @version      8.1.5
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
