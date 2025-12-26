@@ -5,11 +5,12 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
-## [8.1.0] (23/12/2025)
+## [8.2.1] (26/12/2025)
 
 <ul>
     <li>Optimisation maximale pour <b>Firefox et Mobile</b>. Surpression maximale de <a href="https://fr.wikipedia.org/wiki/FOUC">FOUC</a>.</li>
     <li>Cette mise à jour améliore au maximum le chargement, dans la limite permise par un userscript.</li>
+    <li>8.1.5 : Easter egg pour Noel / 8.2.1 : Fin de l'Easter egg + Fix</li>
 </ul>
 
 ## [7.4.0] (22/12/2025)
