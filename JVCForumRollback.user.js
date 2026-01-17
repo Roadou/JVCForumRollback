@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.2.1
+// @version      8.2.2
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -967,7 +967,7 @@ if (document.getElementById('jv-footer')) {
             main();
         }
     });
-    document.documentElement && observer.observe(document.documentElement, { childList: true, subtree: true });
-    setTimeout(() => observer.observe(document.documentElement, { childList: true, subtree: true }), 50); //Secu GreasyMonkey
-    const timeout = setTimeout(() => observer.disconnect(), 4000); // abandon après 4 sec  exit
+    if (document.documentElement) observer.observe(document.documentElement, { childList: true, subtree: true });
+    else setTimeout(() => observer.observe(document.documentElement, { childList: true, subtree: true }), 50); //Secu GreasyMonkey
+    const timeout = setTimeout(() => observer.disconnect(), 4000); // abandon après 4 sec exit
 }
