@@ -5,9 +5,9 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
-## [8.2.2] (17/01/2026)
+## [8.2.3] (21/01/2026)
 
-<ul><li>Minor fix - Mutation Observer.</li></ul>
+<ul><li>8.2.2 : Minor fix - Mutation Observer. / 8.2.3 : Minor Fix CSS</li></ul>
 
 ## [8.2.1] (26/12/2025)
 

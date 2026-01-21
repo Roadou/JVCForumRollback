@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.2.2
+// @version      8.2.3
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -373,9 +373,11 @@ function main() {
     .bloc-2020 {
       display: none;
     }
-    .old-layout > .bloc-2020,
-    .old-layout + .bloc-2020 {
+    .old-layout > .bloc-2020 {
       display: block;
+    }
+    .old-layout + .bloc-2020 {
+      display: flex;
     }
     .old-layout > .bloc-2023 {
       display: none;
