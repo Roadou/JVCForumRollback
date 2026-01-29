@@ -5,23 +5,27 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [8.2.5] (29/01/2026)
+
+<ul><li>8.2.5 : Documentation sur les bouts de CSS ajoutés <b>ou non</b> (Faciliter la reprise).</li></ul>
+
 ## [8.2.3] (21/01/2026)
 
-<ul><li>8.2.2 : Minor fix - Mutation Observer. / 8.2.3 : Minor Fix CSS</li></ul>
+<ul><li>8.2.2 : Minor fix - Mutation Observer. / 8.2.3 : Minor Fix CSS.</li></ul>
 
 ## [8.2.1] (26/12/2025)
 
 <ul>
     <li>Optimisation maximale pour <b>Firefox et Mobile</b>. Surpression maximale de <a href="https://fr.wikipedia.org/wiki/FOUC">FOUC</a>.</li>
     <li>Cette mise à jour améliore au maximum le chargement, dans la limite permise par un userscript.</li>
-    <li>8.1.5 : Easter egg pour Noel / 8.2.1 : Fin de l'Easter egg + Fix</li>
+    <li>8.1.5 : Easter egg pour Noel / 8.2.1 : Fin de l'Easter egg + Fix.</li>
 </ul>
 
 ## [7.4.0] (22/12/2025)
 
 <ul>
     <li>Quick Fix / Suppression d'un système de cache qui était en fait inutile et fragile.</li>
-    <li>Todo: Ameliorer la rapidité sur Firefox, ça devient PRIO => Refactor pour FireFox dans la v8.0.0</li>
+    <li>Todo: Ameliorer la rapidité sur Firefox, ça devient PRIO => Refactor pour FireFox dans la v8.0.0 .</li>
 </ul>
 
 ## [7.2.9] (04/12/2025)
