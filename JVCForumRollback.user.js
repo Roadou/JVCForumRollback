@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.2.3
+// @version      8.2.5
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -38,11 +38,18 @@ function main() {
 
 
     //2)Overlay_CSS_____________
+
+    //https://web.archive.org/web/20240502025906cs_/https://static.jvc.gg/24.7.3/css/skin-common.css
+    //https://web.archive.org/web/20240502025906cs_/https://static.jvc.gg/24.7.3/css/skin-forum.css
+
     const style = document.createElement('style');
     style.type = 'text/css';
 
-
     const css = `
+    /*---------- NO Diff skin-common.css V 24.7.3 --------------*/
+
+    /*---------- Diff skin-forum.css ADD V 24.7.3 --------------*/
+
     .forum-section {
       background: var(--jv-block-bg-color);
       font-family: roboto, Arial, Helvetica, sans-serif;
@@ -366,8 +373,9 @@ function main() {
       margin-right: .3125rem;
       text-align: right
     }
+    /*---------- Diff skin-forum.css END 24.7.3  ---------*/
 
-    /* CSS NON ORIGINAL - AJOUTE POUR PERMETTRE LE SWITCH VERSION 2020 */
+    /*---------- CSS PERSO ------------------*/
     /* La classe .old-layout change la visibilite de plusieurs blocs (enfants / freres) sans redondance JS */
 
     .bloc-2020 {
@@ -382,6 +390,8 @@ function main() {
     .old-layout > .bloc-2023 {
       display: none;
     }
+
+    /*----------  CSS PERSO END --------------*/
     `;
 
 
