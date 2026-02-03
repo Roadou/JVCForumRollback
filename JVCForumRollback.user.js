@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.2.5
+// @version      8.3.0
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -391,6 +391,12 @@ function main() {
       display: none;
     }
 
+    /* Fermeture du Blabla 15 */
+    .f-blabla a.bla-15 {
+        opacity: 0.4;
+        color: unset !important;
+    }
+
     /*----------  CSS PERSO END --------------*/
     `;
 
@@ -451,11 +457,12 @@ function main() {
                 <div class="forum-section">
                   <div class="fs-body f-blabla">
                     <ul>
-                      <li><a href="/forums/0-15-0-1-0-1-0-blabla-moins-de-15-ans.htm">Moins de 15 ans</a></li>
+                      <!-- <li><a href="/forums/0-15-0-1-0-1-0-blabla-moins-de-15-ans.htm">Moins de 15 ans</a></li> -->
                       <li><a href="/forums/0-50-0-1-0-1-0-blabla-15-18-ans.htm">15 - 18 ans</a></li>
                       <li><a href="/forums/0-51-0-1-0-1-0-blabla-18-25-ans.htm">18 - 25 ans</a></li>
                       <li><a href="/forums/0-52-0-1-0-1-0-blabla-25-35-ans.htm">25 - 35 ans</a></li>
                       <li><a href="/forums/0-53-0-1-0-1-0-blabla-35-ans-et-plus.htm">Plus de 35 ans</a></li>
+                      <li><a href="/forums/0-15-0-1-0-1-0-blabla-moins-de-15-ans.htm" class="bla-15">Moins de 15 ans</a></li>
                     </ul>
                     <ul>
                       <li><a href="/forums/0-1000020-0-1-0-1-0-belgique.htm">Belgique <i class="be"></i></a></li>
@@ -840,11 +847,12 @@ function main() {
                 <div class="forum-section">
                   <div class="fs-body f-blabla">
                     <ul>
-                      <li><a href="/forums/0-15-0-1-0-1-0-blabla-moins-de-15-ans.htm">Moins de 15 ans</a></li>
+                      <!-- <li><a href="/forums/0-15-0-1-0-1-0-blabla-moins-de-15-ans.htm">Moins de 15 ans</a></li> -->
                       <li><a href="/forums/0-50-0-1-0-1-0-blabla-15-18-ans.htm">15 - 18 ans</a></li>
                       <li><a href="/forums/0-51-0-1-0-1-0-blabla-18-25-ans.htm">18 - 25 ans</a></li>
                       <li><a href="/forums/0-52-0-1-0-1-0-blabla-25-35-ans.htm">25 - 35 ans</a></li>
                       <li><a href="/forums/0-53-0-1-0-1-0-blabla-35-ans-et-plus.htm">Plus de 35 ans</a></li>
+                      <li><a href="/forums/0-15-0-1-0-1-0-blabla-moins-de-15-ans.htm" class="bla-15">Moins de 15 ans</a></li>
                     </ul>
                     <ul>
                       <li><a href="/forums/0-1000020-0-1-0-1-0-belgique.htm">Belgique <i class="be"></i></a></li>
