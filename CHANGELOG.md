@@ -5,9 +5,9 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
-## [8.3.0] (03/02/2026)
+## [8.3.2] (11/02/2026)
 
-<ul><li>Légère minimisation visuelle du bouton blabla moins 15 suite à sa fermeture.</li></ul>
+<ul><li>8.3.0 / 8.3.2 Légère minimisation visuelle du bouton blabla moins 15 suite à sa fermeture.</li></ul>
 
 ## [8.2.5] (29/01/2026)
 
