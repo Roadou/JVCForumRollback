@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.3.2
+// @version      8.3.3
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -31,6 +31,8 @@ function main() {
     jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/175760/1757595772-1987-capture-d-ecran.jpg' : jaquetteTopJeuImg;
     //GTA_VI
     jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquetteTopJeuImg;
+    //RE9
+    jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175771/1757711609-7258-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/176942/1769419728-6700-capture-d-ecran.jpg' : jaquetteTopJeuImg;
 
     //Recuperer_le_bloc_de_fin___
     const jvFooter = jvPage.querySelector(".layout__row.layout__footer");
