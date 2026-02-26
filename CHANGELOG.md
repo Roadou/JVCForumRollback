@@ -5,6 +5,13 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [8.3.3] (26/02/2026)
+
+<details>
+  <summary><sub>Déplier</sub></summary>
+  <ul><li>🖼️ RE9 (Exception Mauvais ratio)</li></ul>
+</details>
+
 ## [8.3.2] (11/02/2026)
 
 <ul><li>8.3.0 / 8.3.2 Légère minimisation visuelle du bouton blabla moins 15 suite à sa fermeture.</li></ul>
