@@ -5,11 +5,14 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
-## [8.3.3] (26/02/2026)
+## [8.3.4] (02/03/2026)
 
 <details>
   <summary><sub>Déplier</sub></summary>
-  <ul><li>🖼️ RE9 (Exception Mauvais ratio)</li></ul>
+  <ul>
+    <li>🖼️ RE9 (Exception Mauvais ratio)</li>
+    <li>🖼️ Pokopia (Exception Mauvais ratio)</li>
+  </ul>
 </details>
 
 ## [8.3.2] (11/02/2026)
