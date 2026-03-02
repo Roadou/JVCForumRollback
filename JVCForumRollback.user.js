@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.3.3
+// @version      8.3.4
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -21,7 +21,6 @@ function main() {
     const jvPage = document.getElementById("jv-page");
     const jeuxLinks = document.querySelectorAll('.card--game > .card__body .card__link');
 
-
     const jaquetteTopJeu = document.querySelector('.card__imgGame > img');
     const jaquetteTopJeuImgSD = jaquetteTopJeu.getAttribute('data-src') || jaquetteTopJeu.getAttribute('src');
     let jaquetteTopJeuImg = jaquetteTopJeuImgSD.replace('s-xs/', 's-md/');
@@ -33,6 +32,9 @@ function main() {
     jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquetteTopJeuImg;
     //RE9
     jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175771/1757711609-7258-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/176942/1769419728-6700-capture-d-ecran.jpg' : jaquetteTopJeuImg;
+    //Pokopia
+    jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175771/1757707202-8974-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/175772/1757716102-1097-capture-d-ecran.jpg' : jaquetteTopJeuImg;
+
 
     //Recuperer_le_bloc_de_fin___
     const jvFooter = jvPage.querySelector(".layout__row.layout__footer");
