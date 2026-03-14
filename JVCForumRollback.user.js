@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.3.4
+// @version      8.3.7
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -438,10 +438,14 @@ function main() {
                   <div class="f-alaune">
                       <a href="#">
                         <img src=${jaquetteTopJeuImg}>
-                        <!-- <img src="https://image.jeuxvideo.com/medias-md/157322/1573218277-2396-card.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
-                        <!-- <img src="https://static.jvc.gg/unversioned/img/default-og.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">  -->
+                        <!-- 
+                        <img src="https://image.jeuxvideo.com/medias-md/157322/1573218277-2396-card.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">
+                        <img src="https://static.jvc.gg/unversioned/img/default-og.png" style="height: 100%; object-fit: cover; filter: grayscale(25%) brightness(107%);">
+                        -->
                       <p class="nom-forum">${jeuxLinks[0].title}</p>
-                      <!-- <p class="nom-forum">Forums Favoris</p>  -->
+                      <!-- 
+                      <p class="nom-forum">Forums Favoris</p>
+                      -->
                     </a></div>
                 </div>
               </div>
@@ -931,9 +935,8 @@ function main() {
 
     //7)Apres_coup--MAJ_LIENS_TOP_JEU_____________
     setTimeout(() => {
-        //Actualiste_titre_et_liens_top_forum__________
-        getUpdateTopGames();
-        //showFavProfil();
+        getUpdateTopGames(); //Actualiste_Titre_Liens_Top
+        //showFavProfil(); //Liens Favoris (Disable)
     }, 0);
 
 
@@ -950,9 +953,9 @@ function main() {
     }
 
     //Update Liens jeux
-    //HREF => Liens formates || Sinon (Script trop rapide => on applique la logique du site => fonction jvCare)
     function getUpdateTopGames() {
         //RECUP INFO ".card__link"
+        //HREF => Liens formates via JS de JVC || Sinon Script trop rapide => fonction jvCare)
         let links = [...jeuxLinks].map(liens => liens.getAttribute('href') || jvCare(liens.classList.value));
         //MINIATURE LIEN + TOP FORUM LIENS
         document.querySelector('.col-lg-6 .f-alaune a').href = links[0];
@@ -961,8 +964,8 @@ function main() {
         });
     }
 
-    //NON UTILISE  (pour le futur)
-    //Permettra davoir les favoris en haut a gauche (si jabandonne lidee de mettre a jour les images)
+    //
+    //NON UTILISE (Futur) Permettra davoir les favoris en haut a gauche (si jabandonne lidee de mettre a jour les images)
     /*
     function showFavProfil() {
         let pseudoco = document.querySelector('.headerAccount__pseudo').textContent.toLowerCase();
