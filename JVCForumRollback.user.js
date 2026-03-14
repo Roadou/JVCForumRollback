@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.3.7
+// @version      8.3.8
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -923,7 +923,7 @@ function main() {
 
     // Apres coup (setTimeout = 0 => Permet de différer certaines actions car Le début du code (visuel) doit etre rapide. )
 
-    //6)Apres_coup--MAJ_Layout_Blabla_2020__________
+    //6)Apres_coup__MAJ_Layout_Blabla_2020__________
     setTimeout(() => {
         document.querySelector("#switch-layout-blabla").addEventListener("click", function() {
             const currentLayout = document.querySelector(".row.old-layout, .row.new-layout");
@@ -933,7 +933,7 @@ function main() {
         });
     }, 0);
 
-    //7)Apres_coup--MAJ_LIENS_TOP_JEU_____________
+    //7)Apres_coup__MAJ_LIENS_TOP_JEU_____________
     setTimeout(() => {
         getUpdateTopGames(); //Actualiste_Titre_Liens_Top
         //showFavProfil(); //Liens Favoris (Disable)
@@ -964,15 +964,14 @@ function main() {
         });
     }
 
-    //
-    //NON UTILISE (Futur) Permettra davoir les favoris en haut a gauche (si jabandonne lidee de mettre a jour les images)
+
+    //NON UTILISE (Futur) Permettra davoir les favoris en haut a gauche (si jabandonne lidee des images).
     /*
     function showFavProfil() {
-        let pseudoco = document.querySelector('.headerAccount__pseudo').textContent.toLowerCase();
-        if (pseudoco === "connexion") return;
-
-        let lienElement = document.querySelector('.col-lg-6 .f-alaune a');
-        lienElement.href = `/profil/${pseudoco}?mode=favoris`;
+        let pseudoUser = document.querySelector('.headerAccount__pseudo').textContent.toLowerCase();
+        if (pseudoUser !== "connexion") {
+            document.querySelector('.col-lg-6 .f-alaune a').href = `/profil/${pseudoUser}?mode=favoris`;
+        }
     }
     */
 }
