@@ -5,9 +5,10 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
-## [8.3.8] (14/03/2026)
 
-<ul><li>Light Clean Html et Commentaires.</li></ul>
+## [8.3.9] (15/03/2026)
+
+<ul><li>8.3.8 / 8.3.7 : Light Clean Html et Commentaires. / 8.3.9 : Class for switch bouton.</li></ul>
 
 ## [8.3.4] (02/03/2026)
 
