@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.3.8
+// @version      8.3.9
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -395,6 +395,14 @@ function main() {
       display: none;
     }
 
+    /*Bouton Switch BlaBla */
+    #switch-layout-blabla {
+        font-size: 15px;
+        user-select: none;
+        display: flex;
+        align-items: center;
+    }
+
     /* Fermeture du Blabla 15 */
     .f-blabla a.bla-15 {
         opacity: 0.4;
@@ -418,7 +426,7 @@ function main() {
     <div class="layout__row layout__row--gutter layout__breadcrumb">
       <div class="px-3 px-lg-0 mt-3 spreadContainer spreadContainer--rowLayout">
         <nav class="breadcrumb" role="navigation"><a href="/" class="breadcrumb__item">jeuxvideo.com</a><h1 class="breadcrumb__item">Les Forums de jeuxvideo.com : retrouvez notre communauté et venez échanger avec elle sur divers sujets et de nombreux topics</h1></nav>
-            <div><span id="switch-layout-blabla" class="breadcrumb-icon icon-menu-puzzle" title="Remonter / Descendre les blablas" style="font-size: 15px; user-select: none; display: inline-flex; align-items: center; ">&nbsp;2020</span>
+            <div><span id="switch-layout-blabla" class="breadcrumb-icon icon-menu-puzzle" title="Remonter / Descendre les blablas">&nbsp;2020</span>
             </div>
       </div>
     </div>
