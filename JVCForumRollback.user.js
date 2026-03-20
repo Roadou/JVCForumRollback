@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.4.0
+// @version      8.4.1
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -22,7 +22,7 @@ function main() {
     const jeuxLinks = document.querySelectorAll('.card--game > .card__body .card__link');
 
     const jaquetteTopJeu = document.querySelector('.card__imgGame > img');
-    const jaquetteTopJeuImgSD = jaquetteTopJeu.getAttribute('data-src') || jaquetteTopJeu.getAttribute('src');
+    const jaquetteTopJeuImgSD = jaquetteTopJeu.dataset.src || jaquetteTopJeu.src;
     let jaquetteTopJeuImg = jaquetteTopJeuImgSD.replace('s-xs/', 's-md/');
 
     //Exceptions_Fiches_Jeux(Va chercher une autre image SI le ratio est trop different. (Car pas beau))
