@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.3.9
+// @version      8.4.0
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -25,15 +25,15 @@ function main() {
     const jaquetteTopJeuImgSD = jaquetteTopJeu.getAttribute('data-src') || jaquetteTopJeu.getAttribute('src');
     let jaquetteTopJeuImg = jaquetteTopJeuImgSD.replace('s-xs/', 's-md/');
 
-    //Exceptions_fiches_jeux(va_chercher_une_autre_image_sinon_cest_moche)____
+    //Exceptions_Fiches_Jeux(Va chercher une autre image SI le ratio est trop different. (Car pas beau))
     //FOOTBALL_MANAGER_26
     jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/175760/1757595772-1987-capture-d-ecran.jpg' : jaquetteTopJeuImg;
     //GTA_VI
     jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquetteTopJeuImg;
-    //RE9
-    jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175771/1757711609-7258-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/176942/1769419728-6700-capture-d-ecran.jpg' : jaquetteTopJeuImg;
-    //Pokopia
+    //POKOPIA
     jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175771/1757707202-8974-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/175772/1757716102-1097-capture-d-ecran.jpg' : jaquetteTopJeuImg;
+    //CRIMSON DESERT
+    jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/177376/1773757034-3785-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/174006/1740057267-1393-capture-d-ecran.jpeg' : jaquetteTopJeuImg;
 
 
     //Recuperer_le_bloc_de_fin___
@@ -414,12 +414,8 @@ function main() {
     `;
 
 
-
-
-    //3)Definition_Liens_et_Titre_plus_cache_____________
-    const rowTopBlabla = localStorage.getItem("jvcrollback-topblabla") === "row old-layout" ? "row old-layout" : "row new-layout";
-
-    //4)Ancien_HTML_____________
+    //3)Ancien_HTML_____________
+    const rowLayoutBlabla = localStorage.getItem("jvcrollback-topblabla") === "row old-layout" ? "row old-layout" : "row new-layout";
 
     var oldHtmlCode =
     `
@@ -440,7 +436,7 @@ function main() {
             <div class="titre-head-bloc">
               <h2 class="titre-bloc">jeuxvideo.com</h2>
             </div>
-            <div class="${rowTopBlabla}">
+            <div class="${rowLayoutBlabla}">
               <div class="col-lg-6">
                 <div class="forum-section">
                   <div class="f-alaune">
@@ -912,26 +908,24 @@ function main() {
     </div>`;
 
 
-    //5)Injection_HTML_ET_CSS_____________
+    //4)Injection_HTML_ET_CSS_____________
 
-
-    //Ajouter_CSS_manquant_(definit en 2)
+    //CSS_manquant_(Definit en 2)
     style.innerHTML = css;
     document.head.appendChild(style);
 
-    //Remplacer_le_HTML_(definit en 4)
+    //HTML_OLD_(Definit en 3)
     jvPage.innerHTML = oldHtmlCode;
 
-    //Remplacer_bloc_"Top jeux les plus attendus"
+    //Remplace_Bloc_Jeux_plus_attendus
     const oldBlocJeux = jvPage.querySelector('.oldgames.sideModule.sideOrderedGames');
     oldBlocJeux.replaceWith(blocJeuxNew);
 
-    //Ajouter_bandeau_de_fin_actuel
+    //BANDEAU_FIN
     jvPage.appendChild(jvFooter);
 
-    // Apres coup (setTimeout = 0 => Permet de différer certaines actions car Le début du code (visuel) doit etre rapide. )
-
-    //6)Apres_coup__MAJ_Layout_Blabla_2020__________
+    // SetTimeout === 0 => PERMET de différer au 2ND CYCLE de rendu les elements NON VISUELS.
+    //5)Apres_coup__MAJ_Layout_Blabla_2020__________
     setTimeout(() => {
         document.querySelector("#switch-layout-blabla").addEventListener("click", function() {
             const currentLayout = document.querySelector(".row.old-layout, .row.new-layout");
@@ -951,16 +945,14 @@ function main() {
     //JVCare_(Fonction_generique_de_JVC)_(Obligatoire_et_Standardise)
     //https://jvflux.fr/Fonctionnement_technique_de_Jeuxvideo.com#JvCare
     function jvCare(classe) {
-        const base16 = '0A12B34C56D78E9F';
-        let lien = '';
-        const s = classe.split(' ')[1];
+        let base16 = '0A12B34C56D78E9F', lien = '' , s = classe.split(' ')[1];
         for (let i = 0; i < s.length; i += 2) {
             lien += String.fromCharCode(base16.indexOf(s.at(i)) * 16 + base16.indexOf(s.at(i + 1)));
         }
         return lien;
     }
 
-    //Update Liens jeux
+    //UPDATE LIENS TOP FOFO
     function getUpdateTopGames() {
         //RECUP INFO ".card__link"
         //HREF => Liens formates via JS de JVC || Sinon Script trop rapide => fonction jvCare)
@@ -973,8 +965,7 @@ function main() {
     }
 
 
-    //NON UTILISE (Futur) Permettra davoir les favoris en haut a gauche (si jabandonne lidee des images).
-    /*
+    /* NON UTILISE (Futur) PERMETTRA DAVOIR LES FAVORIS (SI jabandonne lidee des images).
     function showFavProfil() {
         let pseudoUser = document.querySelector('.headerAccount__pseudo').textContent.toLowerCase();
         if (pseudoUser !== "connexion") {

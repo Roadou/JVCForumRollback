@@ -5,6 +5,16 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [8.4.0] (20/03/2026)
+
+<ul><li>Clean code.</li></ul>
+<details>
+  <summary><sub>Déplier</sub></summary>
+  <ul>
+    <li>🖼️ RE9 (Fin exception Mauvais ratio)</li>
+    <li>🖼️ CRIMSON DESERT (Exception Mauvais ratio)</li>
+  </ul>
+</details>
 
 ## [8.3.9] (15/03/2026)
 
