@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.4.1
+// @version      8.4.5
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -30,8 +30,6 @@ function main() {
     jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/175760/1757595772-1987-capture-d-ecran.jpg' : jaquetteTopJeuImg;
     //GTA_VI
     jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquetteTopJeuImg;
-    //POKOPIA
-    jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175771/1757707202-8974-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/175772/1757716102-1097-capture-d-ecran.jpg' : jaquetteTopJeuImg;
     //CRIMSON DESERT
     jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/177376/1773757034-3785-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/174006/1740057267-1393-capture-d-ecran.jpeg' : jaquetteTopJeuImg;
 
@@ -417,7 +415,7 @@ function main() {
     //3)Ancien_HTML_____________
     const rowLayoutBlabla = localStorage.getItem("jvcrollback-topblabla") === "row old-layout" ? "row old-layout" : "row new-layout";
 
-    var oldHtmlCode =
+    const oldHtmlCode =
     `
     <div class="layout__row layout__row--gutter layout__breadcrumb">
       <div class="px-3 px-lg-0 mt-3 spreadContainer spreadContainer--rowLayout">
@@ -942,7 +940,6 @@ function main() {
     }, 0);
 
 
-    //JVCare_(Fonction_generique_de_JVC)_(Obligatoire_et_Standardise)
     //https://jvflux.fr/Fonctionnement_technique_de_Jeuxvideo.com#JvCare
     function jvCare(classe) {
         let base16 = '0A12B34C56D78E9F', lien = '' , s = classe.split(' ')[1];
@@ -981,17 +978,13 @@ function main() {
 if (document.getElementById('jv-footer')) {
     main();
 } else {
-    let once = false;
     const observer = new MutationObserver(() => {
-        if (once) return;
         if (document.getElementById('jv-footer')) {
-            once = true;
             observer.disconnect();
-            clearTimeout(timeout);
             main();
         }
     });
     if (document.documentElement) observer.observe(document.documentElement, { childList: true, subtree: true });
     else setTimeout(() => observer.observe(document.documentElement, { childList: true, subtree: true }), 50); //Secu GreasyMonkey
-    const timeout = setTimeout(() => observer.disconnect(), 4000); // abandon après 4 sec exit
+    setTimeout(() => observer.disconnect(), 4000); // abandon après 4 sec exit
 }
