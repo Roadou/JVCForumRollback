@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.4.5
+// @version      8.4.6
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -880,21 +880,21 @@ function main() {
             <div class="card-forum-title card-header">Top Forums</div>
             <div class="card-body p-2">
               <ol class="fw-bold mb-0">
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[0].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[1].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[2].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[3].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[4].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[5].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[6].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[7].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[8].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[9].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[10].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[11].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[12].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[13].title}</a></li>
-                <li><a href="#" class="lh-sm card-forum-link">${jeuxLinks[14].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[0].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[1].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[2].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[3].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[4].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[5].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[6].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[7].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[8].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[9].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[10].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[11].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[12].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[13].title}</a></li>
+                <li><a class="lh-sm card-forum-link" href="#">${jeuxLinks[14].title}</a></li>
               </ol>
             </div>
           </div>
