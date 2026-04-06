@@ -5,6 +5,14 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [8.4.5] (06/04/2026)
+
+<ul><li>8.4.5 : Clean observer.</li></ul>
+<details>
+  <summary><sub>Déplier</sub></summary>
+  <ul><li>🖼️ Pokopia (Fin exception Mauvais ratio)</li></ul>
+</details>
+
 ## [8.4.1] (20/03/2026)
 
 <ul><li>Clean code.</li></ul>
