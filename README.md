@@ -1,27 +1,5 @@
 # **JVCForumRollback**
 
-**Permet d'afficher l'ancienne page des forums JVC :**
+**Script temporairemnt hors ligne pour eviter les bugs avec la prochaine mise à jour jvc.**
 
-<a href="../../raw/main/JVCForumRollback.user.js"><img src="https://img.shields.io/badge/Installer%20/%20Mettre%20%C3%A0%20jour%20le%20Script-Green?style=for-the-badge&color=1E971E" alt="Installer / Mettre à jour Script"></a> ou sur [JVScript](https://jvscript.fr/script/jvcforumrollback)
-
-> [Changelog](CHANGELOG.md#changelog-jvcforumrollback)
-
-#
-
-**Tampermoney ou similaire requis pour ce script.**
-
-<a href="https://www.tampermonkey.net/index.php#download">TamperMonkey</a> (PC / [Firefox Android](https://play.google.com/store/apps/details?id=org.mozilla.firefox) / [Edge Android](https://play.google.com/store/apps/details?id=com.microsoft.emmx) )
-
-<a href="https://violentmonkey.github.io/#installation"><img src="https://violentmonkey.github.io/_astro/vm.C4h557K-.png" alt="ViolentMonkey" width="20"/> ViolentMonkey</a> (PC / [Firefox Android](https://play.google.com/store/apps/details?id=org.mozilla.firefox) / [Edge Android](https://play.google.com/store/apps/details?id=com.microsoft.emmx) ) **MV2**
-
-<a href="https://apps.apple.com/fr/app/userscripts/id1463298887"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/b4/21/66/b42166ec-dd28-21ef-b6a1-dc75715c3452/AppIcon-0-0-85-220-0-4-0-2x.png/48x0w.webp" alt="userscripts" width="20"/> Userscripts</a>  (Safari IOS)
-
-#
-
-![Ancienne page forum](https://jvscript.fr/storage/images/jvcforumrollback.png)
-
-#
-
-<sub>Ce projet est **indépendant** et n'est **pas affilié** à JV.</sub>  
-<sub>Le script repose en partie sur des éléments archivés de la page de selections des forums, cette page n'a pas de balise "noarchive" cependant les droits restent la propriété de Webedia.</sub>  
-<sub>Sa disponibilité perdurera, sauf décision contraire de Webedia.</sub>  
+**https://www.jeuxvideo.com/forums/42-1000021-76887150-1-0-1-0-mise-a-jour-des-forums.htm**
