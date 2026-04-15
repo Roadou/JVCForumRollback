@@ -5,9 +5,9 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
-## [8.5.0] (14/04/2026)
+## [8.5.2] (15/04/2026)
 
-<ul><li>Mise à jour jvc désactivation par prévention.</li></ul>
+<ul><li>Respawn 2.</li></ul>
 
 ## [8.4.8] (13/04/2026)
 
