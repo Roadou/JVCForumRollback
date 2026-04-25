@@ -2,7 +2,7 @@
 
 **Permet d'afficher l'ancienne page des forums JVC :**
 
-<a href="../../raw/main/JVCForumRollback.user.js"><img src="https://img.shields.io/badge/Installer%20/%20Mettre%20%C3%A0%20jour%20le%20Script-Green?style=for-the-badge&color=1E971E" alt="Installer / Mettre à jour Script"></a> ou sur [JVScript](https://jvscript.fr/script/jvcforumrollback)
+<a href="https://raw.githubusercontent.com/Roadou/JVCForumRollback/main/JVCForumRollback.user.js"><img src="https://img.shields.io/badge/Installer%20/%20Mettre%20%C3%A0%20jour%20le%20Script-Green?style=for-the-badge&color=1E971E" alt="Installer / Mettre à jour Script"></a> ou sur [JVScript](https://jvscript.fr/script/jvcforumrollback)
 
 > [Changelog](CHANGELOG.md#changelog-jvcforumrollback)
 
