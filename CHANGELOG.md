@@ -5,6 +5,10 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [8.5.3] (26/04/2026)
+
+<ul><li>Liens direct pour les mise à jour (sans redirection) car sinon ça peu bug sans compte github.</li></ul>
+
 ## [8.5.2] (15/04/2026)
 
 <ul><li>Respawn 2.</li></ul>
