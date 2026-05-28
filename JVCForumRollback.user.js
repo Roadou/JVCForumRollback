@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.5.6
+// @version      8.5.7
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -23,8 +23,7 @@ function main() {
     const jeuxLinks = document.querySelectorAll('.card--game > .card__body .card__link');
 
     const jaquetteTopJeu = document.querySelector('.card__imgGame > img');
-    const jaquetteTopJeuImgSD = jaquetteTopJeu.dataset.src || jaquetteTopJeu.src;
-    let jaquetteTopJeuImg = jaquetteTopJeuImgSD.replace('s-xs/', 's-md/');
+    let jaquetteTopJeuImg = (jaquetteTopJeu.dataset.src || jaquetteTopJeu.src).replace('s-xs/', 's-md/');
 
     //Exceptions_Fiches_Jeux(Va chercher une autre image SI le ratio est trop different. (Car pas beau))
     //FOOTBALL_MANAGER_26
@@ -979,8 +978,8 @@ function main() {
         let links = [...jeuxLinks].map(liens => liens.getAttribute('href') || jvCare(liens.className));
         //MINIATURE LIEN + TOP FORUM LIENS
         document.querySelector('.col-lg-6 .f-alaune a').href = links[0];
-        document.querySelectorAll('.lh-sm.card-forum-link').forEach((element, index) => {
-            element.href = links[index];
+        document.querySelectorAll('.lh-sm.card-forum-link').forEach((ele, index) => {
+            ele.href = links[index];
         });
     }
 
