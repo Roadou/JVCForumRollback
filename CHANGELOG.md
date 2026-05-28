@@ -5,6 +5,14 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [8.5.6] (28/05/2026)
+
+<ul><li>Léger clean de la syntaxe.</li></ul>
+<details>
+  <summary><sub>Déplier</sub></summary>
+  <ul><li>🖼️ Crimson Desert (Fin exception Mauvais ratio)</li></ul>
+</details>
+
 ## [8.5.3] (26/04/2026)
 
 <ul><li>Liens direct pour les mise à jour (sans redirection) car sinon ça peu bug sans compte github.</li></ul>
