@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.5.3
+// @version      8.5.6
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -19,6 +19,7 @@ function main() {
     //1)Recuperer_Elements_Page_Actuelle_______
 
     const jvPage = document.getElementById("jv-page");
+
     const jeuxLinks = document.querySelectorAll('.card--game > .card__body .card__link');
 
     const jaquetteTopJeu = document.querySelector('.card__imgGame > img');
@@ -27,15 +28,13 @@ function main() {
 
     //Exceptions_Fiches_Jeux(Va chercher une autre image SI le ratio est trop different. (Car pas beau))
     //FOOTBALL_MANAGER_26
-    jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/175760/1757595772-1987-capture-d-ecran.jpg' : jaquetteTopJeuImg;
+    if (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') jaquetteTopJeuImg = 'https://image.jeuxvideo.com/medias-md/175760/1757595772-1987-capture-d-ecran.jpg'
     //GTA_VI
-    jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') ? 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg' : jaquetteTopJeuImg;
-    //CRIMSON DESERT
-    jaquetteTopJeuImg = (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/177376/1773757034-3785-jaquette-avant.jpg') ? 'https://image.jeuxvideo.com/medias-md/174006/1740057267-1393-capture-d-ecran.jpeg' : jaquetteTopJeuImg;
+    if (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') jaquetteTopJeuImg = 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg';
 
 
     //Recuperer_le_bloc_de_fin___
-    const jvFooter = jvPage.querySelector(".layout__row.layout__footer");
+    const jvFooter = document.getElementById("jv-footer");
     const blocJeuxNew = document.querySelector(".sideModule.sideOrderedGames");
 
 
@@ -959,7 +958,7 @@ function main() {
 
     //7)Apres_coup__MAJ_LIENS_TOP_JEU_____________
     setTimeout(() => {
-        getUpdateTopGames(); //Actualiste_Titre_Liens_Top
+        getUpdateTopGames(); //Actualiste_Liens_Top_Jeux
         //showFavProfil(); //Liens Favoris (Disable)
     }, 0);
 
@@ -977,7 +976,7 @@ function main() {
     function getUpdateTopGames() {
         //RECUP INFO ".card__link"
         //HREF => Liens formates via JS de JVC || Sinon Script trop rapide => fonction jvCare)
-        let links = [...jeuxLinks].map(liens => liens.getAttribute('href') || jvCare(liens.classList.value));
+        let links = [...jeuxLinks].map(liens => liens.getAttribute('href') || jvCare(liens.className));
         //MINIATURE LIEN + TOP FORUM LIENS
         document.querySelector('.col-lg-6 .f-alaune a').href = links[0];
         document.querySelectorAll('.lh-sm.card-forum-link').forEach((element, index) => {
