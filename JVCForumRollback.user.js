@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.5.7
+// @version      8.5.9
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -29,7 +29,7 @@ function main() {
     //FOOTBALL_MANAGER_26
     if (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') jaquetteTopJeuImg = 'https://image.jeuxvideo.com/medias-md/175760/1757595772-1987-capture-d-ecran.jpg'
     //GTA_VI
-    if (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/170230/1702303334-1969-jaquette-avant.jpeg') jaquetteTopJeuImg = 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg';
+    if (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/178179/1781789125-5577-jaquette-avant.jpg') jaquetteTopJeuImg = 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg';
 
 
     //Recuperer_le_bloc_de_fin___
@@ -61,12 +61,11 @@ function main() {
       }
     }
 
-
     .card-forum-title {
-        font-size: .9375rem;
-        font-family: roboto, Arial, Helvetica, sans-serif;
-        font-weight: 700;
-        color: var(--jv-text-color);
+      font-size: .9375rem;
+      font-family: roboto, Arial, Helvetica, sans-serif;
+      font-weight: 700;
+      color: var(--jv-text-color);
     }
 
     .card-forum-link {
