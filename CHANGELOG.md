@@ -5,6 +5,13 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [8.5.9] (18/06/2026)
+
+<details>
+  <summary><sub>Déplier</sub></summary>
+  <ul><li>🖼️ GTA VI (Switch mauvais ratio source).</li></ul>
+</details>
+
 ## [8.5.7] (29/05/2026)
 
 <ul><li>8.5.7 / 8.5.6 : Léger clean de la syntaxe.</li></ul>
