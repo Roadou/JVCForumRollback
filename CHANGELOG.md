@@ -5,6 +5,10 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [8.6.0] (27/06/2026)
+
+<ul><li>Easter egg Gif temporaire GTA VI.</li></ul>
+
 ## [8.5.9] (18/06/2026)
 
 <details>

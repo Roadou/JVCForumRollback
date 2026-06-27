@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.5.9
+// @version      8.6.0
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -26,11 +26,16 @@ function main() {
     let jaquetteTopJeuImg = (jaquetteTopJeu.dataset.src || jaquetteTopJeu.src).replace('s-xs/', 's-md/');
 
     //Exceptions_Fiches_Jeux(Va chercher une autre image SI le ratio est trop different. (Car pas beau))
+    const gtaGifSeen = localStorage.getItem("jvcrollback-gtavi-gif-seen") === "true";
     //FOOTBALL_MANAGER_26
-    if (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') jaquetteTopJeuImg = 'https://image.jeuxvideo.com/medias-md/175760/1757595772-1987-capture-d-ecran.jpg'
-    //GTA_VI
-    if (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/178179/1781789125-5577-jaquette-avant.jpg') jaquetteTopJeuImg = 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg';
-
+    if (jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') jaquetteTopJeuImg = 'https://image.jeuxvideo.com/medias-md/175760/1757595772-1987-capture-d-ecran.jpg';
+    //GTA_VI_Gif_Event
+    if (!gtaGifSeen && jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/178179/1781789125-5577-jaquette-avant.jpg') {
+        jaquetteTopJeuImg = 'https://image.noelshack.com/fichiers-md/2026/26/6/1782588699-gta-braquage.gif';
+        localStorage.setItem("jvcrollback-gtavi-gif-seen", "true");
+    }
+    //GTA_VI_Classic
+    if (gtaGifSeen && jaquetteTopJeuImg === 'https://image.jeuxvideo.com/medias-md/178179/1781789125-5577-jaquette-avant.jpg') jaquetteTopJeuImg = 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg';
 
     //Recuperer_le_bloc_de_fin___
     const jvFooter = document.getElementById("jv-footer");
