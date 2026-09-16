@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.6.7
+// @version      8.7.2
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -415,18 +415,26 @@ function main() {
 
     /*Bouton Switch BlaBla */
     #switch-layout-blabla {
-        font-size: 15px;
-        user-select: none;
-        display: flex;
-        align-items: center;
+      font-size: 15px;
+      user-select: none;
+      display: flex;
+      align-items: center;
     }
 
-    /* Fermeture du Blabla 15 */
-    .f-blabla a.bla-15 {
+    /* Lock du Blabla 15 */
+    /* ... */
+
+    /* Forum fermé */
+    .forum-section--closed {
         opacity: 0.4;
+        filter: grayscale(0.5);
+    }
+
+    .forum-section--closed a {
         color: unset !important;
         cursor: default;
     }
+
 
     /*----------  CSS PERSO END --------------*/
     `;
@@ -488,7 +496,7 @@ function main() {
                 <div class="forum-section">
                   <div class="fs-body f-blabla">
                     <ul>
-                      <li><a href="/forums/0-15-0-1-0-1-0-blabla-moins-de-15-ans.htm" class="bla-15">Moins de 15 ans</a></li>
+                      <li><a href="/forums/0-15-0-1-0-1-0-blabla-moins-de-15-ans.htm" class="icon-topic-lock"> Moins de 15 ans</a></li>
                       <li><a href="/forums/0-50-0-1-0-1-0-blabla-15-18-ans.htm">15 - 18 ans</a></li>
                       <li><a href="/forums/0-51-0-1-0-1-0-blabla-18-25-ans.htm">18 - 25 ans</a></li>
                       <li><a href="/forums/0-52-0-1-0-1-0-blabla-25-35-ans.htm">25 - 35 ans</a></li>
@@ -858,7 +866,7 @@ function main() {
                     </ul>
                   </div>
                 </div>
-                <div class="forum-section">
+                <div class="forum-section forum-section--closed">
                   <div class="fs-header sante"></div>
                   <div class="fs-body">
                     <h3><a href="/forums/0-3002340-0-1-0-1-0-sante-et-bien-etre.htm">Santé & Bien-être</a></h3>
@@ -877,7 +885,7 @@ function main() {
                 <div class="forum-section">
                   <div class="fs-body f-blabla">
                     <ul>
-                      <li><a href="/forums/0-15-0-1-0-1-0-blabla-moins-de-15-ans.htm" class="bla-15">Moins de 15 ans</a></li>
+                      <li><a href="/forums/0-15-0-1-0-1-0-blabla-moins-de-15-ans.htm" class="icon-topic-lock"> Moins de 15 ans</a></li>
                       <li><a href="/forums/0-50-0-1-0-1-0-blabla-15-18-ans.htm">15 - 18 ans</a></li>
                       <li><a href="/forums/0-51-0-1-0-1-0-blabla-18-25-ans.htm">18 - 25 ans</a></li>
                       <li><a href="/forums/0-52-0-1-0-1-0-blabla-25-35-ans.htm">25 - 35 ans</a></li>
@@ -918,7 +926,7 @@ function main() {
               </ol>
             </div>
           </div>
-          <div class="oldgames sideModule sideOrderedGames">
+          <div id="Old_OrderedGames" class="sideModule sideOrderedGames">
             <!-- Ancienne section à remplacer -->
           </div>
         </div>
@@ -936,7 +944,7 @@ function main() {
     jvPage.innerHTML = oldHtmlCode;
 
     //Remplace_Bloc_Jeux_plus_attendus
-    const oldBlocJeux = jvPage.querySelector('.oldgames.sideModule.sideOrderedGames');
+    const oldBlocJeux = document.getElementById('Old_OrderedGames');
     oldBlocJeux.replaceWith(blocJeuxNew);
 
     //BANDEAU_FIN
