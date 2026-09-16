@@ -5,7 +5,11 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
-## [8.6.6] (03/09/2026)
+## [8.7.2] (16/09/2026)
+
+<ul><li>Fermture forum Santé et sous-forums. Et clean code.</li></ul>
+
+## [8.6.7] (03/09/2026)
 
 <ul><li>8.6.5 / 8.6.6 : Clean code and add IDs on nodes.</li></ul>
 
