@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.7.3
+// @version      8.7.4
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -953,7 +953,7 @@ function main() {
     setTimeout(() => {
 
         //Listener SWITCH MODE_Layout_Blabla_2020
-        document.querySelector("#switch-layout-blabla").addEventListener("click", () => {
+        document.getElementById("switch-layout-blabla").addEventListener("click", () => {
             const currentLayout = document.querySelector(".row.roll-layout");
             const saveLayout = currentLayout.classList.toggle("old-layout");
             localStorage.setItem("jvcrollback-topblabla", saveLayout);
