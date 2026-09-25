@@ -5,7 +5,7 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
-## [8.7.3] (25/09/2026)
+## [8.7.4] (25/09/2026)
 
 <ul><li>Retrait Div pour Ads. Clean code.</li></ul>
 
