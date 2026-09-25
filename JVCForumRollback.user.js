@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.7.2
+// @version      8.7.3
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -33,7 +33,7 @@ function main() {
 
     //Recuperer_le_bloc_de_fin___
     const jvFooter = document.getElementById("jv-footer");
-    const blocJeuxNew = document.querySelector(".sideModule.sideOrderedGames");
+    const blocJeuxAttendus = jvPage.querySelector(".sideModule.sideOrderedGames");
 
 
     //2)Overlay_CSS_____________
@@ -540,7 +540,6 @@ function main() {
                 </div>
               </div>
             </div>
-            <div data-ad-position="middle" data-breakpoints="xs,s,m"></div>
             <div class="titre-head-bloc">
               <h2 class="titre-bloc">Le jeu vidéo</h2>
             </div>
@@ -943,14 +942,14 @@ function main() {
     //HTML_OLD_(Definit en 3)
     jvPage.innerHTML = oldHtmlCode;
 
-    //Remplace_Bloc_Jeux_plus_attendus
-    const oldBlocJeux = document.getElementById('Old_OrderedGames');
-    oldBlocJeux.replaceWith(blocJeuxNew);
+    //Replace_Bloc_Jeux_plus_attendus
+    const placeJeuxAttendus = document.getElementById('Old_OrderedGames');
+    placeJeuxAttendus.replaceWith(blocJeuxAttendus);
 
     //BANDEAU_FIN
     jvPage.appendChild(jvFooter);
 
-    //Timeout === 0 => Differe au 2ND CYCLE de rendu les elements NON VISUELS.
+    //Timeout === 0 => Differe au 2ND CYCLE de rendu JS les elements NON VISUELS (moins important).
     setTimeout(() => {
 
         //Listener SWITCH MODE_Layout_Blabla_2020
