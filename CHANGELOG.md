@@ -5,9 +5,13 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [8.7.3] (25/09/2026)
+
+<ul><li>Retrait Div pour Ads. Clean code.</li></ul>
+
 ## [8.7.2] (16/09/2026)
 
-<ul><li>Fermture forum Santé et sous-forums. Et clean code.</li></ul>
+<ul><li>Fermture forum Santé et sous-forums. Clean code.</li></ul>
 
 ## [8.6.7] (03/09/2026)
 
