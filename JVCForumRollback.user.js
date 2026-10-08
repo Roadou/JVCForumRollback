@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.7.4
+// @version      8.7.5
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -465,7 +465,7 @@ function main() {
             <div class="row roll-layout ${oldLayoutClass}">
               <div class="col-lg-6">
                 <div class="forum-section">
-                  <div id="top_forumCover" class="f-alaune">
+                  <div id="main_jaquetteCover" class="f-alaune">
                       <a href="#">
                         <img src=${jaquetteTopImg}>
                         <!-- 
@@ -962,7 +962,7 @@ function main() {
         // UPDATE LIENS TOP FOFO // Liens Direct || Sinon Script trop rapide => fonction jvCare)
         const jeuxLinks = [...jeuxLinksNodes].map(links => links.getAttribute('href') || jvCare(links.className));
         //MINIATURE LIEN + TOP FORUM LIENS
-        document.querySelector('#top_forumCover a').href = jeuxLinks[0];
+        document.querySelector('#main_jaquetteCover a').href = jeuxLinks[0];
         document.querySelectorAll('#top_forumList .card-forum-link').forEach((elem, index) => {
             elem.href = jeuxLinks[index];
         });
@@ -977,9 +977,9 @@ function main() {
         }
 
         /* NON UTILISE (Futur) PERMETTRA DAVOIR LES FAVORIS (SI jabandonne lidee des images).
-        let pseudoUser = document.querySelector('.headerAccount__pseudo').textContent.toLowerCase();
+        const pseudoUser = document.querySelector('.headerAccount__pseudo').textContent.toLowerCase().trim();
         if (pseudoUser !== "connexion") {
-            document.querySelector('.col-lg-6 .f-alaune a').href = `/profil/${pseudoUser}?mode=favoris`;
+            document.querySelector('#main_jaquetteCover a').href = `/profil/${pseudoUser}?mode=favoris`;
         }
         */
     }, 0);
