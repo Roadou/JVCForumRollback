@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         JVCForumRollback
 // @namespace    https://github.com/Roadou
-// @version      8.7.5
+// @version      8.7.6
 // @description  Ancienne page des forums JVC
 // @author       IceFairy, Atlantis
 // @match        *://www.jeuxvideo.com/forums.htm
@@ -24,11 +24,13 @@ function main() {
     const jaquetteTopNode = document.querySelector('.card__imgGame > img');
 
     let jaquetteTopImg = (jaquetteTopNode.dataset.src || jaquetteTopNode.src).replace('s-xs/', 's-md/');
-    //Exceptions_Fiches_Jeux(Va chercher une autre image SI le ratio est trop different. (Car pas beau))
-    //FOOTBALL_MANAGER_26
-    if (jaquetteTopImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') jaquetteTopImg = 'https://image.jeuxvideo.com/medias-md/175760/1757595772-1987-capture-d-ecran.jpg'
+    //Exceptions_Fiches_Jeux(Va chercher une autre image SI le ratio est trop different. (Car mal cadre))
     //GTA_VI
     if (jaquetteTopImg === 'https://image.jeuxvideo.com/medias-md/178179/1781789125-5577-jaquette-avant.jpg') jaquetteTopImg = 'https://image.jeuxvideo.com/medias-md/172786/1727863534-4176-capture-d-ecran.jpg';
+    //FOOTBALL_MANAGER_26
+    if (jaquetteTopImg === 'https://image.jeuxvideo.com/medias-md/175793/1757925437-1267-jaquette-avant.jpg') jaquetteTopImg = 'https://image.jeuxvideo.com/medias-md/175760/1757595772-1987-capture-d-ecran.jpg';
+    //FOOTBALL_MANAGER_27
+    if (jaquetteTopImg === 'https://image.jeuxvideo.com/medias-md/179361/1793613974-8494-jaquette-avant.jpg') jaquetteTopImg = 'https://image.jeuxvideo.com/medias-md/179396/1793955490-8991-card.jpg';
 
 
     //Recuperer_le_bloc_de_fin___
