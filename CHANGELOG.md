@@ -5,6 +5,13 @@
 Le script repose sur une page recréée localement, sans API, pour optimiser le remplacement et éviter du pooping.   
 Les changements de routine sont dépliables **via les flèches ▸**, afin de garder un changelog centré sur l’essentiel du code.    
 
+## [8.7.6] (14/11/2026)
+
+<details>
+  <summary><sub>Déplier</sub></summary>
+  <ul><li>🖼️ Miniature "Football Manager 27" (Exception Mauvais ratio).</li></ul>
+</details>
+
 ## [8.7.5] (08/10/2026)
 
 <ul><li>Clean code.</li></ul>
